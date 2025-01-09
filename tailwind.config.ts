@@ -13,6 +13,9 @@ export default {
         foreground: "var(--foreground)",
         point: "#FE0000",
       },
+      rotate: {
+        "25": "25deg",
+      },
     },
   },
   plugins: [],
