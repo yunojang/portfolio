@@ -11,23 +11,59 @@ import {
   setEndIntro as setEndIntroAtom,
 } from "./atom/landing/introState";
 
+import { useCallback, useEffect } from "react";
+import { lockScroll, releaseScroll } from "./common/utils/scroll";
+import SmoothScroll from "./common/components/SmoothScroll";
+import { debounce } from "./common/utils/delay";
+
 export default function Home() {
   const isEndIntro = useAtomValue(isEndIntroAtom);
 
   const setProgressIntro = useSetAtom(setProgressIntroAtom);
   const setEndIntro = useSetAtom(setEndIntroAtom);
 
+  const onStartIntro = useCallback(() => {
+    // lockScroll();
+    setProgressIntro();
+  }, [setProgressIntro]);
+
+  const onEndIntro = useCallback(() => {
+    // releaseScroll();
+    setEndIntro();
+  }, [setEndIntro]);
+
+  useEffect(() => {
+    const onWheel = () => {
+      console.log(window.scrollY);
+    };
+
+    const debouncedOnWheel = debounce(onWheel, 40);
+
+    window.addEventListener("wheel", debouncedOnWheel);
+    return () => window.removeEventListener("wheel", debouncedOnWheel);
+  }, []);
+
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen h-full relative ">
+      <SmoothScroll />
+
       {isEndIntro && <LineGrid />}
 
       {/* 인트로 - 이름 */}
-      <Intro onStart={setProgressIntro} onEnd={setEndIntro} />
+      <Intro onStart={onStartIntro} onEnd={onEndIntro} />
 
-      {/* 프로필 */}
-      <ProfileIntroduce />
+      {/* 소개글 */}
+      <div className="sticky top-0">
+        <ProfileIntroduce />
+      </div>
+
+      <div className="bg-red-200 h-screen sticky top-0 z-20">1</div>
+      <div className="bg-blue-200 h-screen sticky top-0 z-20">2</div>
+      <div className="bg-green-200 h-screen sticky top-0 z-20">3</div>
 
       {/* Work - 커리어 */}
+
+      {/* 대표 프로젝트 미리보기 */}
 
       {/* Project */}
 

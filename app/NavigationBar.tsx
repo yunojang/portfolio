@@ -11,7 +11,7 @@ const NavigationBar: FC<NavigationBarProps> = () => {
 
   return (
     <div>
-      <div className="bg-gray-900 rounded-lg py-2 px-4 pr-8 shadow-2xl">
+      <div className="bg-gray-900 rounded-lg py-2 px-4 pr-8 shadow-frame opacity-70 hover:opacity-100 transition-all duration-500">
         <section className="flex items-center justify-between">
           <Logo dark />
 

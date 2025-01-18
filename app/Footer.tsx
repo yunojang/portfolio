@@ -11,7 +11,7 @@ const Footer: FC<FooterProps> = ({}) => {
         <div className="flex gap-7 flex-wrap text-lg">
           <div className="text-white">PROFILE</div>
           <div className="text-white">CAREER</div>
-          <div className="text-white">DEGREE</div>
+          <div className="text-white">PROJECTS</div>
           <div className="text-white">ETC</div>
         </div>
 

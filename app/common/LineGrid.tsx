@@ -6,7 +6,7 @@ interface LineGridProps {}
 
 const LineGrid: FC<LineGridProps> = () => {
   return (
-    <div className="absolute inset-0 grid grid-cols-8 justify-between place-items-center w-full overflow-hidden">
+    <div className="absolute inset-0 grid grid-cols-8 justify-between place-items-center w-full h-full overflow-hidden">
       {new Array(8).fill(0).map((_, i) => (
         <div
           key={i}

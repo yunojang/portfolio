@@ -33,7 +33,7 @@ const Intro: FC<IntroProps> = ({ onEnd, onStart }) => {
   }, [onStartIntro, onEndIntro]);
 
   return (
-    <div className="w-full h-screen bg-white">
+    <div className="w-full" style={{ height: "calc(100vh + 60px)" }}>
       <div
         className={`h-[85%] flex flex-col relative items-center justify-center ${notoSansKR.className} leading-[230px] font-semibold`}
       >
