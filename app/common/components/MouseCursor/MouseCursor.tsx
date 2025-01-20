@@ -4,7 +4,7 @@ import { FC, useEffect, useRef } from "react";
 import { cx } from "@emotion/css";
 import { cursor as cursorAtom } from "@/app/atom/common/cursor";
 
-import "../style/cursor.css";
+import "./cursor.css";
 import { useAtom } from "jotai";
 
 interface MouseCursorProps {}
@@ -52,7 +52,7 @@ const MouseCursor: FC<MouseCursorProps> = ({}) => {
         destination.x = mouse.x;
         destination.y = mouse.y;
       } else {
-        const degree = 0.08;
+        const degree = 0.075;
 
         distance.x = (mouse.x - destination.x) * degree;
         distance.y = (mouse.y - destination.y) * degree;

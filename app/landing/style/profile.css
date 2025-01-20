@@ -1,0 +1,134 @@
+.title-bg {
+  animation: bg-fade-in linear forwards;
+  animation-timeline: view();
+  opacity: 0;
+  scale: 0.8;
+  animation-range: entry 15vh;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+
+@keyframes bg-fade-in {
+  0% {
+  }
+
+  100% {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    scale: 1;
+    opacity: 1;
+  }
+
+  /* 85% {
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    scale: 0.8;
+    opacity: 0;
+  } */
+}
+
+.intro-text {
+  animation: floating linear forwards;
+  animation-timeline: view();
+}
+
+@keyframes floating {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0px);
+    filter: blur(0px);
+  }
+}
+
+.mask-x {
+  mask: linear-gradient(90deg, transparent, white 25%, white 75%, transparent);
+}
+
+.scroller[data-animated="true"] {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scrolling linear;
+  animation-timeline: scroll(root);
+  transform: translate(-90%) rotate(-3deg);
+}
+
+.scroller[data-direction="right"] {
+  animation-direction: reverse;
+}
+
+@keyframes scrolling {
+  to {
+    transform: translate(calc(0% - 0.5rem)) rotate(-3deg);
+  }
+}
+
+@keyframes bg-shift {
+  from {
+    background: red;
+  }
+  to {
+    background: blue;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+  width: 0;
+  animation: typing steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+  animation-timeline: view(20vh);
+  /* animation-range: entry; */
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+#intro-text .text {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translate(0, 100%);
+  transition: all 600ms;
+}
+
+#intro-text .text.show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translate(0, 0);
+  transition: all 600ms;
+}
+
+#intro-text .text.hide {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translate(0, -100%);
+  transition: all 600ms;
+}

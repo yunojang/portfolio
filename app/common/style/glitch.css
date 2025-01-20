@@ -79,7 +79,7 @@
   }
 }
 
-.nosie {
+.noise {
   position: relative;
 }
 
@@ -95,12 +95,12 @@
 
 .noise::before {
   animation: noiseTop 2000ms linear infinite;
-  /* text-shadow: -4 4 #e90696; */
+  text-shadow: -4 4 #e90696;
 }
 
 .noise::after {
   animation: noiseBottom 2000ms linear infinite;
-  /* text-shadow: 4 -4 #9ae906; */
+  text-shadow: 4 -4 #9ae906;
 }
 
 @keyframes glitch {
@@ -182,7 +182,7 @@
   animation: glitch 450ms infinite;
   z-index: 1;
   /* color: rgb(36, 200, 36); */
-  clip-path: polygon(0 65%, 100% 45%, 100% 100%, 0 100%);
+  clip-path: polygon(0 60%, 100% 50%, 100% 100%, 0 100%);
   transform: translate(0.025em, 0.0125em);
   opacity: 0.5;
 }

@@ -12,7 +12,8 @@ const notoSansKR = Noto_Sans_KR({
 
 import Footer from "./Footer";
 import NavigationBar from "./NavigationBar";
-import MouseCursor from "./common/components/MouseCursor";
+import MouseCursor from "./common/components/MouseCursor/MouseCursor";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,12 +39,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <Script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" />
+
       <body
         className={`${notoSansKR.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <section className="relative">
-          <MouseCursor />
-
           {children}
 
           <Footer />

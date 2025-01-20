@@ -1,5 +1,5 @@
 import { useSpring, animated } from "@react-spring/web";
-import { FC } from "react";
+import { FC, useState } from "react";
 
 interface ExpendableBoxProps {
   size?: string;
@@ -9,9 +9,11 @@ interface ExpendableBoxProps {
 
 const ExpendableBox: FC<ExpendableBoxProps> = ({
   size = "72px",
-  expendRatio = 4.8,
+  expendRatio = 4.2,
   innerText,
 }) => {
+  const [isHover, setIsHover] = useState(false);
+
   const [springs, api] = useSpring(() => ({
     from: { scale: 1, opacity: 0, blur: 5 },
   }));
@@ -19,18 +21,20 @@ const ExpendableBox: FC<ExpendableBoxProps> = ({
   return (
     <button
       className="relative"
-      onMouseEnter={() =>
+      onMouseEnter={() => {
         api.start({
           from: { scale: 1, opacity: 0, blur: 20 },
           to: { scale: expendRatio, opacity: 1, blur: 0 },
-        })
-      }
-      onMouseLeave={() =>
+        });
+        setIsHover(true);
+      }}
+      onMouseLeave={() => {
         api.start({
           from: { scale: expendRatio, opacity: 1, blur: 0 },
           to: { scale: 1, opacity: 0, blur: 20 },
-        })
-      }
+        });
+        setIsHover(false);
+      }}
     >
       <animated.div
         style={{
@@ -46,10 +50,13 @@ const ExpendableBox: FC<ExpendableBoxProps> = ({
         // className="hover:scale-[4.2] transition-all duration-500 relative"
         // className="bg-black rounded-lg cursor-pointer"
       />
-      <animated.div
+      <div
+        className="transition-all duration-500"
         style={{
-          opacity: springs.opacity,
-          filter: springs.blur.to((v) => `blur(${v}px)`),
+          opacity: isHover ? 1 : 0,
+          filter: isHover ? "blur(0px)" : "blur(5px)",
+          // opacity: springs.opacity,
+          // filter: springs.blur.to((v) => `blur(${v}px)`),
           color: "white", // text-white
           position: "absolute", // absolute
           top: "50%",
@@ -63,7 +70,7 @@ const ExpendableBox: FC<ExpendableBoxProps> = ({
         // className="text-white absolute inset-0 text-2xl font-serif tracking-normal leading-8"
       >
         {innerText}
-      </animated.div>
+      </div>
     </button>
   );
 };

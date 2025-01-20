@@ -19,10 +19,6 @@
   align-items: center;
 }
 
-.cursor::after {
-  opacity: 0;
-}
-
 .cursor.open::after {
   content: attr(data-text);
   color: white;
@@ -30,4 +26,6 @@
   font-weight: 800;
   opacity: 1;
   transition: all;
+  white-space: nowrap;
+  overflow: hidden;
 }
