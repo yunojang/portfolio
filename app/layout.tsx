@@ -12,6 +12,7 @@ const notoSansKR = Noto_Sans_KR({
 
 import Footer from "./Footer";
 import NavigationBar from "./NavigationBar";
+import MouseCursor from "./common/components/MouseCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,8 @@ export default function RootLayout({
         className={`${notoSansKR.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <section className="relative">
+          <MouseCursor />
+
           {children}
 
           <Footer />

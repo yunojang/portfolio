@@ -15,6 +15,7 @@ import { useCallback, useEffect } from "react";
 import { lockScroll, releaseScroll } from "./common/utils/scroll";
 import SmoothScroll from "./common/components/SmoothScroll";
 import { debounce } from "./common/utils/delay";
+import MouseCursor from "./common/components/MouseCursor";
 
 export default function Home() {
   const isEndIntro = useAtomValue(isEndIntroAtom);
@@ -34,7 +35,7 @@ export default function Home() {
 
   useEffect(() => {
     const onWheel = () => {
-      console.log(window.scrollY);
+      // console.log(window.scrollY);
     };
 
     const debouncedOnWheel = debounce(onWheel, 40);
@@ -44,7 +45,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen h-full relative ">
+    <main className="min-h-screen h-full relative">
       <SmoothScroll />
 
       {isEndIntro && <LineGrid />}
@@ -52,7 +53,6 @@ export default function Home() {
       {/* 인트로 - 이름 */}
       <Intro onStart={onStartIntro} onEnd={onEndIntro} />
 
-      {/* 소개글 */}
       <div className="sticky top-0">
         <ProfileIntroduce />
       </div>

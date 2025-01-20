@@ -1,0 +1,33 @@
+.cursor {
+  width: 4.5em;
+  height: 4.5em;
+  background: transparent;
+  border: solid 0.3em #bbb;
+  backdrop-filter: blur(0em);
+  transition: 0.25s;
+  transition-property: width, height, background, backdrop-filter;
+}
+
+.cursor.open {
+  width: 12.5em;
+  height: 12.5em;
+  background: #35353531;
+  backdrop-filter: blur(0.5em);
+  border-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor::after {
+  opacity: 0;
+}
+
+.cursor.open::after {
+  content: attr(data-text);
+  color: white;
+  font-size: 1.65em;
+  font-weight: 800;
+  opacity: 1;
+  transition: all;
+}
