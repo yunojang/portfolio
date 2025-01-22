@@ -1,25 +1,54 @@
+"use client";
+
 import { FC } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface StackPageProps {
   params: Promise<{ id: string }>;
 }
 
-const StackPage: FC<StackPageProps> = async ({ params }) => {
-  const id = (await params).id;
+const StackPage: FC<StackPageProps> = ({ params }) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".c",
+      start: "top 65%",
+      end: "bottom 20%",
+      // toggleActions: "restart pause resume pasue",
+      markers: true,
+      // pin: ".b",
+      scrub: 1,
+    },
+  });
+
+  useGSAP(() => {
+    tl.to(".c", {
+      x: 400,
+      rotate: 360,
+      duration: 3,
+      stagger: 1,
+    });
+    // .to(".c", {
+    //   background: "purple",
+    //   duration: 1,
+    // });
+  });
+  // const id = (await params).id;
 
   return (
-    <div className="relative top-0 ">
-      <div className="bg-green-300">{id}번 Stack 페이지</div>
-      <div className="bg-green-300">{id}번 Stack 페이지</div>
-      <div className="bg-green-300">{id}번 Stack 페이지</div>
-      <div className="bg-green-300">{id}번 Stack 페이지</div>
-      <div className="bg-green-300 h-52">
-        <div className="sticky top-0">멈춰라잇!</div>
+    <div className="relative">
+      <div className="h-[500vh]">
+        {/* <div className="flex items-center justify-center"> */}
+        <div className="a bg-red-400 w-40 h-40 mb-[50em]">a</div>
+        <div className="b bg-blue-400 w-40 h-40 mb-[50em]">b</div>
+        <div className="c bg-green-400 w-40 h-40 mb-[2em]">c</div>
+        <div className="c bg-green-400 w-40 h-40 mb-[50em]">c</div>
       </div>
-      <div className="h-screen sticky top-20 bg-red-200">1</div>
-      <div className="h-screen sticky top-20 bg-red-200">2</div>
-      <div className="h-[200vh] sticky top-0 left-0 bg-blue-50">3</div>
-      <div className="h-screen sticky top-20 bg-red-200">2</div>
+      {/* </div> */}
     </div>
   );
 };

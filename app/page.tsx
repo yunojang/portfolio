@@ -11,7 +11,7 @@ import {
   setEndIntro as setEndIntroAtom,
 } from "./atom/landing/introState";
 
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { lockScroll, releaseScroll } from "./common/utils/scroll";
 import SmoothScroll from "./common/components/SmoothScroll";
 import { debounce } from "./common/utils/delay";
@@ -35,22 +35,28 @@ export default function Home() {
     setEndIntro();
   }, [setEndIntro]);
 
-  useEffect(() => {
-    const onWheel = () => {
-      // console.log(window.scrollY);
-    };
+  // useEffect(() => {
+  //   const onWheel = () => {};
 
-    const debouncedOnWheel = debounce(onWheel, 40);
+  //   const debouncedOnWheel = debounce(onWheel, 40);
 
-    window.addEventListener("wheel", debouncedOnWheel);
-    return () => window.removeEventListener("wheel", debouncedOnWheel);
-  }, []);
+  //   window.addEventListener("wheel", debouncedOnWheel);
+  //   return () => window.removeEventListener("wheel", debouncedOnWheel);
+  // }, []);
+
+  const career = useRef<HTMLDivElement>(null);
+
+  const scrollToCareer = () => {
+    if (!career.current) return;
+
+    career.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <main className="min-h-screen h-full w-full relative">
       <MouseCursor />
 
-      {/* <SmoothScroll /> */}
+      <SmoothScroll />
 
       {isEndIntro && <LineGrid />}
 
@@ -59,11 +65,13 @@ export default function Home() {
 
       <ProfileIntroduce />
 
-      <ProfileTexts />
+      <ProfileTexts onScrollCareer={scrollToCareer} />
 
-      <div className="bg-red-200 h-screen sticky top-0 z-20">1</div>
-      <div className="bg-blue-200 h-screen sticky top-0 z-20">2</div>
-      <div className="bg-green-200 h-screen sticky top-0 z-20">3</div>
+      <div id="career" ref={career}>
+        <div className="bg-red-200 h-[115vh] sticky top-0 z-20">1</div>
+        <div className="bg-blue-200 h-[115vh] sticky top-0 z-20">2</div>
+        <div className="bg-green-200 h-[115vh] sticky top-0 z-20">3</div>
+      </div>
 
       {/* Work - 커리어 */}
 

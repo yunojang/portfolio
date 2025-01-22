@@ -1,16 +1,21 @@
 import { useSpring, animated } from "@react-spring/web";
+import Link from "next/link";
 import { FC, useState } from "react";
 
 interface ExpendableBoxProps {
   size?: string;
   expendRatio?: number;
   innerText?: string;
+  onClick?(): void;
+  // path?: string;
 }
 
 const ExpendableBox: FC<ExpendableBoxProps> = ({
   size = "72px",
   expendRatio = 4.2,
   innerText,
+  onClick,
+  path,
 }) => {
   const [isHover, setIsHover] = useState(false);
 
@@ -20,6 +25,7 @@ const ExpendableBox: FC<ExpendableBoxProps> = ({
 
   return (
     <button
+      onClick={onClick}
       className="relative"
       onMouseEnter={() => {
         api.start({
