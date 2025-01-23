@@ -15,6 +15,8 @@ const STACKS = [
   "NextJS",
   "React-Native",
   "UX/UI",
+  "Tailwind",
+  "Jotai",
 ];
 
 const StackTapeLine: FC<StackTapeLineProps> = ({ direction = "left" }) => {

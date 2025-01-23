@@ -2,7 +2,7 @@
 
 import { FC, useEffect, useRef } from "react";
 
-import { Space_Mono } from "next/font/google";
+import { Smooch_Sans } from "next/font/google";
 import ExpendableBox from "./components/ExpendableBox";
 
 import { useRouter } from "next/navigation";
@@ -13,7 +13,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const doHyeon = Space_Mono({
+const doHyeon = Smooch_Sans({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
@@ -43,7 +43,7 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
         start: "top bottom",
         end: "bottom 55%",
         scrub: 3,
-        markers: true,
+        // markers: true,
       },
     });
     // gsap.utils.toArray(".text");
@@ -111,7 +111,7 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
   return (
     <main
       ref={container}
-      className={`text-[70px] ${doHyeon.className} leading-[1.8em] tracking-tight text-black py-32 mb-[20rem] sticky top-0`}
+      className={`text-[70px] ${doHyeon.className} leading-[1.8em] tracking-widest text-black py-32 mb-[20rem] sticky top-0`}
     >
       <section
         id="intro-text"

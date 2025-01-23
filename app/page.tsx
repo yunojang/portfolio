@@ -11,13 +11,30 @@ import {
   setEndIntro as setEndIntroAtom,
 } from "./atom/landing/introState";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useRef } from "react";
 import { lockScroll, releaseScroll } from "./common/utils/scroll";
 import SmoothScroll from "./common/components/SmoothScroll";
-import { debounce } from "./common/utils/delay";
 import MouseCursor from "./common/components/MouseCursor/MouseCursor";
-import StackTapeLine from "./landing/components/StackTapeLine";
 import ProfileTexts from "./landing/ProfileTexts";
+import CareerPanel, { Career } from "./landing/CareerPanel";
+
+const career1: Career = {
+  companyName: "wizcore",
+  startDate: new Date("2021-11-21"),
+  endDate: new Date("2024-07-14"),
+  position: "Front-End Web Developer",
+  mainColor: "#1C51FA",
+  projects: [],
+};
+
+const career2: Career = {
+  companyName: "ideaconcert",
+  startDate: new Date("2020-09-01"),
+  endDate: new Date("2020-11-25"),
+  position: "Front-End Web Developer",
+  mainColor: "#FC943B",
+  projects: [],
+};
 
 export default function Home() {
   const isEndIntro = useAtomValue(isEndIntroAtom);
@@ -56,7 +73,7 @@ export default function Home() {
     <main className="min-h-screen h-full w-full relative">
       <MouseCursor />
 
-      <SmoothScroll />
+      {/* <SmoothScroll /> */}
 
       {isEndIntro && <LineGrid />}
 
@@ -67,19 +84,16 @@ export default function Home() {
 
       <ProfileTexts onScrollCareer={scrollToCareer} />
 
+      {/* Work - 커리어 */}
       <div id="career" ref={career}>
-        <div className="bg-red-200 h-[115vh] sticky top-0 z-20">1</div>
-        <div className="bg-blue-200 h-[115vh] sticky top-0 z-20">2</div>
-        <div className="bg-green-200 h-[115vh] sticky top-0 z-20">3</div>
+        <CareerPanel career={career1} />
+
+        <CareerPanel career={career2} />
       </div>
 
-      {/* Work - 커리어 */}
+      {/* Projects - see all projects */}
 
-      {/* 대표 프로젝트 미리보기 */}
-
-      {/* Project */}
-
-      {/* ETC - 학위, 자격증, 받은 교육 */}
+      {/* ETC - 학위, 자격증, 받은 교육  - 타임라인 */}
     </main>
   );
 }
