@@ -9,10 +9,9 @@ const Footer: FC<FooterProps> = ({}) => {
       <section className="px-7 py-5 flex flex-col h-full">
         {/* <Logo dark /> */}
         <div className="flex gap-7 flex-wrap text-lg">
-          <div className="text-white">PROFILE</div>
-          <div className="text-white">CAREER</div>
+          <div className="text-white">ABOUT</div>
           <div className="text-white">PROJECTS</div>
-          <div className="text-white">ETC</div>
+          <div className="text-white">EXPERIENCE</div>
         </div>
 
         <div className="text-white mt-3">
