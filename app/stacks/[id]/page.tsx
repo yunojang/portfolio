@@ -19,7 +19,7 @@ const StackPage: FC<StackPageProps> = ({ params }) => {
       start: "top 65%",
       end: "bottom 20%",
       // toggleActions: "restart pause resume pasue",
-      // markers: true,
+      markers: true,
       // pin: ".b",
       scrub: 1,
     },

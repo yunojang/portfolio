@@ -42,7 +42,7 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
         trigger: "#intro-text",
         start: "top 80%",
         end: "bottom 35%",
-        scrub: 3,
+        scrub: 2,
         // markers: true,
       },
     });
