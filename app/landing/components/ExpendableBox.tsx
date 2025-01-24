@@ -11,11 +11,11 @@ interface ExpendableBoxProps {
 }
 
 const ExpendableBox: FC<ExpendableBoxProps> = ({
-  size = "72px",
-  expendRatio = 4.2,
+  size = "64px",
+  expendRatio = 4,
   innerText,
   onClick,
-  path,
+  // path,
 }) => {
   const [isHover, setIsHover] = useState(false);
 

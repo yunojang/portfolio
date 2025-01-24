@@ -1,0 +1,8 @@
+.box {
+  transition: background-image 300ms linear;
+  background-image: transparent;
+}
+
+.box:hover {
+  background-image: radial-gradient(circle at top, #c8ec89 0% 1%, transparent);
+}

@@ -40,8 +40,8 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#intro-text",
-        start: "top bottom",
-        end: "bottom 55%",
+        start: "top 80%",
+        end: "bottom 35%",
         scrub: 3,
         // markers: true,
       },
@@ -111,7 +111,7 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
   return (
     <main
       ref={container}
-      className={`text-[70px] ${doHyeon.className} leading-[1.8em] tracking-widest text-black py-32 mb-[20rem] sticky top-0`}
+      className={`text-[3.5em] ${doHyeon.className} leading-[1.55em] tracking-widest text-black py-40 mb-[16rem] sticky top-0`}
     >
       <section
         id="intro-text"

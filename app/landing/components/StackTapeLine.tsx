@@ -26,7 +26,7 @@ const StackTapeLine: FC<StackTapeLineProps> = ({ direction = "left" }) => {
       data-animated={true}
       data-direction={direction}
     >
-      {Array.from({ length: 40 }, (_, i) => STACKS[i % STACKS.length]).map(
+      {Array.from({ length: 24 }, (_, i) => STACKS[i % STACKS.length]).map(
         (stack, i) => (
           <div
             key={i}
