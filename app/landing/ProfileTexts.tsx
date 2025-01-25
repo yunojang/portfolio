@@ -136,11 +136,11 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
         {/* </FloatingText> */}
         {/* <FloatingText delay={0.3} className=""> */}
         <div className="text2">
-          열정, 성실함, 책임감으로 아이디어와 활력이 되는,
+          성실함과 책임감으로 새로운 아이디어와 활력을 부여하는,
         </div>
         {/* </FloatingText> */}
         {/* <FloatingText delay={0.4} className=""> */}
-        <div className="text3">결과물과 그룹의 성장에 기여하는,</div>
+        <div className="text3">결과물과 그룹의 성장에 최선을 다하는,</div>
         {/* </FloatingText> */}
         {/* <FloatingText delay={0.5} className="flex gap-8 items-center "> */}
         <div className="text4 flex gap-6 items-center">

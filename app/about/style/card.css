@@ -1,0 +1,8 @@
+.card:hover > .img {
+  transform: translateY(-55);
+}
+
+.card:hover ~ .card > .img {
+  z-index: 1;
+  transform: translateX(75);
+}

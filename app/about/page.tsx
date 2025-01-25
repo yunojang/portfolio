@@ -22,12 +22,15 @@ import AboutTexts from "./AboutTexts";
 import { IoIosMail } from "react-icons/io";
 import { GoHomeFill } from "react-icons/go";
 import { FaGithub } from "react-icons/fa";
+import ImageCards from "./ImageCards";
+import MouseCursor from "../common/components/MouseCursor/MouseCursor";
 
 interface AboutPageProps {}
 
 const AboutPage: FC<AboutPageProps> = () => {
   return (
     <section className={`pt-32 ${noto.className} bg-[#f0f1eb]`}>
+      <MouseCursor />
       <header className="flex flex-col justify-center items-center w-fit mx-auto mb-48">
         <Image
           className="rounded-full object-cover w-48 h-48 border mb-5"
@@ -46,35 +49,8 @@ const AboutPage: FC<AboutPageProps> = () => {
 
       <main className={ibm.className}>
         {/* images */}
-        <div className="flex w-fit mx-auto items-center mb-52">
-          <Image
-            src="/images/img1.jpg"
-            width={250}
-            height={350}
-            alt="myimg4"
-            className="w-80 cursor-pointer h-[28em] object-cover -rotate-6"
-          />
-          <Image
-            src="/images/img2.jpg"
-            width={250}
-            height={350}
-            alt="myimg4"
-            className="w-80 cursor-pointer h-[28em] object-cover -rotate-3 -translate-y-6"
-          />
-          <Image
-            src="/images/img3.jpg"
-            width={250}
-            height={350}
-            alt="myimg4"
-            className="w-80 cursor-pointer h-[28em] object-cover rotate-3 -translate-y-6"
-          />
-          <Image
-            src="/images/img4.jpg"
-            width={250}
-            height={350}
-            alt="myimg4"
-            className="w-80 cursor-pointer h-[28em] object-cover rotate-6"
-          />
+        <div className="w-fit mx-auto mb-52 h-[50vh]">
+          <ImageCards />
         </div>
 
         {/* profile details */}
