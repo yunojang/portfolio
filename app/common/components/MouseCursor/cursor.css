@@ -9,8 +9,8 @@
 }
 
 .cursor.open {
-  width: 12.5em;
-  height: 12.5em;
+  width: 10.5em;
+  height: 10.5em;
   background: #35353531;
   backdrop-filter: blur(0.5em);
   border-color: transparent;

@@ -39,9 +39,7 @@ const Intro: FC<IntroProps> = ({ onEnd, onStart }) => {
         className={`h-[85%] flex flex-col relative items-center justify-center ${notoSansKR.className} leading-[230px] font-semibold`}
       >
         <div className="overflow-hidden">
-          <ClickableComponent>
-            <div className={`slide-up-animation text-[185px]`}>장윤호</div>
-          </ClickableComponent>
+          <div className={`slide-up-animation text-[185px]`}>장윤호</div>
         </div>
 
         <div className="overflow-hidden">

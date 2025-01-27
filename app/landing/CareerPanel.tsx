@@ -94,7 +94,7 @@ const CareerPanel: FC<CareerPanelProps> = ({ career }) => {
   return (
     <>
       <section
-        className={`h-[100vh] sticky ${smoochSans.className}`}
+        className={`h-[105vh] sticky ${smoochSans.className}`}
         style={{
           background: mainColor,
         }}

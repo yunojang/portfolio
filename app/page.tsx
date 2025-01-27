@@ -11,12 +11,14 @@ import {
   setEndIntro as setEndIntroAtom,
 } from "./atom/landing/introState";
 
-import { useCallback, useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import { lockScroll, releaseScroll } from "./common/utils/scroll";
 import SmoothScroll from "./common/components/SmoothScroll";
 import MouseCursor from "./common/components/MouseCursor/MouseCursor";
 import ProfileTexts from "./landing/ProfileTexts";
 import CareerPanel, { Career } from "./landing/CareerPanel";
+
+import LandingEtc from "./landing/LandingEtc";
 
 const career1: Career = {
   companyName: "wizcore",
@@ -92,15 +94,16 @@ export default function Home() {
       </div>
 
       {/* Work - 커리어 */}
-      <div id="career" ref={career}>
+      <div id="career" className="h-fit mb-0" ref={career}>
         <CareerPanel career={career1} />
 
         <CareerPanel career={career2} />
       </div>
 
       {/* Projects - see all projects */}
-
-      {/* ETC - 학위, 자격증, 받은 교육  - 타임라인 */}
+      <div className="bg-white sticky pb-20">
+        <LandingEtc />
+      </div>
     </main>
   );
 }

@@ -1,10 +1,12 @@
 "use client";
 
-import { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { FaMapPin } from "react-icons/fa6";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+
+// import "@/app/common/style/animation.css";
 
 interface LocationDiffProps {}
 
@@ -50,6 +52,8 @@ const diffs: Diff[] = [
 
 const LocationDiff: FC<LocationDiffProps> = () => {
   useGSAP(() => {
+    // const increase = (max: number) => () => {};
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".diff-container",
@@ -72,6 +76,13 @@ const LocationDiff: FC<LocationDiffProps> = () => {
           opacity: 0,
           ease: "back",
           duration: 0.3,
+          // onComplete() {
+          //   const max = NumberIel.querySelector<HTMLElement>(
+          //     ".number-increase-animation"
+          //   )?.dataset.value;
+
+          //   requestAnimationFrame(increase(max));
+          // },
         });
     });
 
@@ -101,7 +112,14 @@ const LocationDiff: FC<LocationDiffProps> = () => {
               }}
             >
               <div className="absolute bottom-[115%] left-1/2 -translate-x-1/2 font-medium text-lg">
-                {formatMin(diff.diffMin)}
+                <div
+                // className="number-increase-animation"
+                // data-index={i}
+                // data-value={diff.diffMin}
+                // style={{ "--value": diff.diffMin } as React.CSSProperties}
+                >
+                  {formatMin(diff.diffMin)}
+                </div>
               </div>
             </div>
 

@@ -24,6 +24,8 @@ import { GoHomeFill } from "react-icons/go";
 import { FaGithub } from "react-icons/fa";
 import ImageCards from "./ImageCards";
 import MouseCursor from "../common/components/MouseCursor/MouseCursor";
+import ClickableComponent from "../common/components/ClickableComponent";
+import { FiExternalLink } from "react-icons/fi";
 
 interface AboutPageProps {}
 
@@ -54,16 +56,31 @@ const AboutPage: FC<AboutPageProps> = () => {
         </div>
 
         {/* profile details */}
-        <section className="w-[55vw] mx-auto flex gap-6 mb-10">
+        <section className="w-[55vw] mx-auto flex gap-3 mb-10">
           <div className="flex-1">
             <header className="mb-10">
               <h1 className="text-lg text-gray-500">더 알아보기</h1>
               <h3 className="font-medium text-2xl">자세한 정보를 알아보세요</h3>
             </header>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col flex-wrap gap-3">
               <ProfileField label="생년월일" content={"1998.10.03"} />
-              <ProfileField label="거주지" content={"서울시 서초구"} />
               <ProfileField label="연락처" content={"010-2757-3729"} />
+
+              <ClickableComponent clickableText="move">
+                <Link href="/about/location">
+                  <ProfileField
+                    label="거주지"
+                    content={
+                      <div className="flex items-center justify-between">
+                        <div>서초구 Seoul, Korea</div>
+                        <div>
+                          <FiExternalLink />
+                        </div>
+                      </div>
+                    }
+                  />
+                </Link>
+              </ClickableComponent>
             </div>
 
             {/* <div className="flex w-full items-center justify-end gap-3 relative">
@@ -125,12 +142,10 @@ interface ProfileFieldProps {
 
 const ProfileField: FC<ProfileFieldProps> = ({ content, label }) => {
   return (
-    <div className=" flex flex-col gap-1">
+    <div className="w-full h-full flex flex-col gap-1 bg-white px-3 py-2.5 rounded-lg shadow-lg">
       {/* <div className="w-full bg-white py-7 px-3 rounded-lg shadow-lg"> */}
       <label className="text-xl font-bold">{label}</label>
-      <div className="text-lg bg-white px-3 py-2.5 rounded-lg shadow-lg">
-        {content}
-      </div>
+      <div className="text-lg">{content}</div>
     </div>
   );
 };
