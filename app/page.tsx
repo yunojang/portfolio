@@ -24,7 +24,21 @@ const career1: Career = {
   endDate: new Date("2024-07-14"),
   position: "Front-End Web Developer",
   mainColor: "#1C51FA",
-  projects: [],
+  projects: [
+    {
+      title: "Safely",
+      thumbnailSrc: "/images/safely-logo.png",
+    },
+    {
+      title: "Find-e",
+      thumbnailSrc: "/images/finde-logo.png",
+    },
+
+    {
+      title: "WCM",
+      thumbnailSrc: "/images/safely-logo.png",
+    },
+  ],
 };
 
 const career2: Career = {
@@ -52,15 +66,6 @@ export default function Home() {
     setEndIntro();
   }, [setEndIntro]);
 
-  // useEffect(() => {
-  //   const onWheel = () => {};
-
-  //   const debouncedOnWheel = debounce(onWheel, 40);
-
-  //   window.addEventListener("wheel", debouncedOnWheel);
-  //   return () => window.removeEventListener("wheel", debouncedOnWheel);
-  // }, []);
-
   const career = useRef<HTMLDivElement>(null);
 
   const scrollToCareer = () => {
@@ -82,7 +87,9 @@ export default function Home() {
 
       <ProfileIntroduce />
 
-      <ProfileTexts onScrollCareer={scrollToCareer} />
+      <div className=" py-40 mb-[16rem] sticky top-0">
+        <ProfileTexts onScrollCareer={scrollToCareer} />
+      </div>
 
       {/* Work - 커리어 */}
       <div id="career" ref={career}>

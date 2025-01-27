@@ -25,60 +25,56 @@ interface ProfileTextsProps {
 const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
   const router = useRouter();
 
-  const showVars = {
-    y: 0,
-    x: 0,
-    rotate: 0,
-    scale: 1,
-    opacity: 1,
-    filter: "blur(0px)",
-    duration: 3,
-    // stagger: 2,
-  };
-
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#intro-text",
         start: "top 80%",
-        end: "bottom 35%",
-        scrub: 2,
+        // end: "bottom 35%",
+        // scrub: 2,
         // markers: true,
       },
     });
     // gsap.utils.toArray(".text");
     tl.from(".text1", {
-      y: 85,
-      scale: 0.8,
-      opacity: 0.15,
+      x: -85,
+      // scale: 0.8,
+      opacity: 0,
       filter: "blur(10px)",
+      duration: 0.8,
     })
-      .from(".text2", {
-        y: 85,
-        scale: 0.8,
-        opacity: 0.15,
-        filter: "blur(10px)",
-      })
-      .from(".text3", {
-        y: 85,
-        scale: 0.8,
-        opacity: 0.15,
-        filter: "blur(10px)",
-      })
-      .from(".text4", {
-        y: 85,
-        scale: 0.8,
-        opacity: 0.15,
-        filter: "blur(10px)",
-      })
-      .fromTo(
-        "text-container",
+      .from(
+        ".text2",
         {
-          overflow: "hidden",
+          x: -85,
+          // scale: 0.8,
+          opacity: 0,
+          filter: "blur(10px)",
+          duration: 0.8,
         },
+        "-=0.5"
+      )
+      .from(
+        ".text3",
         {
-          overflow: "visible",
-        }
+          x: -85,
+          // scale: 0.8,
+          opacity: 0,
+          filter: "blur(10px)",
+          duration: 0.8,
+        },
+        "-=0.5"
+      )
+      .from(
+        ".text4",
+        {
+          x: -85,
+          // scale: 0.8,
+          opacity: 0,
+          filter: "blur(10px)",
+          duration: 0.8,
+        },
+        "-=0.5"
       );
   });
 
@@ -111,7 +107,7 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
   return (
     <main
       ref={container}
-      className={`text-[3.5em] ${doHyeon.className} leading-[1.55em] tracking-widest text-black py-40 mb-[16rem] sticky top-0`}
+      className={`text-[3.5em] ${doHyeon.className} leading-[1.55em] tracking-widest text-black`}
     >
       <section
         id="intro-text"

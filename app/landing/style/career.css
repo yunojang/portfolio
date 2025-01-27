@@ -1,0 +1,11 @@
+.thumbnail-container {
+  flex: 0 0 22%;
+  transition: flex 0.4s;
+}
+
+.thumbnail-container.expended {
+  flex: 0 0 50%;
+}
+
+.thumbnail-holder {
+}
