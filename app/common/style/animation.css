@@ -1,4 +1,4 @@
-:root {
+html {
   --float-size: 100%;
 }
 
@@ -21,19 +21,18 @@
 
 @keyframes slideUp {
   0% {
-    transform: translateY(var(--float-size));
+    transform: translateY(100%);
     opacity: 0;
-    /* clip-path: inset(100% 0 0 0); 상단 자른 상태 */
   }
 
   100% {
     transform: translateY(0);
     opacity: 1;
-    /* clip-path: inset(0 0 0 0); 자른 부분을 모두 표시 */
   }
 }
 
 .slide-up-animation {
   animation: slideUp 1s forwards;
   opacity: 0;
+  display: block;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useRef } from "react";
+import { FC, useRef } from "react";
 
 import { Smooch_Sans } from "next/font/google";
 import ExpendableBox from "./components/ExpendableBox";
@@ -52,7 +52,7 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
           filter: "blur(10px)",
           duration: 0.8,
         },
-        "-=0.5"
+        "-=0.7"
       )
       .from(
         ".text3",
@@ -63,7 +63,7 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
           filter: "blur(10px)",
           duration: 0.8,
         },
-        "-=0.5"
+        "-=0.7"
       )
       .from(
         ".text4",
@@ -72,9 +72,9 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
           // scale: 0.8,
           opacity: 0,
           filter: "blur(10px)",
-          duration: 0.8,
+          duration: 1.2,
         },
-        "-=0.5"
+        "-=0.7"
       );
   });
 

@@ -2,12 +2,17 @@ import { FC } from "react";
 
 import "./style/animation.css";
 
-interface LineGridProps {}
+interface LineGridProps {
+  count?: number;
+}
 
-const LineGrid: FC<LineGridProps> = () => {
+const LineGrid: FC<LineGridProps> = ({ count = 6 }) => {
   return (
-    <div className="absolute inset-0 grid grid-cols-6 justify-between place-items-center w-full h-full overflow-hidden">
-      {new Array(6).fill(0).map((_, i) => (
+    <div
+      className="absolute inset-0 grid justify-between place-items-center w-full h-full overflow-hidden"
+      style={{ gridTemplateColumns: `repeat(${count}, minmax(0, 1fr))` }}
+    >
+      {new Array(count).fill(0).map((_, i) => (
         <div
           key={i}
           className="slide-up-animation bg-gray-200 w-0.5 h-full static"

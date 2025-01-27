@@ -1,0 +1,7 @@
+.map-cover:hover > .inner {
+  scale: 1.15;
+}
+
+.map-cover > .inner {
+  transition: all 0.4s;
+}
