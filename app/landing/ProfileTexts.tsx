@@ -2,7 +2,7 @@
 
 import { FC, useRef } from "react";
 
-import { Smooch_Sans } from "next/font/google";
+import { IBM_Plex_Sans_KR } from "next/font/google";
 import ExpendableBox from "./components/ExpendableBox";
 
 import { useRouter } from "next/navigation";
@@ -13,8 +13,8 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const doHyeon = Smooch_Sans({
-  weight: ["400", "700"],
+const doHyeon = IBM_Plex_Sans_KR({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -107,12 +107,12 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
   return (
     <main
       ref={container}
-      className={`text-[3.5em] ${doHyeon.className} leading-[1.55em] tracking-widest text-black`}
+      className={`text-[3.75em] ${doHyeon.className} leading-[1.4em] tracking-widest text-black`}
     >
       <section
         id="intro-text"
         // ref={textSection}
-        className="flex flex-col items-center justify-center font-semibold"
+        className="flex flex-col items-center justify-center font-medium"
       >
         {/* <FloatingText delay={0.2} className="flex gap-8 items-center "> */}
         <div className="flex gap-6 items-center text1">

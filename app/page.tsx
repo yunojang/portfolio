@@ -2,7 +2,7 @@
 
 import LineGrid from "./common/LineGrid";
 import Intro from "./landing/Intro";
-import ProfileIntroduce from "./landing/ProfileAnimation";
+import ProfileIntroduce from "./landing/GlitchAnimation";
 
 import { useAtomValue, useSetAtom } from "jotai";
 import {

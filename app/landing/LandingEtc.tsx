@@ -15,7 +15,7 @@ interface LandingEtcProps {}
 const LandingEtc: FC<LandingEtcProps> = () => {
   return (
     <div className={ibm.className}>
-      <div className="flex flex-col items-center justify-center py-20 gap-5 mb-24">
+      <div className="flex flex-col items-center justify-center py-40 gap-5 mb-40">
         <div className="text-center text-[2.25em]">
           더 많은 프로젝트 알아보기
         </div>
@@ -45,7 +45,7 @@ const LandingEtc: FC<LandingEtcProps> = () => {
           >
             <div className="text-center text-[8.75em]">모든 경험 살펴보기</div>
             <div className="text-gray-400 font-medium text-3xl">
-              Experience - 지나온 타임라인 보기
+              Experience - 지나온 타임라인으로 알아보기
             </div>
           </Link>
         </ClickableComponent>

@@ -9,12 +9,14 @@ import { cx } from "@emotion/css";
 
 interface ClickableComponentProps {
   children: ReactNode;
+  cursorHide?: boolean;
   className?: string;
   clickableText?: string;
 }
 
 const ClickableComponent: FC<ClickableComponentProps> = ({
   children,
+  cursorHide = false,
   className,
   clickableText = "open",
 }) => {

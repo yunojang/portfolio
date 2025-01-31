@@ -6,23 +6,28 @@ import "./style/profile.css";
 
 import StackTapeLine from "./components/StackTapeLine";
 
-interface ProfileAnimationProps {}
+interface GlitchAnimationProps {}
 
-const ProfileAnimation: FC<ProfileAnimationProps> = () => {
+const GlitchAnimation: FC<GlitchAnimationProps> = () => {
   return (
     <section className="min-h-screen flex-col">
       <header className="text-[10em] text-center">
-        <div className="title-bg bg-black h-[150vh]">
-          <div className="mask-x flex items-center justify-center relative w-full h-full">
-            <div className="absolute top-1/3 z-10 w-full">
+        <div
+          className="title-bg bg-black h-[200vh]"
+          style={{
+            mask: "linear-gradient( #00ff 0% 81.5%,  transparent)",
+          }}
+        >
+          <div className="mask-x flex  justify-center relative w-full h-full">
+            <div className="absolute top-1/4 z-10 w-full">
               <StackTapeLine />
             </div>
 
-            <div className="absolute top-2/3 translate-y-1/2 z-10 w-full">
+            <div className="absolute top-2/4 translate-y-1/2 z-10 w-full">
               <StackTapeLine direction="right" />
             </div>
 
-            <span className="glitch text-white">
+            <span className="glitch text-white absolute top-[30.75%]">
               <span aria-hidden="true">INTRODUCE</span>
               INTRODUCE
               <span aria-hidden="true">INTRODUCE</span>
@@ -34,7 +39,7 @@ const ProfileAnimation: FC<ProfileAnimationProps> = () => {
   );
 };
 
-export default ProfileAnimation;
+export default GlitchAnimation;
 
 // const FloatingText: FC = () => {
 //   return <></>;
