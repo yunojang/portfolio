@@ -116,12 +116,13 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
       >
         {/* <FloatingText delay={0.2} className="flex gap-8 items-center "> */}
         <div className="flex gap-6 items-center text1">
-          <div>HI!</div>
+          <div>{`I'm Jang Yun Ho`}</div>
+
           <ExpendableBox
             innerText="About me"
             onClick={() => router.push("/about")}
           />
-          <div>{`I'm Jang Yun Ho,`}</div>
+
           <div>Living in korea</div>
           <ExpendableBox
             innerText="Location"
@@ -132,11 +133,11 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
         {/* </FloatingText> */}
         {/* <FloatingText delay={0.3} className=""> */}
         <div className="text2">
-          성실함과 책임감으로 새로운 아이디어와 활력을 부여하는,
+          성실함과 책임감으로 아이디어와 활력을 일으키는,
         </div>
         {/* </FloatingText> */}
         {/* <FloatingText delay={0.4} className=""> */}
-        <div className="text3">결과물과 그룹의 성장에 최선을 다하는,</div>
+        <div className="text3">결과물과 성장에 최선을 다하는,</div>
         {/* </FloatingText> */}
         {/* <FloatingText delay={0.5} className="flex gap-8 items-center "> */}
         <div className="text4 flex gap-6 items-center">

@@ -7,20 +7,20 @@ const Footer: FC<FooterProps> = ({}) => {
     <div className="h-60 bg-gray-900">
       <section className="px-7 py-5 flex flex-col h-full">
         {/* <Logo dark /> */}
-        <div className="flex gap-7 flex-wrap text-lg">
+        <div className="flex gap-7 flex-wrap mb-3 font-bold">
           <div className="text-white">ABOUT</div>
           <div className="text-white">PROJECTS</div>
           <div className="text-white">EXPERIENCE</div>
         </div>
 
-        <div className="text-white mt-3">
+        <div className="text-white mt-3 text-[0.85em] ">
           3년차 개발자로써,
           <br />
-          프로젝트 경험과 적극적인 도전 자세로 훌륭한 프로덕트가 되도록 기여하고
+          프로젝트 경험과 적극적인 도전 자세로 훌륭한 결과물에 기여하고
           <br /> 그룹의 성취를 위해 노력하는 구성원이 되겠습니다.
         </div>
 
-        <div className="mt-auto flex justify-between text-sm">
+        <div className="mt-auto flex justify-between text-xs">
           <div className="text-white">
             Copyright 2025. YUNHO. all rights reserved.
           </div>

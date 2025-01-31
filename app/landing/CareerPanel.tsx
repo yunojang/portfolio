@@ -117,14 +117,14 @@ const CareerPanel: FC<CareerPanelProps> = ({ career }) => {
 
       {projects.length && (
         <section
-          className={`card-${companyName}-area h-[27.5vw] bg-white sticky top-0`}
+          className={`card-${companyName}-area h-[32.5vw] bg-white sticky top-0`}
         >
-          <div className="flex items-center h-full px-14 py-10">
+          <div className="flex items-center h-full px-6 py-10">
             {projects.map((project, i) => (
               <div
                 key={i}
                 className={cx(
-                  `${companyName}-thumbnail thumbnail-container w-full h-full px-14 `
+                  `${companyName}-thumbnail thumbnail-container w-full h-full px-6 `
                 )}
                 style={{
                   order: ORDER[i],
