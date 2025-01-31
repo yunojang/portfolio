@@ -19,83 +19,93 @@ interface ProjectPageProps {}
 
 const projects: Project[] = [
   {
+    id: "1",
     title: "Safely",
     position: "Front-end Web/Mobile Developer",
     period: "2024",
     thumbnail: "/images/safely-logo.png",
-    stacks: [IconableStackName.next],
+    thumbStacks: [IconableStackName.next],
   },
 
   {
+    id: "2",
     title: "Find-e",
     position: "Front-end Web/Mobile Developer",
     period: "2023-2024",
     thumbnail: "/images/finde-logo.png",
-    stacks: [IconableStackName.react],
+    thumbStacks: [IconableStackName.react],
   },
 
   {
+    id: "3",
     title: "wcm",
     position: "Front-end Web Developer",
     period: "2022-2024",
     // thumbnail: "/images/finde-logo.png",
-    stacks: [IconableStackName.react],
+    thumbStacks: [IconableStackName.react],
   },
 
   {
+    id: "4",
     title: "절삭공구 플랫폼",
     position: "Front-end Web Developer",
     period: "2022",
     // thumbnail: "/images/finde-logo.png",
-    stacks: [IconableStackName.react],
+    thumbStacks: [IconableStackName.react],
   },
 
   {
+    id: "5",
     title: "component lib",
     position: "Front-end Web Developer",
     period: "2021-2023",
     // thumbnail: "/images/finde-logo.png",
-    stacks: [IconableStackName.react],
+    thumbStacks: [IconableStackName.react],
   },
 
   {
+    id: "6",
     title: "Morak",
     position: "Front-end Web Developer",
     period: "2023",
     // thumbnail: "/images/finde-logo.png",
-    stacks: [IconableStackName.next],
+    thumbStacks: [IconableStackName.next],
   },
 
   {
+    id: "7",
     title: "Toonivie",
     position: "Front-end Web Developer",
     period: "2020",
     // thumbnail: "/images/finde-logo.png",
-    stacks: [IconableStackName.react],
+    thumbStacks: [IconableStackName.react],
   },
 
   {
+    id: "8",
     title: "portfolio",
     position: "Front-end Web Developer",
     period: "2025",
     // thumbnail: "/images/finde-logo.png",
-    stacks: [IconableStackName.next],
+    thumbStacks: [IconableStackName.next],
   },
 
   {
+    id: "9",
     title: "daily-diary",
     position: "Front-end Web Developer",
     period: "2021",
     // thumbnail: "/images/finde-logo.png",
-    stacks: [IconableStackName.js],
+    thumbStacks: [IconableStackName.js],
   },
 
   {
+    id: "10",
     title: "pomodoro-timer",
     position: "Front-end Web Developer",
     period: "2021",
     // thumbnail: "/images/finde-logo.png",
-    stacks: [IconableStackName.js],
+    thumbStacks: [IconableStackName.js],
   },
 ];
 

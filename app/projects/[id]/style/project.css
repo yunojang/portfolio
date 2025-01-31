@@ -1,0 +1,37 @@
+.project-detail {
+  --bg-color: #efecd2;
+  --font-color: rgb(218, 76, 15);
+  /* --font-color: rgb(218, 76, 15); */
+}
+
+::-webkit-scrollbar {
+  width: 0.425em;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3838387a;
+  border-radius: 0.5em;
+}
+
+.project-detail .title {
+  color: var(--font-color);
+  font-size: 6em;
+  opacity: 77.5;
+  font-weight: 600;
+}
+
+.project-detail .label {
+  color: var(--font-color);
+  font-size: 1.35em;
+  opacity: 0.525;
+}
+
+.project-detail .description {
+  color: var(--font-color);
+  font-size: 1.35em;
+  opacity: 77.5;
+}

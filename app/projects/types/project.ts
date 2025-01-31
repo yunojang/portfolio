@@ -5,18 +5,22 @@ export enum IconableStackName {
 }
 
 export interface Project {
+  id: string;
   title: string;
   position: string;
   period: string;
   thumbnail?: string;
-  stacks: IconableStackName[];
+  thumbStacks: IconableStackName[];
 
   // --- detail
-  // tags: string[];
-  // images: string[];
-  // mainFeature: string[];
-  // description: string;
-  // progress: string;
+  company?: string;
+  stacks?: string[];
   // tools: string[];
-  //
+  member?: string;
+  state?: string;
+  // progress: string;
+  description?: string;
+  screenShots?: string[];
+  points?: { subject: string; title: string; description: string }[];
+  // mainFeature: string[];
 }
