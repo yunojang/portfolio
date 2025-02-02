@@ -35,7 +35,14 @@ const tempProject: Project = {
       서비스 개선안 개발팀 아이디어 회의 주관 및 기획 관련 팀과 소통`,
     },
   ],
-  screenShots: [],
+  screenShots: [
+    "/images/safely-logo.png",
+    "/images/safely-ss.jpg",
+    "/images/safely-logo.png",
+    "/images/safely-logo.png",
+    "/images/safely-ss.jpg",
+    "/images/safely-ss.jpg",
+  ],
   company: "wizcore",
 };
 

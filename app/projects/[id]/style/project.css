@@ -27,7 +27,7 @@
 .project-detail .label {
   color: var(--font-color);
   font-size: 1.35em;
-  opacity: 0.525;
+  opacity: 0.625;
 }
 
 .project-detail .description {
