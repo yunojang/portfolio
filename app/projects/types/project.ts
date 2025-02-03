@@ -4,6 +4,12 @@ export enum IconableStackName {
   js = "Js",
 }
 
+export interface Point {
+  subject: string;
+  title: string;
+  description: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -21,6 +27,6 @@ export interface Project {
   // progress: string;
   description?: string;
   screenShots?: string[];
-  points?: { subject: string; title: string; description: string }[];
+  points?: Point[];
   // mainFeature: string[];
 }

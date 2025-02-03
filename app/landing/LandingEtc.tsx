@@ -9,6 +9,7 @@ const ibm = IBM_Plex_Sans_KR({
 });
 
 import "./style/project.css";
+import RotateButton from "../common/components/RotateButton/RotateButton";
 
 interface LandingEtcProps {}
 
@@ -20,19 +21,10 @@ const LandingEtc: FC<LandingEtcProps> = () => {
           더 많은 프로젝트 알아보기
         </div>
 
-        <Link
-          href={"/projects"}
-          className="rotate-button rounded-full bg-black px-10 font-bold text-white text-center w-fit overflow-hidden "
-          style={
-            {
-              "--pad": "1.05em",
-            } as React.CSSProperties
-          }
-        >
-          <div className="flex flex-col gap-4">
+        <Link href={"/projects"}>
+          <RotateButton>
             <div className="">All Projects</div>
-            <div className="">All Projects</div>
-          </div>
+          </RotateButton>
         </Link>
       </div>
 

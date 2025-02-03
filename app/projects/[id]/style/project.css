@@ -1,37 +1,39 @@
 .project-detail {
-  --bg-color: #efecd2;
-  --font-color: rgb(218, 76, 15);
+  --bg-color: #f3f1dc;
+  --font-color: rgb(227, 73, 7);
   /* --font-color: rgb(218, 76, 15); */
 }
 
-::-webkit-scrollbar {
-  width: 0.425em;
-}
+.project-detail {
+  .title {
+    color: var(--font-color);
+    font-size: 6em;
+    opacity: 77.5;
+    font-weight: 600;
+  }
 
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0);
-}
+  .heading {
+    color: var(--font-color);
+    font-size: 4.25em;
+    opacity: 75;
+    font-weight: 500;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #3838387a;
-  border-radius: 0.5em;
-}
+  .expend {
+    color: var(--font-color);
+    font-size: 1.825em;
+    opacity: 80;
+  }
 
-.project-detail .title {
-  color: var(--font-color);
-  font-size: 6em;
-  opacity: 77.5;
-  font-weight: 600;
-}
+  .description {
+    color: var(--font-color);
+    font-size: 1.375em;
+    opacity: 77.5;
+  }
 
-.project-detail .label {
-  color: var(--font-color);
-  font-size: 1.35em;
-  opacity: 0.625;
-}
-
-.project-detail .description {
-  color: var(--font-color);
-  font-size: 1.35em;
-  opacity: 77.5;
+  .label {
+    color: var(--font-color);
+    font-size: 1.375em;
+    opacity: 0.625;
+  }
 }
