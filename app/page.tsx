@@ -12,8 +12,6 @@ import {
 } from "./atom/landing/introState";
 
 import React, { useCallback, useRef } from "react";
-import { lockScroll, releaseScroll } from "./common/utils/scroll";
-import SmoothScroll from "./common/components/SmoothScroll";
 import MouseCursor from "./common/components/MouseCursor/MouseCursor";
 import ProfileTexts from "./landing/ProfileTexts";
 import CareerPanel, { Career } from "./landing/CareerPanel";

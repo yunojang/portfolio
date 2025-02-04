@@ -13,7 +13,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const doHyeon = IBM_Plex_Sans_KR({
+const ibm = IBM_Plex_Sans_KR({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
@@ -107,12 +107,12 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
   return (
     <main
       ref={container}
-      className={`text-[3.75em] ${doHyeon.className} leading-[1.4em] tracking-widest text-black`}
+      className={`text-[3.75em] ${ibm.className} leading-[1.4em] tracking-widest text-black`}
     >
       <section
         id="intro-text"
         // ref={textSection}
-        className="flex flex-col items-center justify-center font-medium"
+        className="flex flex-col items-center justify-center"
       >
         {/* <FloatingText delay={0.2} className="flex gap-8 items-center "> */}
         <div className="flex gap-6 items-center text1">

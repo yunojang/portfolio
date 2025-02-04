@@ -11,7 +11,7 @@ interface ExpendableBoxProps {
 }
 
 const ExpendableBox: FC<ExpendableBoxProps> = ({
-  size = "64px",
+  size = "60px",
   expendRatio = 4,
   innerText,
   onClick,
