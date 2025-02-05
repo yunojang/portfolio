@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Project } from "../types/project";
 
+import "@/app/common/style/animation.css";
 interface ProjectAboutProps {
   project: Project;
 }
@@ -14,9 +15,11 @@ const ibm = IBM_Plex_Sans_KR({
 const ProjectAbout: FC<ProjectAboutProps> = ({ project }) => {
   return (
     <header className="w-[37.5em] h-full flex flex-col gap-20 pb-20 pr-12">
-      <h1 className={`title ${ibm.className} text-left`}>
-        {project.title.toUpperCase()}
-      </h1>
+      <div className="overflow-hidden">
+        <h1 className={`slide-up-animation title ${ibm.className} text-left`}>
+          {project.title.toUpperCase()}
+        </h1>
+      </div>
 
       <div className="flex flex-col justify-between flex-1">
         <div className="description">{project.description}</div>

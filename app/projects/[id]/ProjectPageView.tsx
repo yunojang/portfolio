@@ -30,8 +30,8 @@ const ProjectPageView: FC<ProjectPageViewProps> = ({
       style={{ background: "var(--bg-color)" }}
     >
       <ProjectImageSlider
-        screenShots={project.screenShots ?? []}
         fixedEl={<ProjectAbout project={project} />}
+        screenShots={project.screenShots ?? []}
       />
 
       {project.points?.length && (

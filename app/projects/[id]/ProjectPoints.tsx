@@ -20,6 +20,10 @@ const ProjectPoints: FC<ProjectPointsProps> = ({ points }) => {
     gsap.from(".heading", {
       scrollTrigger: {
         trigger: ".heading",
+        start: "-20 97.5%",
+        end: "bottom 50%",
+        markers: true,
+        scrub: 1,
       },
       y: "150%",
       opacity: 0,
