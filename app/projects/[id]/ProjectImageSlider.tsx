@@ -19,7 +19,7 @@ const ProjectImageSlider: FC<ProjectImageSliderProps> = ({
   fixedEl,
   screenShots,
 }) => {
-  const imageWidth = 775;
+  const imageWidth = 1080;
   const gapSize = 92;
   const padSize = 140;
 
@@ -61,7 +61,7 @@ const ProjectImageSlider: FC<ProjectImageSliderProps> = ({
               className="image-slider flex items-center h-full "
               style={{
                 gap: `${gapSize}px`,
-                padding: `8.525em ${padSize}px`,
+                padding: `4.25em ${padSize}px`,
               }}
             >
               {screenShots?.map((ss, i) => (
