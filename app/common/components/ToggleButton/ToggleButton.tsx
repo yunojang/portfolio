@@ -43,12 +43,12 @@ const ToggleButton: FC<ToggleButtonProps> = ({
   return (
     <div
       onClick={handleClick}
-      className="select-none overflow-hidden hover:scale-105 transition-all duration-700"
+      className="select-none overflow-hidden hover:scale-105 transition-all"
       style={{ height: itemHeight }}
     >
       <div
         className={cx(
-          activeTransition ? "transition-all" : "",
+          activeTransition ? "transition-all duration-500" : "",
           "flex flex-col"
         )}
         onTransitionEnd={handleTransitionEnd}

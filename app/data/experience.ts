@@ -21,7 +21,7 @@ export const experience: Experience[] = [
     startDate: new Date("2020-09-01"),
     endDate: new Date("2020-11-31"),
     description:
-      "비디오 편집,제작 툴 리뉴얼 웹 프론트 참여. \b 수습기간 후, 군 면제 전환으로 퇴사",
+      "3개월간 근무하며, 비디오 편집,제작 툴 리뉴얼 웹 프론트 참여. 수습기간 후, 군 면제 전환으로 퇴사",
     graphColor: "#FC943B",
   },
   {
@@ -29,10 +29,10 @@ export const experience: Experience[] = [
     type: "career",
     name: "U+커넥트",
     subContents: ["Front-End Web Dev", "SI팀 외주계약 참여"],
-    startDate: new Date("2024-11-01"),
-    endDate: new Date("2024-12-31"),
+    startDate: new Date("2024-11-10"),
+    endDate: new Date("2024-12-20"),
     description:
-      "U+커넥트 리뉴얼, 내/외부 관리자 사용자 웹 페이지 프론트 개발 및 유지보수 참여",
+      "U+커넥트 리뉴얼, 내/외부 관리자 & 사용자 웹 페이지의 프론트 개발 및 유지보수 참여",
     graphColor: "#EC018C",
   },
 
