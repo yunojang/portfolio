@@ -80,8 +80,11 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
       </div>
       <div className="relative h-12">
         {/* 년도 표시 */}
-        <div className="absolute left-1 bottom-full font-bold  text-gray-400">
+        <div className="absolute left-1 bottom-full font-bold text-lg  text-gray-400">
           2018년
+        </div>
+        <div className="absolute right-1 bottom-full font-bold text-lg  text-gray-400">
+          2025년
         </div>
         {/* 수직선 */}
         <div className="border-t-2 border-[#666] w-full absolute top-1/2 -translate-y-1/2" />
@@ -192,7 +195,7 @@ const GraphBar: FC<GraphBarProps> = ({
     <div
       onClick={inActive ? undefined : onClick}
       className={cx(
-        inActive ? "opacity-30" : "",
+        inActive ? "opacity-25" : "",
         // type === "event" ? "" : "shadow-trim",
         type === "event" ? "shadow-trim rotate-45" : "rounded-lg",
         "absolute cursor-pointer transition-all hover:scale-x-105 hover:scale-y-125 hover:z-10"

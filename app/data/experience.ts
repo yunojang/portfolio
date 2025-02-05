@@ -11,7 +11,7 @@ export const experience: Experience[] = [
     description: `2년 9개월간 기술연구소에서 웹 프론트엔드 개발.
   2개의 국가 과제 프로젝트, 3개의 백오피스 프로젝트,
   2개의 신사업 B2C 프로젝트를 참여 및 담당`,
-    graphColor: "#1C51FA",
+    // graphColor: "#1C51FA",
   },
   {
     id: "1",
@@ -22,7 +22,7 @@ export const experience: Experience[] = [
     endDate: new Date("2020-11-31"),
     description:
       "3개월간 근무하며, 비디오 편집,제작 툴 리뉴얼 웹 프론트 참여. 수습기간 후, 군 면제 전환으로 퇴사",
-    graphColor: "#FC943B",
+    // graphColor: "#FC943B",
   },
   {
     id: "8",
@@ -33,7 +33,7 @@ export const experience: Experience[] = [
     endDate: new Date("2024-12-20"),
     description:
       "U+커넥트 리뉴얼, 내/외부 관리자 & 사용자 웹 페이지의 프론트 개발 및 유지보수 참여",
-    graphColor: "#EC018C",
+    // graphColor: "#EC018C",
   },
 
   {
@@ -45,7 +45,7 @@ export const experience: Experience[] = [
     endDate: new Date("2020-08"),
     description:
       "Java, Spring 프레임워크 기반 웹 백엔드 개발 교육. JS, React 기반 웹 프론트엔드 개발 교육",
-    graphColor: "#52c91b",
+    // graphColor: "#52c91b",
   },
   {
     id: "3",
@@ -56,7 +56,7 @@ export const experience: Experience[] = [
     endDate: new Date("2021-10"),
     description:
       "참여기업 9곳에서 제공하는 과제를 프론트 신입 개발자가 해결 및 피드백하는 교육과정. JS, React 개발에 필요한 핵심 이론 및 실습 강의",
-    graphColor: "#01E3B9",
+    // graphColor: "#01E3B9",
   },
 
   {
@@ -68,7 +68,7 @@ export const experience: Experience[] = [
     endDate: new Date("2020-02"),
     description:
       "정보보호개론, 암호학, 네트워크, 포렌식 등 정보보호 관련 과목 수료",
-    graphColor: "#8debf0",
+    // graphColor: "#8debf0",
   },
 
   {
