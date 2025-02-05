@@ -15,7 +15,7 @@ interface LogoProps {
 const Logo: FC<LogoProps> = ({ dark, href }) => {
   return (
     <div
-      className={`flex flex-col gap-0.5 items-start text-2xl [&>*]:h-5 mb-5 ml-3 cursor-pointer select-none ${
+      className={`flex flex-col gap-0.5 items-start text-lg [&>*]:h-4 ml-3 mb-3 cursor-pointer select-none ${
         orbit.className
       } ${dark ? "text-white" : "text-black"}`}
     >

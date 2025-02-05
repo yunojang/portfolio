@@ -49,9 +49,13 @@ export default function RootLayout({
 
           <Footer />
 
-          {/* <div className="fixed w-[740px] left-1/2 -translate-x-1/2 bottom-5 z-50">
+          {/* <div className="fixed w-[645px] left-1/2 -translate-x-1/2 bottom-5 z-50">
             <NavigationBar />
           </div> */}
+
+          <div className="fixed w-fit right-3 bottom-5 z-[999]">
+            <NavigationBar />
+          </div>
         </section>
       </body>
     </html>
