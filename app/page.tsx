@@ -64,14 +64,14 @@ export default function Home() {
       </div>
 
       {/* Work - 커리어 */}
-      <div id="career" className="h-fit mb-0" ref={career}>
+      <div id="career" className="bg-white" ref={career}>
         {careers.map((career, i) => (
           <CareerPanel key={i} career={career} />
         ))}
       </div>
 
       {/* Projects - see all projects */}
-      <div className="bg-white sticky pb-20">
+      <div className="bg-white pb-20 sticky z-20">
         <LandingEtc />
       </div>
     </main>

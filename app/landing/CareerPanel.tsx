@@ -117,7 +117,7 @@ const CareerPanel: FC<CareerPanelProps> = ({ career }) => {
         </div>
       </section>
 
-      {projects.length && (
+      {projects.length > 0 && (
         <section
           className={`card-${companyName}-area h-[32.5vw] bg-white sticky top-0`}
         >
