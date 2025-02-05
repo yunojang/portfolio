@@ -70,7 +70,11 @@ const ProjectImageSlider: FC<ProjectImageSliderProps> = ({
                   src={ss}
                   alt="screenshot"
                   className="object-cover h-full"
-                  style={{ minWidth: imageWidth, maxWidth: imageWidth }}
+                  style={{
+                    minWidth: imageWidth,
+                    maxWidth: imageWidth,
+                    objectPosition: "center 35%",
+                  }}
                   width={imageWidth}
                   height={imageWidth * 0.75}
                 />

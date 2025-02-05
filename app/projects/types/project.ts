@@ -6,7 +6,7 @@ export enum IconableStackName {
 
 export interface Point {
   subject: string;
-  title: string;
+  // title: string;
   description: string;
 }
 
