@@ -13,25 +13,25 @@ export const projects: Project[] = [
     state: "운영중",
     description: `보관/관리가 필요한 문서 및 사진을 업로드하여
     OCR을 통해 자동 분류, 관리하는 솔루션.
-        주로, 산업안전 문서 관리가 힘든 현장의 중대재해처벌법 대응을 위해 개발`,
+        주로, 산업안전 문서 관리가 힘든 현장의 중대재해처벌법 대응을 위함`,
     company: "wizcore",
     points: [
       {
         subject: "Role",
         // title: "Front-end Lead",
-        description: `프론트 팀에서 개발 및 리드를 담당. 프로젝트의 구조와 개발 방식 등을 결정, 초기 보일러플레이트 적용 및 배포 설정 담당.
-               문서 관리 및 문서 뷰어 개발, 반응형 웹 및 WebView를 통한 모바일 개발과 앱 배포 담당`,
+        description: `프론트 팀에서 개발 및 리드를 담당. 프로젝트의 구조 및 개발 방식 등 결정 및 배포 설정.
+               문서 관리 및 문서 뷰어 개발, 반응형 웹 및 WebView를 통한 모바일 개발과 앱 배포`,
       },
       {
         subject: "CO-OP",
         // title: "회의 주관",
-        description: `팀 내 서버 개발팀과 API 개발 요구사항 회의 등을 주관하며 사전 작업 및 협업.
+        description: `팀 내 서버 개발팀과 API 개발 요구사항 회의 등을 주관하며 사전 작업 진행.
            기획팀, 디자인 외주사 등과 협업`,
       },
       {
         subject: "Stack",
         // title: "Next, Jotai",
-        description: `Next를 처음으로 프로젝트에 적용하면서, Next에 App Router를 이용하고 코드가 실행되는 환경이 서버, 클라이언트 변경되는 부분을 고려하며 개발. 또한, state libaray로 jotai를 사용하여 간단한 사용 코드로 전역 state를 관리`,
+        description: `Next를 처음으로 프로젝트에 적용하며 Next에 App Router 사용 컴포넌트별 ssr, csr 여부 구분하여 개발. 또한, state libaray로 jotai를 사용하여 간단한 사용 코드로 전역 state를 관리`,
       },
     ],
     screenShots: [
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     position: "Front-end Web/Mobile Developer",
     period: "2023-2024",
     thumbnail: "/images/finde-logo.png",
-    description: `자료 공유 및 리워드 시스템과 커뮤니티 기능이 있는, 다양한 분야의 실무자를 위한 정보 및 자료를 공유하는 플랫폼. `,
+    description: `자료 공유에 따른 리워드 시스템과 커뮤니티 기능이 있는, 여러 분야의 실무자를 위한 정보 및 자료를 공유하는 정보 공유 커뮤니티 플랫폼.`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 1인, Server 2인",
     state: "-",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     points: [
       {
         subject: "Role",
-        description: `프론트 팀에서 개발 및 리드를 담당. 로그인 관련 및 OAuth, 계정관련 기능, 실무 자료 업로드와 관리, 리워드 시스템, 커뮤니티 개발`,
+        description: `프론트 팀에서 개발 및 리드를 담당. 로그인 관련 및 OAuth, 계정 설정 관련 기능, 실무 자료 업로드와 관리, 리워드 시스템, 커뮤니티 전반적 개발`,
       },
       {
         subject: "Reward",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
       },
       {
         subject: "WebView",
-        description: `반응형 작업 및 WebView를 사용해 앱 구현. Webview Agent로 웹에서 웹뷰 환경 구분 및 초기 설정. FCM 모바일 알림 구현`,
+        description: `반응형 작업 및 WebView를 사용해 앱 구현. Webview Agent로 웹에서 웹뷰 환경 구분. FCM 모바일 알림 구현`,
       },
     ],
 
@@ -92,11 +92,11 @@ export const projects: Project[] = [
     points: [
       {
         subject: "Role",
-        description: `프론트 팀에서 개발 및 리드를 담당. 계약 내 채팅 시스템, 계약 관리자 페이지, 계약 관리 대시보드 담당 및 개발`,
+        description: `프론트 팀에서 개발 및 리드를 담당. 계약서 작성 및 상신, 계약 내 채팅 시스템, 계약 관리자 페이지, 계약 통계 대시보드 개발`,
       },
       {
         subject: "Chat",
-        description: `WebSocket을 이용 실시간 채팅 구현, 채팅 멘션 기능 자동완성을 위해 라이브러리를 통해 자모분리한 값으로 비교`,
+        description: `WebSocket을 이용 실시간 채팅 구현, 채팅 멘션 기능 자동완성을 위해 라이브러리를 통해 자모분리 및 비교하여 개발`,
       },
     ],
     company: "wizcore",
@@ -139,13 +139,20 @@ export const projects: Project[] = [
   {
     id: "6",
     title: "Toonivie",
-    description: `영상이나 사진을 타임라인 위에서 편집하거나, 사진 요소를 이동시켜 애니메이션을 만드는 웹 영상 편집 및 제작 플랫폼.`,
+    description: `영상이나 사진을 타임라인 위에서 편집하거나, 사진 요소를 이동시켜 애니메이션을 만드는 웹 영상 편집 및 제작 플랫폼. `,
     position: "Front-end Web Developer",
     period: "2020",
     stacks: ["React"],
     member: "-",
     state: "-",
     company: "ideaconcert",
+    points: [
+      {
+        subject: "Canvas",
+        description:
+          "pixi.js 와 같은 Canvas 라이브러리를 사용해 업로드한 요소의 파라미터를 제어해 영상 애니메이션으로 편집하도록 개발",
+      },
+    ],
     // thumbnail: "/images/finde-logo.png",
     thumbStacks: [IconableStackName.react],
   },
