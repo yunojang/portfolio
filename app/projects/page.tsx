@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useRef } from "react";
+import React, { FC, useRef, useState } from "react";
 
 import { Noto_Sans_KR } from "next/font/google";
 const noto = Noto_Sans_KR({
@@ -13,101 +13,16 @@ import { FaArrowDown } from "react-icons/fa6";
 import "@/app/common/style/animation.css";
 import ProjectCard from "./ProjectCard";
 import MouseCursor from "../common/components/MouseCursor/MouseCursor";
-import { IconableStackName, Project } from "./types/project";
+import { projects } from "../data/projects";
+import ToggleButton from "../common/components/ToggleButton/ToggleButton";
+
+enum ProjectViewFilter {
+  ALL = "AllProject",
+  ONLYWORK = "OnlyWork",
+  ONLYSIDE = "OnlySide",
+}
 
 interface ProjectPageProps {}
-
-const projects: Project[] = [
-  {
-    id: "1",
-    title: "Safely",
-    position: "Front-end Web/Mobile Developer",
-    period: "2024",
-    thumbnail: "/images/safely-logo.png",
-    thumbStacks: [IconableStackName.next],
-  },
-
-  {
-    id: "2",
-    title: "Find-e",
-    position: "Front-end Web/Mobile Developer",
-    period: "2023-2024",
-    thumbnail: "/images/finde-logo.png",
-    thumbStacks: [IconableStackName.react],
-  },
-
-  {
-    id: "3",
-    title: "wcm",
-    position: "Front-end Web Developer",
-    period: "2022-2024",
-    // thumbnail: "/images/finde-logo.png",
-    thumbStacks: [IconableStackName.react],
-  },
-
-  {
-    id: "4",
-    title: "절삭공구 플랫폼",
-    position: "Front-end Web Developer",
-    period: "2022",
-    // thumbnail: "/images/finde-logo.png",
-    thumbStacks: [IconableStackName.react],
-  },
-
-  {
-    id: "5",
-    title: "component lib",
-    position: "Front-end Web Developer",
-    period: "2021-2023",
-    // thumbnail: "/images/finde-logo.png",
-    thumbStacks: [IconableStackName.react],
-  },
-
-  {
-    id: "6",
-    title: "Morak",
-    position: "Front-end Web Developer",
-    period: "2023",
-    // thumbnail: "/images/finde-logo.png",
-    thumbStacks: [IconableStackName.next],
-  },
-
-  {
-    id: "7",
-    title: "Toonivie",
-    position: "Front-end Web Developer",
-    period: "2020",
-    // thumbnail: "/images/finde-logo.png",
-    thumbStacks: [IconableStackName.react],
-  },
-
-  {
-    id: "8",
-    title: "portfolio",
-    position: "Front-end Web Developer",
-    period: "2025",
-    // thumbnail: "/images/finde-logo.png",
-    thumbStacks: [IconableStackName.next],
-  },
-
-  {
-    id: "9",
-    title: "daily-diary",
-    position: "Front-end Web Developer",
-    period: "2021",
-    // thumbnail: "/images/finde-logo.png",
-    thumbStacks: [IconableStackName.js],
-  },
-
-  {
-    id: "10",
-    title: "pomodoro-timer",
-    position: "Front-end Web Developer",
-    period: "2021",
-    // thumbnail: "/images/finde-logo.png",
-    thumbStacks: [IconableStackName.js],
-  },
-];
 
 const ProjectPage: FC<ProjectPageProps> = () => {
   const listContainer = useRef<HTMLElement>(null);
@@ -116,6 +31,10 @@ const ProjectPage: FC<ProjectPageProps> = () => {
     if (!listContainer.current) return;
     listContainer.current.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [viewState, setViewState] = useState<ProjectViewFilter>(
+    ProjectViewFilter.ALL
+  );
 
   return (
     <section>
@@ -154,28 +73,54 @@ const ProjectPage: FC<ProjectPageProps> = () => {
           >
             <FaArrowDown />
 
-            <div className="text-lg">Scroll to Explore</div>
+            <div className="text-xl">Scroll to Explore</div>
           </div>
 
           {/* filter 적용 - 토글 버튼 같은 느낌을 [all, work, toy(side)] */}
-          <div className="text-lg">ALL Projects</div>
+          <div className="text-lg font-medium">
+            <ToggleButton
+              itemHeight="28px"
+              items={Object.values(ProjectViewFilter).map((v) => ({
+                id: v,
+                text: toName(v),
+              }))}
+              onClick={(key) => setViewState(key as ProjectViewFilter)}
+            />
+          </div>
         </div>
 
         <div className="h-0.5 bg-gray-200 w-full mt-3" />
       </header>
 
       <main ref={listContainer}>
-        {projects.map((project, i) => (
-          <ProjectCard
-            key={i}
-            keyIndex={`k${i}`}
-            direction={i % 2 === 0 ? "left" : "right"}
-            project={project}
-          />
-        ))}
+        {projects
+          .filter((pj) =>
+            viewState === ProjectViewFilter.ONLYWORK
+              ? pj.company
+              : viewState === ProjectViewFilter.ALL || !pj.company
+          )
+          .map((project, i) => (
+            <ProjectCard
+              key={i}
+              keyIndex={`k${i}`}
+              direction={i % 2 === 0 ? "left" : "right"}
+              project={project}
+            />
+          ))}
       </main>
     </section>
   );
 };
 
 export default ProjectPage;
+
+const isUpperCase = (letter: string) => {
+  return letter === letter.toUpperCase();
+};
+
+const toName = (letter: string) => {
+  return letter
+    .split("")
+    .reduce((str, char) => (str += isUpperCase(char) ? ` ${char}` : char), "")
+    .toUpperCase();
+};

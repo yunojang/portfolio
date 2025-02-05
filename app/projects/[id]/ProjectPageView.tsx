@@ -8,6 +8,7 @@ import RotateButton from "@/app/common/components/RotateButton/RotateButton";
 import ProjectImageSlider from "./ProjectImageSlider";
 import ProjectAbout from "./ProjectAbout";
 import ProjectPoints from "./ProjectPoints";
+import Link from "next/link";
 
 const noto = Noto_Sans_KR({
   weight: ["300", "400", "500", "600"],
@@ -16,9 +17,13 @@ const noto = Noto_Sans_KR({
 
 interface ProjectPageViewProps {
   project: Project;
+  nextProject: Project;
 }
 
-const ProjectPageView: FC<ProjectPageViewProps> = ({ project }) => {
+const ProjectPageView: FC<ProjectPageViewProps> = ({
+  project,
+  nextProject,
+}) => {
   return (
     <div
       className={`${noto.className} project-detail`}
@@ -29,9 +34,11 @@ const ProjectPageView: FC<ProjectPageViewProps> = ({ project }) => {
         fixedEl={<ProjectAbout project={project} />}
       />
 
-      <div className="w-screen py-5 px-7">
-        <ProjectPoints points={project.points ?? []} />
-      </div>
+      {project.points?.length && (
+        <div className="w-screen py-5 px-7">
+          <ProjectPoints points={project.points} />
+        </div>
+      )}
 
       {/* next project show */}
       <div>
@@ -39,9 +46,13 @@ const ProjectPageView: FC<ProjectPageViewProps> = ({ project }) => {
           <div className="font-light text-gray-400 text-[1.525em]">
             Next Project
           </div>
-          <div className="font-bold text-[5.25em] mb-10">FIND-E</div>
+          <div className="font-bold text-[5.25em] mb-10">
+            {nextProject.title.toUpperCase()}
+          </div>
 
-          <RotateButton>Next Project</RotateButton>
+          <Link href={`/projects/${nextProject.id}`}>
+            <RotateButton>Next Project</RotateButton>
+          </Link>
         </div>
       </div>
     </div>

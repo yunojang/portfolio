@@ -12,6 +12,7 @@ const smoochSans = Smooch_Sans({
 interface Project {
   thumbnailSrc: string;
   title: string;
+  id: string;
 }
 
 export interface Career {
@@ -33,6 +34,7 @@ import { useGSAP } from "@gsap/react";
 import { padArray } from "@/utils/array";
 import { cx } from "@emotion/css";
 import ClickableComponent from "../common/components/ClickableComponent";
+import Link from "next/link";
 
 const ORDER = [2, 1, 3];
 
@@ -133,7 +135,11 @@ const CareerPanel: FC<CareerPanelProps> = ({ career }) => {
                 onMouseEnter={project ? () => onCardHover(i) : undefined}
               >
                 {project ? (
-                  <ProjectThumbCard src={project.thumbnailSrc} />
+                  <Link href={`/projects/${project.id}`}>
+                    <ClickableComponent className="w-full h-full">
+                      <ProjectThumbCard src={project.thumbnailSrc} />
+                    </ClickableComponent>
+                  </Link>
                 ) : null}
               </div>
             ))}
@@ -153,19 +159,17 @@ interface ProjectThumbCardProps {
 
 const ProjectThumbCard: FC<ProjectThumbCardProps> = ({ el, src }) => {
   return (
-    <ClickableComponent className="w-full h-full">
-      <div className="thumbnail-holder w-full h-full rounded-xl overflow-hidden shadow-lg flex items-center justify-center">
-        {el && el}
-        {src && (
-          <Image
-            src={src}
-            width={400}
-            height={300}
-            alt="project-thumbnail"
-            className="object-cover object-center w-full h-full"
-          />
-        )}
-      </div>
-    </ClickableComponent>
+    <div className="thumbnail-holder w-full h-full rounded-xl overflow-hidden shadow-lg flex items-center justify-center">
+      {el && el}
+      {src && (
+        <Image
+          src={src}
+          width={400}
+          height={300}
+          alt="project-thumbnail"
+          className="object-cover object-center w-full h-full"
+        />
+      )}
+    </div>
   );
 };

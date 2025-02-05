@@ -9,9 +9,9 @@ const ExperienceCards: FC<ExperienceCardsProps> = ({ exps }) => {
   return (
     <div className="flex flex-col gap-5">
       {exps.map((exp, i) => (
-        <div key={i}>
+        <div key={i} id={exp.name}>
           <div className="border-t-2 border-[#a7bcec] border-dashed" />
-          <div className="w-[67.25vw] mx-auto flex items-start gap-5 pb-32 pt-8 text-gray-500">
+          <div className="w-[67.25vw] mx-auto flex items-start gap-5 pb-[50vh] pt-12 text-gray-500">
             <div className="flex-1">
               <div className="border-2 rounded-full border-[#2c59bb] text-[#2c59bb] inline-block px-2 py-1 self-end font-semibold text-sm mb-3 tracking-wider">
                 {exp.type.toUpperCase()}

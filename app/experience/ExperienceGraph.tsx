@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, useMemo } from "react";
 
 import { Noto_Sans_KR } from "next/font/google";
@@ -10,10 +12,13 @@ import { Experience } from "./types/experience";
 import { cx } from "@emotion/css";
 
 import "./style/shape.css";
+import { useRouter } from "next/navigation";
 
 interface ExperienceGraphProps {
   exps: Experience[];
 }
+
+const now = Date.now();
 
 const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
   const expStartTime = useMemo(
@@ -21,12 +26,12 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
       exps.reduce(
         (time, exp) =>
           exp.startDate.getTime() < time ? exp.startDate.getTime() : time,
-        Date.now()
+        now
       ) - new Date("1970-02-01").getTime(),
     [exps]
   );
 
-  const expEndTime = useMemo(() => Date.now(), []);
+  const expEndTime = useMemo(() => now, []);
 
   const totalTime = expEndTime - expStartTime;
 
@@ -42,6 +47,9 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
     () => exps.filter((exp) => exp.type === "event"),
     [exps]
   );
+
+  const router = useRouter();
+  const onClickGraph = (id: string) => router.push(`/experience#${id}`);
 
   return (
     <div className={`${noto.className} py-20`}>
@@ -65,6 +73,7 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
           {careers.map((career, i) => (
             <GraphBar
               key={i}
+              onClick={() => onClickGraph(career.name)}
               backGround={career.graphColor ?? "#2b2b2b"}
               type={career.type}
               length={
@@ -85,6 +94,7 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
           {edus.map((edu, i) => (
             <GraphBar
               key={i}
+              onClick={() => onClickGraph(edu.name)}
               backGround={edu.graphColor ?? "#858585"}
               type={edu.type}
               length={
@@ -104,6 +114,7 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
           {events.map((event, i) => (
             <GraphBar
               key={i}
+              onClick={() => onClickGraph(event.name)}
               backGround={event.graphColor ?? "#4d4d4d"}
               type={event.type}
               start={
@@ -124,11 +135,19 @@ interface GraphBarProps {
   type: Experience["type"];
   length?: number;
   start?: number;
+  onClick?(): void;
 }
 
-const GraphBar: FC<GraphBarProps> = ({ backGround, type, length, start }) => {
+const GraphBar: FC<GraphBarProps> = ({
+  backGround,
+  type,
+  length,
+  start,
+  onClick,
+}) => {
   return (
     <div
+      onClick={onClick}
       className={cx(
         // type === "event" ? "" : "shadow-trim",
         type === "event" ? "shadow-trim rotate-45" : "rounded-lg",

@@ -10,6 +10,7 @@
     font-size: 6em;
     opacity: 77.5;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   .heading {

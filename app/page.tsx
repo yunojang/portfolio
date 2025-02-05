@@ -15,40 +15,11 @@ import React, { useCallback, useRef } from "react";
 import MouseCursor from "./common/components/MouseCursor/MouseCursor";
 import ProfileTexts from "./landing/ProfileTexts";
 import CareerPanel, { Career } from "./landing/CareerPanel";
+import { lockScroll, releaseScroll } from "./common/utils/scroll";
 
 import LandingEtc from "./landing/LandingEtc";
-
-const career1: Career = {
-  companyName: "wizcore",
-  startDate: new Date("2021-11-21"),
-  endDate: new Date("2024-07-14"),
-  position: "Front-End Web Developer",
-  mainColor: "#1C51FA",
-  projects: [
-    {
-      title: "Safely",
-      thumbnailSrc: "/images/safely-logo.png",
-    },
-    {
-      title: "Find-e",
-      thumbnailSrc: "/images/finde-logo.png",
-    },
-
-    {
-      title: "WCM",
-      thumbnailSrc: "/images/safely-logo.png",
-    },
-  ],
-};
-
-const career2: Career = {
-  companyName: "ideaconcert",
-  startDate: new Date("2020-09-01"),
-  endDate: new Date("2020-11-25"),
-  position: "Front-End Web Developer",
-  mainColor: "#FC943B",
-  projects: [],
-};
+import SmoothScroll from "./common/components/SmoothScroll";
+import { careers } from "./data/career";
 
 export default function Home() {
   const isEndIntro = useAtomValue(isEndIntroAtom);
@@ -93,9 +64,9 @@ export default function Home() {
 
       {/* Work - 커리어 */}
       <div id="career" className="h-fit mb-0" ref={career}>
-        <CareerPanel career={career1} />
-
-        <CareerPanel career={career2} />
+        {careers.map((career, i) => (
+          <CareerPanel key={i} career={career} />
+        ))}
       </div>
 
       {/* Projects - see all projects */}
