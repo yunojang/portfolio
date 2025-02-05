@@ -22,7 +22,7 @@ export const careers: Career[] = [
       {
         id: "3",
         title: "WCM",
-        thumbnailSrc: "/images/safely-logo.png",
+        thumbnailSrc: "/images/cm-logo.png",
       },
     ],
   },
