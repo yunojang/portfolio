@@ -43,7 +43,7 @@ const ToggleButton: FC<ToggleButtonProps> = ({
   return (
     <div
       onClick={handleClick}
-      className="select-none overflow-hidden hover:scale-105 transition-all"
+      className="select-none overflow-hidden hover:scale-105 transition-all duration-700"
       style={{ height: itemHeight }}
     >
       <div

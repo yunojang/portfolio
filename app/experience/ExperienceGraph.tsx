@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useMemo } from "react";
+import { FC, useMemo, useState } from "react";
 
 import { Noto_Sans_KR } from "next/font/google";
 const noto = Noto_Sans_KR({
@@ -13,6 +13,14 @@ import { cx } from "@emotion/css";
 
 import "./style/shape.css";
 import { useRouter } from "next/navigation";
+import ToggleButton from "../common/components/ToggleButton/ToggleButton";
+
+enum ExperienceFiliterType {
+  ALL = "All",
+  CAREER = "Career",
+  EDU = "Education",
+  EVENT = "Events",
+}
 
 interface ExperienceGraphProps {
   exps: Experience[];
@@ -48,11 +56,28 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
     [exps]
   );
 
+  // events
   const router = useRouter();
   const onClickGraph = (id: string) => router.push(`/experience#${id}`);
 
+  const [filterState, setFilterState] = useState<ExperienceFiliterType>(
+    ExperienceFiliterType.ALL
+  );
+
   return (
     <div className={`${noto.className} py-20`}>
+      <div className="mb-20 flex items-center justify-end px-10">
+        <div className="text-lg font-medium cursor-pointer bg-black rounded-full text-white px-6 py-1.5 text-center">
+          <ToggleButton
+            itemHeight="28px"
+            items={Object.values(ExperienceFiliterType).map((type) => ({
+              id: type,
+              text: type.toUpperCase(),
+            }))}
+            onClick={(id) => setFilterState(id as ExperienceFiliterType)}
+          />
+        </div>
+      </div>
       <div className="relative h-12">
         {/* 수직선 */}
         <div className="border-t-2 border-[#666] w-full absolute top-1/2 -translate-y-1/2" />
@@ -73,6 +98,10 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
           {careers.map((career, i) => (
             <GraphBar
               key={i}
+              inActive={
+                filterState !== ExperienceFiliterType.ALL &&
+                filterState !== ExperienceFiliterType.CAREER
+              }
               onClick={() => onClickGraph(career.name)}
               backGround={career.graphColor ?? "#2b2b2b"}
               type={career.type}
@@ -94,6 +123,10 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
           {edus.map((edu, i) => (
             <GraphBar
               key={i}
+              inActive={
+                filterState !== ExperienceFiliterType.ALL &&
+                filterState !== ExperienceFiliterType.EDU
+              }
               onClick={() => onClickGraph(edu.name)}
               backGround={edu.graphColor ?? "#858585"}
               type={edu.type}
@@ -114,6 +147,10 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
           {events.map((event, i) => (
             <GraphBar
               key={i}
+              inActive={
+                filterState !== ExperienceFiliterType.ALL &&
+                filterState !== ExperienceFiliterType.EVENT
+              }
               onClick={() => onClickGraph(event.name)}
               backGround={event.graphColor ?? "#4d4d4d"}
               type={event.type}
@@ -136,6 +173,7 @@ interface GraphBarProps {
   length?: number;
   start?: number;
   onClick?(): void;
+  inActive?: boolean;
 }
 
 const GraphBar: FC<GraphBarProps> = ({
@@ -144,11 +182,13 @@ const GraphBar: FC<GraphBarProps> = ({
   length,
   start,
   onClick,
+  inActive,
 }) => {
   return (
     <div
-      onClick={onClick}
+      onClick={inActive ? undefined : onClick}
       className={cx(
+        inActive ? "opacity-30" : "",
         // type === "event" ? "" : "shadow-trim",
         type === "event" ? "shadow-trim rotate-45" : "rounded-lg",
         "absolute cursor-pointer transition-all hover:scale-x-105 hover:scale-y-125 hover:z-10"

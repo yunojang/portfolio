@@ -37,7 +37,7 @@ const LandingEtc: FC<LandingEtcProps> = () => {
           >
             <div className="text-center text-[8.75em]">모든 경험 살펴보기</div>
             <div className="text-gray-400 font-medium text-3xl">
-              Experience - 지나온 타임라인으로 알아보기
+              Experience - 모든 경험 타임라인으로
             </div>
           </Link>
         </ClickableComponent>

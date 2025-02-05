@@ -1,8 +1,6 @@
 "use client";
 
-import LineGrid from "./common/LineGrid";
-import Intro from "./landing/Intro";
-import ProfileIntroduce from "./landing/GlitchAnimation";
+import { careers } from "./data/career";
 
 import { useAtomValue, useSetAtom } from "jotai";
 import {
@@ -11,15 +9,18 @@ import {
   setEndIntro as setEndIntroAtom,
 } from "./atom/landing/introState";
 
-import React, { useCallback, useRef } from "react";
 import MouseCursor from "./common/components/MouseCursor/MouseCursor";
-import ProfileTexts from "./landing/ProfileTexts";
-import CareerPanel, { Career } from "./landing/CareerPanel";
-import { lockScroll, releaseScroll } from "./common/utils/scroll";
-
-import LandingEtc from "./landing/LandingEtc";
+import LineGrid from "./common/LineGrid";
 import SmoothScroll from "./common/components/SmoothScroll";
-import { careers } from "./data/career";
+
+import ProfileTexts from "./landing/ProfileTexts";
+import Intro from "./landing/Intro";
+import ProfileIntroduce from "./landing/GlitchAnimation";
+import LandingEtc from "./landing/LandingEtc";
+import CareerPanel from "./landing/CareerPanel";
+
+import React, { useCallback, useRef } from "react";
+import { lockScroll, releaseScroll } from "./common/utils/scroll";
 
 export default function Home() {
   const isEndIntro = useAtomValue(isEndIntroAtom);
