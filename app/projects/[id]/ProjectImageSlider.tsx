@@ -88,7 +88,12 @@ const ProjectImageSlider: FC<ProjectImageSliderProps> = ({
           {fixedEl}
 
           {/* 스크린샷 슬라이더 */}
-          <main className={cx("flex-1 h-full overflow-hidden")}>
+          <main
+            className={cx("flex-1 h-full overflow-hidden")}
+            style={{
+              mask: "linear-gradient(to right, transparent, white 3.5% 92.75%, transparent)",
+            }}
+          >
             <div
               ref={imgContainer}
               className={"image-slider flex items-center h-full"}
