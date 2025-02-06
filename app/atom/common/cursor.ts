@@ -4,20 +4,23 @@ interface Cursor {
   show: boolean;
   active: boolean;
   text: string;
-  hide: boolean;
 }
 
 const defalutOptions: Cursor = {
   show: true,
   active: false,
   text: "open",
-  hide: false,
 };
 
 export const cursor = atom<Cursor>(defalutOptions);
 
-export const showCursor = () => {};
-export const hideCursor = () => {};
+export const showCursor = atom(null, (get, set) => {
+  set(cursor, { ...get(cursor), show: true });
+});
+
+export const hideCursor = atom(null, (get, set) => {
+  set(cursor, { ...get(cursor), show: false });
+});
 
 export const activateCursor = atom(null, (get, set, newText?: string) => {
   set(cursor, {

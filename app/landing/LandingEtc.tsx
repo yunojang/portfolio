@@ -22,9 +22,11 @@ const LandingEtc: FC<LandingEtcProps> = () => {
         </div>
 
         <Link href={"/projects"}>
-          <RotateButton>
-            <div className="">All Projects</div>
-          </RotateButton>
+          <ClickableComponent cursorHide>
+            <RotateButton>
+              <div className="">All Projects</div>
+            </RotateButton>
+          </ClickableComponent>
         </Link>
       </div>
 

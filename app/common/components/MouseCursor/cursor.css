@@ -5,7 +5,7 @@
   border: solid 0.3em #bbb;
   backdrop-filter: blur(0em);
   transition: 0.25s;
-  transition-property: width, height, background, backdrop-filter;
+  transition-property: width, height, background, backdrop-filter, opacity;
 }
 
 .cursor.open {
@@ -25,7 +25,6 @@
   font-size: 1.65em;
   font-weight: 800;
   opacity: 1;
-  transition: all;
   white-space: nowrap;
   overflow: hidden;
 }

@@ -3,7 +3,12 @@
 import { FC, ReactNode } from "react";
 
 import { useSetAtom } from "jotai";
-import { activateCursor, deactivateCursor } from "@/app/atom/common/cursor";
+import {
+  activateCursor,
+  deactivateCursor,
+  hideCursor,
+  showCursor,
+} from "@/app/atom/common/cursor";
 
 import { cx } from "@emotion/css";
 
@@ -22,13 +27,17 @@ const ClickableComponent: FC<ClickableComponentProps> = ({
 }) => {
   const activate = useSetAtom(activateCursor);
   const deactivate = useSetAtom(deactivateCursor);
+  const hide = useSetAtom(hideCursor);
+  const show = useSetAtom(showCursor);
 
   const onMouseEnter = () => {
-    activate(clickableText);
+    if (cursorHide) hide();
+    else activate(clickableText);
   };
 
   const onMouseLeave = () => {
-    deactivate();
+    if (cursorHide) show();
+    else deactivate();
   };
 
   return (

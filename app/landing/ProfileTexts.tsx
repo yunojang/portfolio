@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import ClickableComponent from "../common/components/ClickableComponent";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -118,16 +119,20 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
         <div className="flex gap-6 items-center text1">
           <div className="whitespace-nowrap">{`I'm Jang Yun Ho`}</div>
 
-          <ExpendableBox
-            innerText="About me"
-            onClick={() => router.push("/about")}
-          />
+          <ClickableComponent cursorHide>
+            <ExpendableBox
+              innerText="About me"
+              onClick={() => router.push("/about")}
+            />
+          </ClickableComponent>
 
           <div className="whitespace-nowrap">Living in korea</div>
-          <ExpendableBox
-            innerText="Location"
-            onClick={() => router.push("/about/location")}
-          />
+          <ClickableComponent cursorHide>
+            <ExpendableBox
+              innerText="Location"
+              onClick={() => router.push("/about/location")}
+            />
+          </ClickableComponent>
         </div>
 
         {/* </FloatingText> */}
@@ -144,13 +149,15 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
         {/* <FloatingText delay={0.5} className="flex gap-8 items-center "> */}
         <div className="text4 flex gap-6 items-center">
           <div className="whitespace-nowrap">Front-end Web Developer</div>
-          <ExpendableBox
-            innerText="Careers"
-            onClick={
-              onScrollCareer
-              // () => window.scrollBy(0, (container.current?.clientHeight ?? 500) + 500)
-            }
-          />
+          <ClickableComponent cursorHide>
+            <ExpendableBox
+              innerText="Careers"
+              onClick={
+                onScrollCareer
+                // () => window.scrollBy(0, (container.current?.clientHeight ?? 500) + 500)
+              }
+            />
+          </ClickableComponent>
         </div>
         {/* </FloatingText> */}
       </section>

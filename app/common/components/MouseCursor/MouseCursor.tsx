@@ -85,7 +85,7 @@ const MouseCursor: FC<MouseCursorProps> = ({}) => {
     window.requestAnimationFrame(moveCursor);
   }, []);
 
-  const [{ active, text }] = useAtom(cursorAtom);
+  const [{ active, text, show }] = useAtom(cursorAtom);
   const cursorText = `[ ${text.toUpperCase()} ]`;
 
   return (
@@ -93,10 +93,13 @@ const MouseCursor: FC<MouseCursorProps> = ({}) => {
       ref={cursor}
       data-text={cursorText}
       className={cx(
+        show ? "" : "opacity-0",
         active ? "open" : "",
         "cursor absolute top-0 left-0 rounded-full z-[999] pointer-events-none "
       )}
-    />
+    >
+      <div />
+    </div>
   );
 };
 
