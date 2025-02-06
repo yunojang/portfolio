@@ -1,11 +1,15 @@
 "use client";
 
 import { FC, useEffect, useRef } from "react";
-import { cx } from "@emotion/css";
-import { cursor as cursorAtom } from "@/app/atom/common/cursor";
 
+import { cx } from "@emotion/css";
 import "./cursor.css";
-import { useAtom } from "jotai";
+
+import { useAtom, useSetAtom } from "jotai";
+import {
+  cursor as cursorAtom,
+  initCursor as initCursorAtom,
+} from "@/app/atom/common/cursor";
 
 interface MouseCursorProps {}
 
@@ -23,6 +27,8 @@ interface FollowCursorPosition {
 const MouseCursor: FC<MouseCursorProps> = ({}) => {
   const cursor = useRef<HTMLDivElement>(null);
 
+  const initCursor = useSetAtom(initCursorAtom);
+
   const positionRef = useRef<FollowCursorPosition>({
     mouse: { x: 0, y: 0 },
     destination: { x: 0, y: 0 },
@@ -39,8 +45,11 @@ const MouseCursor: FC<MouseCursorProps> = ({}) => {
     };
 
     window.addEventListener("mousemove", onMouseMove);
-    return () => window.removeEventListener("mousemove", onMouseMove);
-  }, []);
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      initCursor();
+    };
+  }, [initCursor]);
 
   useEffect(() => {
     const moveCursor = (time: number) => {

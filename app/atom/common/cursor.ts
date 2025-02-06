@@ -7,12 +7,14 @@ interface Cursor {
   hide: boolean;
 }
 
-export const cursor = atom<Cursor>({
+const defalutOptions: Cursor = {
   show: true,
   active: false,
   text: "open",
   hide: false,
-});
+};
+
+export const cursor = atom<Cursor>(defalutOptions);
 
 export const showCursor = () => {};
 export const hideCursor = () => {};
@@ -28,3 +30,5 @@ export const activateCursor = atom(null, (get, set, newText?: string) => {
 export const deactivateCursor = atom(null, (get, set) => {
   set(cursor, { ...get(cursor), active: false, text: get(cursor).text });
 });
+
+export const initCursor = atom(null, (_, set) => set(cursor, defalutOptions));

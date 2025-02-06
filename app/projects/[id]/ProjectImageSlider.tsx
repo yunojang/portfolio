@@ -91,7 +91,7 @@ const ProjectImageSlider: FC<ProjectImageSliderProps> = ({
           <main
             className={cx("flex-1 h-full overflow-hidden")}
             style={{
-              mask: "linear-gradient(to right, transparent, white 3.5% 92.75%, transparent)",
+              mask: "linear-gradient(to right, transparent, white 2.525% 96%, transparent)",
             }}
           >
             <div
