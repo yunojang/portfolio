@@ -13,6 +13,7 @@ const notoSansKR = Noto_Sans_KR({
 import Footer from "./Footer";
 import NavigationBar from "./NavigationBar";
 import Script from "next/script";
+import ResponsiveRedirect from "./common/components/ResponsiveRedirect";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +44,8 @@ export default function RootLayout({
       <body
         className={`${notoSansKR.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ResponsiveRedirect width={901} />
+
         <section className="relative">
           {children}
 

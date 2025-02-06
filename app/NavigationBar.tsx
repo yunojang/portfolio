@@ -92,6 +92,8 @@ const NavigationBar: FC<NavigationBarProps> = () => {
     },
   ];
 
+  if (pathname.includes("mobile")) return null;
+
   return (
     <div>
       {/* <div className="bg-gray-900 rounded-lg py-2 px-4 pr-8 shadow-frame opacity-25 hover:opacity-100 transition-all duration-500">
