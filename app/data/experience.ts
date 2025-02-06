@@ -37,17 +37,6 @@ export const experience: Experience[] = [
   },
 
   {
-    id: "11",
-    type: "edu",
-    name: "국비지원교육",
-    subContents: ["자바기반의 웹&앱 응용SW개발자 양성과정"],
-    startDate: new Date("2020-02"),
-    endDate: new Date("2020-08"),
-    description:
-      "Java, Spring 프레임워크 기반 웹 백엔드 개발 교육. JS, React 기반 웹 프론트엔드 개발 교육",
-    // graphColor: "#52c91b",
-  },
-  {
     id: "3",
     type: "edu",
     name: "원티드 프리온보딩",
@@ -57,6 +46,18 @@ export const experience: Experience[] = [
     description:
       "참여기업 9곳에서 제공하는 과제를 프론트 신입 개발자가 해결 및 피드백하는 교육과정. JS, React 개발에 필요한 핵심 이론 및 실습 강의",
     // graphColor: "#01E3B9",
+  },
+
+  {
+    id: "11",
+    type: "edu",
+    name: "국비지원교육",
+    subContents: ["자바기반의 웹&앱 응용SW개발자 양성과정"],
+    startDate: new Date("2020-02"),
+    endDate: new Date("2020-08"),
+    description:
+      "Java, Spring 프레임워크 기반 웹 백엔드 개발 교육. JS, React 기반 웹 프론트엔드 개발 교육",
+    // graphColor: "#52c91b",
   },
 
   {

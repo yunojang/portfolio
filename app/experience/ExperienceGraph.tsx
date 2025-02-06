@@ -12,15 +12,11 @@ import { Experience } from "./types/experience";
 import { cx } from "@emotion/css";
 
 import "./style/shape.css";
-import { useRouter } from "next/navigation";
-import ToggleButton from "../common/components/ToggleButton/ToggleButton";
 
-enum ExperienceFiliterType {
-  ALL = "All",
-  CAREER = "Career",
-  EDU = "Education",
-  EVENT = "Events",
-}
+import ToggleButton from "../common/components/ToggleButton/ToggleButton";
+import { ExperienceFiliterType } from "./types/type";
+import { useAtom } from "jotai";
+import { experienceFilter } from "../atom/experience/filter";
 
 interface ExperienceGraphProps {
   exps: Experience[];
@@ -64,9 +60,10 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
   };
   const onClickGraph = (id: string) => scrollToById(id);
 
-  const [filterState, setFilterState] = useState<ExperienceFiliterType>(
-    ExperienceFiliterType.ALL
-  );
+  const [filterState, setFilterState] = useAtom(experienceFilter);
+  // const [filterState, setFilterState] = useState<ExperienceFiliterType>(
+  //   ExperienceFiliterType.ALL
+  // );
 
   return (
     <div className={`${noto.className} py-20`}>
