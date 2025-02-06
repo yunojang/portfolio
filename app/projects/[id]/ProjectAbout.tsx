@@ -14,7 +14,7 @@ const ibm = IBM_Plex_Sans_KR({
 
 const ProjectAbout: FC<ProjectAboutProps> = ({ project }) => {
   return (
-    <header className="w-[37.5em] h-full flex flex-col gap-20 pb-20 pr-12">
+    <header className="xl:w-[37.5em] lg:w-[31.725em] md:w-[28.725em] h-full flex flex-col gap-20 pb-20 pr-12">
       <div className="overflow-hidden">
         <h1 className={`slide-up-animation title ${ibm.className} text-left`}>
           {project.title.toUpperCase()}

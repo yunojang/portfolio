@@ -57,8 +57,12 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
   );
 
   // events
-  const router = useRouter();
-  const onClickGraph = (id: string) => router.push(`/experience#${id}`);
+  // const router = useRouter();
+  const scrollToById = (id: string) => {
+    const target = document.getElementById(id);
+    target?.scrollIntoView({ behavior: "smooth" });
+  };
+  const onClickGraph = (id: string) => scrollToById(id);
 
   const [filterState, setFilterState] = useState<ExperienceFiliterType>(
     ExperienceFiliterType.ALL
@@ -69,7 +73,7 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
       <div className="mb-20 flex items-center justify-end px-10">
         <div className="text-lg font-medium cursor-pointer bg-black rounded-full text-white px-6 py-1.5 text-center">
           <ToggleButton
-            itemHeight="28px"
+            itemHeight="1.75em"
             items={Object.values(ExperienceFiliterType).map((type) => ({
               id: type,
               text: type.toUpperCase(),

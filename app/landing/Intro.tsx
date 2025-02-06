@@ -36,15 +36,17 @@ const Intro: FC<IntroProps> = ({ onEnd, onStart }) => {
   return (
     <div className="w-full" style={{ height: "calc(100vh + 60px)" }}>
       <div
-        className={`h-[85%] flex flex-col relative items-center justify-center ${notoSansKR.className} leading-[230px] font-semibold`}
+        className={`h-[85%] flex flex-col relative items-center justify-center ${notoSansKR.className} leading-[14.375em] font-semibold`}
       >
         <div className="overflow-hidden">
-          <div className={`slide-up-animation text-[185px]`}>장윤호</div>
+          <div className={`slide-up-animation whitespace-nowrap text-[11.5em]`}>
+            장윤호
+          </div>
         </div>
 
         <div className="overflow-hidden">
           <div
-            className={`slide-up-animation text-[185px]`}
+            className={`slide-up-animation whitespace-nowrap text-[11.5em]`}
             style={{ animationDelay: "350ms" }}
           >
             JANG YUN HO

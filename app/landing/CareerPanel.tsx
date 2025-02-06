@@ -101,19 +101,19 @@ const CareerPanel: FC<CareerPanelProps> = ({ career }) => {
           background: mainColor,
         }}
       >
-        <div className="flex items-center justify-between text-white pl-40 pr-20 h-full">
+        <div className="flex items-center justify-between gap-3 text-white pl-[11.25vw] pr-[3.75vw] h-full">
           <div className="text-[4.25em] font-semibold tracking-wider">
             {companyName.toUpperCase()}
           </div>
 
           <div className="w-[22.5em] h-0.5 bg-white" />
 
-          <div className="text-3xl">
+          <div className="text-3xl text-nowrap">
             {startDate.getFullYear() === endDate.getFullYear()
               ? startDate.getFullYear()
               : `${startDate.getFullYear()} - ${endDate.getFullYear()}`}
           </div>
-          <div className="text-4xl font-medium">{position}</div>
+          <div className="text-4xl font-medium  text-nowrap">{position}</div>
         </div>
       </section>
 

@@ -12,7 +12,6 @@ const notoSansKR = Noto_Sans_KR({
 
 import Footer from "./Footer";
 import NavigationBar from "./NavigationBar";
-import MouseCursor from "./common/components/MouseCursor/MouseCursor";
 import Script from "next/script";
 
 const geistSans = Geist({

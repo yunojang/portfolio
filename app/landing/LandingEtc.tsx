@@ -35,7 +35,9 @@ const LandingEtc: FC<LandingEtcProps> = () => {
             href={"/experience"}
             className="flex flex-col items-center justify-center py-20 gap-3 "
           >
-            <div className="text-center text-[8.75em]">모든 경험 살펴보기</div>
+            <div className="text-center text-[8.75em] text-nowrap">
+              모든 경험 살펴보기
+            </div>
             <div className="text-gray-400 font-medium text-3xl">
               Experience - 모든 경험 타임라인 보기
             </div>

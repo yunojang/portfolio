@@ -79,7 +79,7 @@ const ProjectPage: FC<ProjectPageProps> = () => {
           {/* filter 적용 - 토글 버튼 같은 느낌을 [all, work, toy(side)] */}
           <div className="text-lg font-medium">
             <ToggleButton
-              itemHeight="28px"
+              itemHeight="1.75em"
               items={Object.values(ProjectViewFilter).map((v) => ({
                 id: v,
                 text: toName(v),

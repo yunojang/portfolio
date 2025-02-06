@@ -9,12 +9,12 @@ interface ToggleButtonProps {
   itemHeight: string;
 }
 
-const GAP = 20;
+const GAP = "1.25em";
 
 const ToggleButton: FC<ToggleButtonProps> = ({
   items,
   onClick,
-  itemHeight,
+  itemHeight = "1.75em",
 }) => {
   const [selectIndex, setSelectIdx] = useState<number>(0);
   const [activeTransition, setActiveTransition] = useState(true);
@@ -43,26 +43,25 @@ const ToggleButton: FC<ToggleButtonProps> = ({
   return (
     <div
       onClick={handleClick}
-      className="select-none overflow-hidden hover:scale-105 transition-all"
-      style={{ height: itemHeight }}
+      className="select-none overflow-hidden hover:scale-105 transition-all h-fit"
     >
       <div
         className={cx(
           activeTransition ? "transition-all duration-500" : "",
-          "flex flex-col"
+          "flex flex-col "
         )}
         onTransitionEnd={handleTransitionEnd}
         style={{
           gap: GAP,
-          transform: `translateY(calc((${itemHeight} + ${GAP}px)* ${selectIndex} * -1))`,
+          height: itemHeight,
+          transform: `translateY(calc((${itemHeight} + ${GAP})* ${selectIndex} * -1))`,
         }}
       >
         {/* <div>{items[selectIndex]}</div> */}
-        {items.map((item, i) => (
-          <div key={i}>{item.text}</div>
-        ))}
-        {items.map((item, i) => (
-          <div key={i}>{item.text}</div>
+        {items.concat(items).map((item, i) => (
+          <div key={i} style={{ minHeight: itemHeight }}>
+            {item.text}
+          </div>
         ))}
       </div>
     </div>

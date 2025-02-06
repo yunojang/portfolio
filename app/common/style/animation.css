@@ -15,7 +15,7 @@ html {
 }
 
 .slide-down-animation {
-  animation: slideDown 1s forwards;
+  animation: slideDown var(--duration, 1s) forwards;
   animation-delay: var(--delay);
   opacity: 0;
 }
@@ -33,7 +33,7 @@ html {
 }
 
 .slide-up-animation {
-  animation: slideUp 1s forwards;
+  animation: slideUp var(--duration, 1s) forwards;
   animation-delay: var(--delay);
   opacity: 0;
   display: block;

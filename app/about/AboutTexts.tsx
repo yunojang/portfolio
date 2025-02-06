@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import React, { FC } from "react";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -55,13 +55,16 @@ const AboutTexts: FC<AboutTextsProps> = () => {
   });
 
   return (
-    <section className="bg-white py-80 text-container">
+    <section
+      className="bg-white py-80 text-container"
+      style={{ "--view-width": "45vw" } as React.CSSProperties}
+    >
       <header>
-        <h1 className="w-[45vw] mx-auto text-[4em] font-bold mb-20">
+        <h1 className="view-width mx-auto text-[4em] font-bold mb-20">
           ABOUT ME
         </h1>
       </header>
-      <div className="flex flex-col gap-32 w-[45vw] mx-auto ">
+      <div className="view-width flex flex-col gap-32 mx-auto ">
         <CoverLetter
           title="프론트엔드 개발자로써의 과정"
           content="진로를 선택하는 과정에서 IT 전문학교에 입학 하였고, 2년간 정보보호를 전공으로 네트워크, 암호학, 포렌식 등 여러 분야를 배웠습니다. 다양한 분야에 관심을 가지는 편인데, 학습하는 과정 중에 관심가는 분야들을 따로 공부하기도 하였습니다. 당시, JAVA나 C언어를 통해 개발하는 것에 가장 관심을 가져 졸업한 후에 본격적으로, 개발 학습을 위한 강좌와 교육을 수료했습니다. JAVA Spring을 통해 웹 백엔드를 주로 개발하는 교육이었으나, JS를 통한 프론트 개발에 더 흥미를 느껴 수료 이후 프론트 개발자로 취업했습니다. 2개의 회사에 총 3년 재직(3개월 + 2년 9개월)하면서 주로, Next, React로 웹 프론트로 여러 프로젝트에 참여했으며, CRA처럼 사내 프론트 개발 보일러 플레이트를 제작하며 빌드 과정과 배포 설정에 대해서도 다뤘습니다. 또한, 사내 컴포넌트 패키지 개발 경험도 있습니다. 반응형 개발과 React-native와 Webview를 사용하여 동일한 소스를 기반으로 웹과 앱을 운영하기도 하였습니다."

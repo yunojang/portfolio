@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FC, ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 
 import "./style/about.css";
 
@@ -56,34 +56,37 @@ const AboutPage: FC<AboutPageProps> = () => {
         </div>
 
         {/* profile details */}
-        <section className="w-[55vw] mx-auto flex gap-3 mb-10">
-          <div className="flex-1">
-            <header className="mb-10">
-              <h1 className="text-lg text-gray-500">더 알아보기</h1>
-              <h3 className="font-medium text-2xl">자세한 정보를 알아보세요</h3>
-            </header>
-            <div className="flex flex-col flex-wrap gap-3">
-              <ProfileField label="생년월일" content={"1998.10.03"} />
-              <ProfileField label="연락처" content={"010-2757-3729"} />
+        <section style={{ "--view-width": "55vw" } as React.CSSProperties}>
+          <div className="view-width mx-auto flex gap-3 mb-10">
+            <div className="flex-1">
+              <header className="mb-10">
+                <h1 className="text-lg text-gray-500">더 알아보기</h1>
+                <h3 className="font-medium text-2xl">
+                  자세한 정보를 알아보세요
+                </h3>
+              </header>
+              <div className="flex flex-col flex-wrap gap-3">
+                <ProfileField label="생년월일" content={"1998.10.03"} />
+                <ProfileField label="연락처" content={"010-2757-3729"} />
 
-              <ClickableComponent clickableText="move">
-                <Link href="/about/location">
-                  <ProfileField
-                    label="거주지"
-                    content={
-                      <div className="flex items-center justify-between">
-                        <div>서초구 Seoul, Korea</div>
-                        <div>
-                          <FiExternalLink />
+                <ClickableComponent clickableText="move">
+                  <Link href="/about/location">
+                    <ProfileField
+                      label="거주지"
+                      content={
+                        <div className="flex items-center justify-between">
+                          <div>서초구 Seoul, Korea</div>
+                          <div>
+                            <FiExternalLink />
+                          </div>
                         </div>
-                      </div>
-                    }
-                  />
-                </Link>
-              </ClickableComponent>
-            </div>
+                      }
+                    />
+                  </Link>
+                </ClickableComponent>
+              </div>
 
-            {/* <div className="flex w-full items-center justify-end gap-3 relative">
+              {/* <div className="flex w-full items-center justify-end gap-3 relative">
               <ContactIcon
                 icon={<IoIosMail size={"65%"} />}
                 path="mailto:hanganda23@naver.com"
@@ -94,37 +97,40 @@ const AboutPage: FC<AboutPageProps> = () => {
                 path="https://github.com/yunojang"
               />
             </div> */}
-          </div>
+            </div>
 
-          {/* stacks */}
-          <div className=" bg-white py-10 shadow-sm rounded-2xl w-[25vw] flex flex-col justify-between">
-            <header className="px-5">
-              <div className="text-3xl font-semibold mb-5">My Tech Stacks</div>
-              <div className="text-lg text-[#404040]">
-                일치하면 좋지만, 새로운 스택에도 열려있습니다.
+            {/* stacks */}
+            <div className=" bg-white py-10 shadow-sm rounded-2xl w-[47.25%] flex flex-col justify-between">
+              <header className="px-5">
+                <div className="text-3xl font-semibold mb-5">
+                  My Tech Stacks
+                </div>
+                <div className="text-lg text-[#404040]">
+                  일치하면 좋지만, 새로운 스택에도 열려있습니다.
+                </div>
+              </header>
+
+              {/* stack icons */}
+              <div className="mb-[10.5%]">
+                {/* stacks slider */}
+                <StackSlider />
               </div>
-            </header>
-
-            {/* stack icons */}
-            <div className="mb-[10.5%]">
-              {/* stacks slider */}
-              <StackSlider />
             </div>
           </div>
-        </section>
 
-        {/* contact icons */}
-        <div className="w-[55vw] mx-auto flex items-center justify-end gap-6 relative mb-40">
-          <ContactIcon
-            icon={<IoIosMail size={"65%"} />}
-            path="mailto:hanganda23@naver.com"
-          />
-          <ContactIcon icon={<GoHomeFill size={"65%"} />} path="/" />
-          <ContactIcon
-            icon={<FaGithub size={"65%"} />}
-            path="https://github.com/yunojang"
-          />
-        </div>
+          {/* contact icons */}
+          <div className="view-width mx-auto flex items-center justify-end gap-6 relative mb-40">
+            <ContactIcon
+              icon={<IoIosMail size={"65%"} />}
+              path="mailto:hanganda23@naver.com"
+            />
+            <ContactIcon icon={<GoHomeFill size={"65%"} />} path="/" />
+            <ContactIcon
+              icon={<FaGithub size={"65%"} />}
+              path="https://github.com/yunojang"
+            />
+          </div>
+        </section>
 
         {/* texts */}
         <AboutTexts />

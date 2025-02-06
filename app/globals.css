@@ -33,8 +33,32 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   overflow-x: hidden;
+
+  @media (max-width: 1440px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 12px;
+  }
+}
+
+section {
+  --pretty-view-width: var(--view-width, 47.25vw);
+
+  @media (max-width: 1440px) {
+    --pretty-view-width: min(calc(var(--view-width, 47.25vw) * 1.475), 95vw);
+  }
+
+  @media (max-width: 1024px) {
+    --pretty-view-width: min(calc(var(--view-width, 47.25vw) * 1.625), 95vw);
+  }
+}
+
+section .view-width {
+  width: var(--pretty-view-width);
 }
 
 body,

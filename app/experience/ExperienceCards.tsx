@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Experience } from "./types/experience";
 
 interface ExperienceCardsProps {
@@ -11,13 +11,16 @@ const ExperienceCards: FC<ExperienceCardsProps> = ({ exps }) => {
       {exps.map((exp, i) => (
         <div key={i} id={exp.name}>
           <div className="border-t-2 border-[#a7bcec] border-dashed" />
-          <div className="w-[67.25vw] mx-auto flex items-start gap-5 pb-[50vh] pt-12 text-gray-500">
+          <section
+            className="view-width mx-auto flex items-start gap-5 pb-[50vh] pt-12 text-gray-600"
+            style={{ "--view-width": "62.625vw" } as React.CSSProperties}
+          >
             <div className="flex-1">
-              <div className="border-2 rounded-full border-[#2c59bb] text-[#2c59bb] inline-block px-2 py-1 self-end font-semibold text-sm mb-3 tracking-wider">
+              <div className="border-2 rounded-full border-[#1a397c] text-[#1a397c] inline-block px-2 py-1 self-end font-semibold text-sm mb-3 tracking-wider">
                 {exp.type.toUpperCase()}
               </div>
 
-              <div className="text-3xl text-[#2c59bb] mb-3">
+              <div className="text-3xl text-[#1a397c] mb-3">
                 {exp.name.toUpperCase()}
               </div>
 
@@ -36,7 +39,7 @@ const ExperienceCards: FC<ExperienceCardsProps> = ({ exps }) => {
               </div>
             </div>
             <div className="flex-1 text-lg break-keep">{exp.description}</div>
-          </div>
+          </section>
         </div>
       ))}
     </div>

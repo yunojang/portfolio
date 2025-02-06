@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import React, { FC } from "react";
 import { Point } from "../types/project";
 
 import { useGSAP } from "@gsap/react";
@@ -14,15 +14,16 @@ interface ProjectPointsProps {
 gsap.registerPlugin(ScrollTrigger);
 
 const keyTitleHeight = 200;
+const itemHieght = "4.75em";
 
 const ProjectPoints: FC<ProjectPointsProps> = ({ points }) => {
   useGSAP(() => {
     gsap.from(".heading", {
       scrollTrigger: {
         trigger: ".heading",
-        start: "-20 97.5%",
+        start: "-20 97.5",
         end: "bottom 50%",
-        markers: true,
+        // markers: true,
         scrub: 1,
       },
       y: "150%",
@@ -38,13 +39,16 @@ const ProjectPoints: FC<ProjectPointsProps> = ({ points }) => {
 
       <div className="">
         {points?.map((point, i) => (
-          <ProjectPointItem
-            point={point}
+          <div
+            className="h-screen sticky top-0"
             key={i}
-            index={i}
-            topPad={keyTitleHeight}
-            size={70}
-          />
+            style={{
+              top: `calc(${itemHieght} * ${i} + ${keyTitleHeight}px)`,
+              background: "var(--bg-color)",
+            }}
+          >
+            <ProjectPointItem point={point} size={itemHieght} index={i} />
+          </div>
         ))}
 
         <div
@@ -64,22 +68,22 @@ const ProjectPoints: FC<ProjectPointsProps> = ({ points }) => {
 export default ProjectPoints;
 
 interface ProjectPointItemProps {
-  topPad: number;
+  // topPad: number;
   index: number;
-  size: number;
+  size: string;
   point: Point;
 }
 
 const ProjectPointItem: FC<ProjectPointItemProps> = ({
-  topPad,
+  // topPad,
   index,
   size,
   point,
 }) => {
   return (
-    <div
-      className="flex flex-col h-screen sticky"
-      style={{ top: size * index + topPad, background: "var(--bg-color)" }}
+    <section
+      className="flex flex-col"
+      style={{ "--view-width": "25.25vw" } as React.CSSProperties}
     >
       <div
         className="border-t-[1px] border-dashed"
@@ -91,11 +95,11 @@ const ProjectPointItem: FC<ProjectPointItemProps> = ({
         </div>
         <div className="flex-1">
           <div className="expend">({point.subject})</div>
-          <div className="ml-12 description w-[24.5vw] mt-5">
+          <div className="ml-12 description view-width mt-5">
             {point.description}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

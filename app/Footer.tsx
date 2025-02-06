@@ -4,7 +4,7 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = ({}) => {
   return (
-    <div className="h-60 bg-gray-900">
+    <div className="h-60 bg-gray-900 relative">
       <section className="px-7 py-5 flex flex-col h-full">
         {/* <Logo dark /> */}
         <div className="flex gap-7 flex-wrap mb-3 font-bold">
