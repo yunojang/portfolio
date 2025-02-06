@@ -4,8 +4,9 @@
   background: transparent;
   border: solid 0.3em #bbb;
   backdrop-filter: blur(0em);
-  transition: 0.25s;
-  transition-property: width, height, background, backdrop-filter, opacity;
+  /* transition: 0.25s; */
+  transition: width 0.3s, height 0.3s, background 0.3s, backdrop-filter 0.3s,
+    opacity 0.185s;
 }
 
 .cursor.open {

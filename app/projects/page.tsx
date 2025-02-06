@@ -15,6 +15,7 @@ import ProjectCard from "./ProjectCard";
 import MouseCursor from "../common/components/MouseCursor/MouseCursor";
 import { projects } from "../data/projects";
 import ToggleButton from "../common/components/ToggleButton/ToggleButton";
+import ClickableComponent from "../common/components/ClickableComponent";
 
 enum ProjectViewFilter {
   ALL = "AllProject",
@@ -78,14 +79,16 @@ const ProjectPage: FC<ProjectPageProps> = () => {
 
           {/* filter 적용 - 토글 버튼 같은 느낌을 [all, work, toy(side)] */}
           <div className="text-lg font-medium">
-            <ToggleButton
-              itemHeight="1.75em"
-              items={Object.values(ProjectViewFilter).map((v) => ({
-                id: v,
-                text: toName(v),
-              }))}
-              onClick={(key) => setViewState(key as ProjectViewFilter)}
-            />
+            <ClickableComponent cursorHide>
+              <ToggleButton
+                itemHeight="1.75em"
+                items={Object.values(ProjectViewFilter).map((v) => ({
+                  id: v,
+                  text: toName(v),
+                }))}
+                onClick={(key) => setViewState(key as ProjectViewFilter)}
+              />
+            </ClickableComponent>
           </div>
         </div>
 
