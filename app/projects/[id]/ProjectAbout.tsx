@@ -7,6 +7,7 @@ interface ProjectAboutProps {
 }
 
 import { IBM_Plex_Sans_KR } from "next/font/google";
+import { cx } from "@emotion/css";
 const ibm = IBM_Plex_Sans_KR({
   weight: ["300", "400", "500", "600"],
   subsets: ["latin"],
@@ -15,8 +16,13 @@ const ibm = IBM_Plex_Sans_KR({
 const ProjectAbout: FC<ProjectAboutProps> = ({ project }) => {
   return (
     <header className="xl:w-[37.5em] lg:w-[31.725em] md:w-[28.725em] h-full flex flex-col gap-20 pb-20 pr-12">
-      <div className="overflow-hidden">
-        <h1 className={`slide-up-animation title ${ibm.className} text-left`}>
+      <div className="">
+        <h1
+          className={cx(
+            project.title.length >= 8 ? "heading" : "title",
+            `slide-up-animation  ${ibm.className} text-left`
+          )}
+        >
           {project.title.toUpperCase()}
         </h1>
       </div>
