@@ -28,21 +28,24 @@ const ExpendableBox: FC<ExpendableBoxProps> = ({
       onClick={onClick}
       className="relative"
       onMouseEnter={() => {
-        api.start({
-          from: { scale: 1, opacity: 0, blur: 20 },
-          to: { scale: expendRatio, opacity: 1, blur: 0 },
-        });
+        // api.start({
+        //   from: { scale: 1 },
+        //   to: { scale: expendRatio },
+        // });
+
         setIsHover(true);
       }}
       onMouseLeave={() => {
-        api.start({
-          from: { scale: expendRatio, opacity: 1, blur: 0 },
-          to: { scale: 1, opacity: 0, blur: 20 },
-        });
+        // api.start({
+        //   from: { scale: expendRatio },
+        //   to: { scale: 1 },
+        // });
+
         setIsHover(false);
       }}
     >
-      <animated.div
+      {/* <animated.div */}
+      <div
         style={{
           width: size,
           height: size,
@@ -50,7 +53,9 @@ const ExpendableBox: FC<ExpendableBoxProps> = ({
           borderRadius: "6px",
           cursor: "pointer",
           position: "relative",
-          transform: springs.scale.to((v) => `scale(${v})`),
+          scale: isHover ? expendRatio : "none",
+          transition: "all 350ms ease-out",
+          // transform: springs.scale.to((v) => `scale(${v})`),
           //   transform: springs.scale.to((v) => `scale(${v})`),
         }}
         // className="hover:scale-[4.2] transition-all duration-500 relative"

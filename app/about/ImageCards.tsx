@@ -1,7 +1,7 @@
 "use client";
 
 import "./style/card.css";
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import Image from "next/image";
 import gsap from "gsap";
@@ -21,12 +21,22 @@ const IMG_PATHS = [
 ];
 
 const ImageCards: FC<ImageCardsProps> = ({}) => {
+  const [animationState, setAnimationState] = useState<
+    "ready" | "progress" | "end"
+  >("ready");
+
   useGSAP(() => {
     gsap
       .timeline({
         scrollTrigger: {
           trigger: ".container",
           start: "50% 75%",
+        },
+        onStart() {
+          setAnimationState("progress");
+        },
+        onComplete() {
+          setAnimationState("end");
         },
       })
       .from(".card", {
@@ -88,7 +98,7 @@ const ImageCards: FC<ImageCardsProps> = ({}) => {
               height={350}
               alt="myimg"
               className={cx(
-                "img",
+                animationState === "end" ? "img" : "",
                 "w-80 cursor-pointer shadow-frame rounded-xl h-[28.5em] object-cover transition-all duration-500"
               )}
             />
