@@ -31,14 +31,15 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
       scrollTrigger: {
         trigger: "#intro-text",
         start: "top 80%",
-        // end: "bottom 35%",
-        // scrub: 2,
+        end: "bottom 35%",
+        scrub: 1,
         // markers: true,
       },
     });
     // gsap.utils.toArray(".text");
     tl.from(".text1", {
-      x: -85,
+      x: "-50%",
+      // x: -85,
       // scale: 0.8,
       opacity: 0,
       filter: "blur(10px)",
@@ -47,35 +48,38 @@ const ProfileTexts: FC<ProfileTextsProps> = ({ onScrollCareer }) => {
       .from(
         ".text2",
         {
-          x: -85,
+          x: "-50%",
+          // x: -85,
           // scale: 0.8,
           opacity: 0,
           filter: "blur(10px)",
           duration: 0.8,
         },
-        "-=0.7"
+        "-=0.625"
       )
       .from(
         ".text3",
         {
-          x: -85,
+          x: "-50%",
+          // x: -85,
           // scale: 0.8,
           opacity: 0,
           filter: "blur(10px)",
           duration: 0.8,
         },
-        "-=0.7"
+        "-=0.625"
       )
       .from(
         ".text4",
         {
-          x: -85,
+          x: "-50%",
+          // x: -85,
           // scale: 0.8,
           opacity: 0,
           filter: "blur(10px)",
           duration: 1.2,
         },
-        "-=0.7"
+        "-=0.625"
       );
   });
 

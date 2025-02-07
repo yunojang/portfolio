@@ -7,10 +7,11 @@
 .project-detail {
   .title {
     color: var(--font-color);
-    font-size: 6em;
+    font-size: 5.75em;
     opacity: 77.5;
     font-weight: 600;
     white-space: nowrap;
+    /* word-break: normal; */
   }
 
   .heading {

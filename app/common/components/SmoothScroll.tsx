@@ -5,12 +5,8 @@ import { useEffect } from "react";
 const SmoothScroll = () => {
   useEffect(() => {
     const scroller = new Scroller(0.0000825, 180, 18.5);
-    // const scroller = new Scroller(5, 200);
-
-    // let r = 0;
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
-      // console.log("reduce", (r += e.deltaY));
 
       scroller.reduce(e.deltaY * 0.02);
     };
@@ -69,10 +65,10 @@ class Scroller {
   }
 
   private logDatas = (label?: string) => {
-    console.log(label, {
-      amount: this._reducedAmount,
-      counter: this._frameCounter,
-    });
+    // console.log(label, {
+    //   amount: this._reducedAmount,
+    //   counter: this._frameCounter,
+    // });
   };
 
   private initCounter = () => {
@@ -106,6 +102,7 @@ class Scroller {
     const frame = () => {
       this.moveScrollPerFrame();
 
+      // logs
       if (this._frameCounter % 5 == 0) {
         this.logDatas("frame");
       }
