@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useMemo, useState } from "react";
+import { FC, useEffect, useMemo, useState } from "react";
 
 import { Noto_Sans_KR } from "next/font/google";
 const noto = Noto_Sans_KR({
@@ -64,6 +64,10 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
   // const [filterState, setFilterState] = useState<ExperienceFiliterType>(
   //   ExperienceFiliterType.ALL
   // );
+
+  useEffect(() => {
+    return () => setFilterState(ExperienceFiliterType.ALL);
+  }, [setFilterState]);
 
   return (
     <div className={`${noto.className} py-20`}>
