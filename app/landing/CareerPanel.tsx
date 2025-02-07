@@ -57,7 +57,7 @@ const CareerPanel: FC<CareerPanelProps> = ({ career }) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: `.card-${companyName}-area`,
-        start: "35% bottom",
+        start: "top bottom",
         // end: "+=50 75%",
         // markers: true,
         // scrub: 1,

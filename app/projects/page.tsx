@@ -16,6 +16,7 @@ import MouseCursor from "../common/components/MouseCursor/MouseCursor";
 import { projects } from "../data/projects";
 import ToggleButton from "../common/components/ToggleButton/ToggleButton";
 import ClickableComponent from "../common/components/ClickableComponent";
+import SmoothScroll from "../common/components/SmoothScroll";
 
 enum ProjectViewFilter {
   ALL = "AllProject",
@@ -40,6 +41,7 @@ const ProjectPage: FC<ProjectPageProps> = () => {
   return (
     <section>
       <MouseCursor />
+      {/* <SmoothScroll /> */}
 
       <header className={`${noto.className} mb-40 w-full`}>
         <div className="pl-12 h-[95vh] flex flex-col justify-center">

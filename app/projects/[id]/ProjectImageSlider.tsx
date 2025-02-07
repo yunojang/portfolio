@@ -113,7 +113,7 @@ const ProjectImageSlider: FC<ProjectImageSliderProps> = ({
                   )}
                   style={
                     {
-                      "--duration": "350ms",
+                      "--duration": "500ms",
                       clipPath: scrolling
                         ? "polygon(1.5% 0%, 100% 0%, 98.5% 100%, 0% 100%)" // 상단 두 점을 5%만큼 우측으로 이동
                         : "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", // 기본 사각형 모양

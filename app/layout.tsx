@@ -14,6 +14,7 @@ import Footer from "./Footer";
 import NavigationBar from "./NavigationBar";
 import Script from "next/script";
 import ResponsiveRedirect from "./common/components/ResponsiveRedirect";
+import SmoothScroll from "./common/components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,8 @@ export default function RootLayout({
         className={`${notoSansKR.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ResponsiveRedirect width={901} />
+
+        <SmoothScroll />
 
         <section className="relative">
           {children}

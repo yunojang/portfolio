@@ -16,7 +16,7 @@ export const careers: Career[] = [
       {
         id: "2",
         title: "Find-e",
-        thumbnailSrc: "/images/finde-logo.png",
+        thumbnailSrc: "/images/finde/finde-logo.png",
       },
 
       {

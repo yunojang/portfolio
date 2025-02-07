@@ -49,7 +49,7 @@ export const projects: Project[] = [
     title: "Find-e",
     position: "Front-end Web/Mobile Developer",
     period: "2023-2024",
-    thumbnail: "/images/finde-logo.png",
+    thumbnail: "/images/finde/finde-logo.png",
     description: `자료 공유에 따른 리워드 시스템과 커뮤니티 기능이 있는, 여러 분야의 실무자를 위한 정보 및 자료를 공유하는 정보 공유 커뮤니티 플랫폼.`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 1인, Server 2인",
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     member: "Front 2인, Server 3인",
     state: "-",
     company: "wizcore",
-    // thumbnail: "/images/finde-logo.png",
+    // thumbnail: "/images/finde/finde-logo.png",
     thumbStacks: [IconableStackName.react],
   },
 
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     state: "-",
     points: [
       {
-        subject: "템플릿",
+        subject: "개발 템플릿화",
         description: `지속적 컴포넌트 개발 및 추가를 위해 plop 템플릿 라이브러리로 컴포넌트 개발을 위한 설정과 storybook 설정과 같은 초기 설정을 자동화 함`,
       },
     ],
@@ -153,7 +153,7 @@ export const projects: Project[] = [
           "pixi.js 와 같은 Canvas 라이브러리를 사용해 업로드한 요소의 파라미터를 제어해 영상 애니메이션으로 편집하도록 개발",
       },
     ],
-    // thumbnail: "/images/finde-logo.png",
+    // thumbnail: "/images/finde/finde-logo.png",
     thumbStacks: [IconableStackName.react],
   },
 
@@ -166,7 +166,7 @@ export const projects: Project[] = [
     member: "1인",
     state: "운영중",
     period: "2025",
-    // thumbnail: "/images/finde-logo.png",
+    // thumbnail: "/images/finde/finde-logo.png",
     thumbStacks: [IconableStackName.next],
   },
 
@@ -179,7 +179,7 @@ export const projects: Project[] = [
     member: "Front 1인, Sever 1인",
     period: "2023",
     state: "-",
-    // thumbnail: "/images/finde-logo.png",
+    // thumbnail: "/images/finde/finde-logo.png",
     thumbStacks: [IconableStackName.next],
   },
 
@@ -192,7 +192,7 @@ export const projects: Project[] = [
     period: "2021",
     stacks: ["Javascript"],
     state: "운영중",
-    // thumbnail: "/images/finde-logo.png",
+    // thumbnail: "/images/finde/finde-logo.png",
     thumbStacks: [IconableStackName.js],
   },
 ];

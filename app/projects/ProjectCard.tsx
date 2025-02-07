@@ -47,7 +47,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: `.${getClassName("container")}`,
-        start: "90% bottom",
+        start: "82.5% bottom",
         end: "top 25%",
         scrub: 1.5,
       },
@@ -84,7 +84,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
         {
           opacity: 0,
         },
-        "-=.2"
+        "<"
       );
   });
 
