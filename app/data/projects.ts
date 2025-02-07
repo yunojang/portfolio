@@ -166,21 +166,28 @@ export const projects: Project[] = [
     member: "1인",
     state: "운영중",
     period: "2025",
-    // thumbnail: "/images/finde/finde-logo.png",
+    thumbnail: "/images/pt/pt-main1.png",
     thumbStacks: [IconableStackName.next],
+    screenShots: [
+      "/images/pt/pt-main.png",
+      "/images/pt/pt-main1.png",
+      "/images/pt/pt-about.png",
+      "/images/pt/pt-exp.png",
+    ],
   },
 
   {
     id: "8",
-    title: "Morak",
-    description: `셀 수 없이 많아진 웹 드라마 및 웹 포맷 영상물을 OTT 처럼 검색하고 시청하는 플랫폼`,
+    title: "Molak",
+    description: `최근 유행으로 콘텐츠에 한 축을 담당하는 웹 드라마 및 웹 포맷 영상물을 OTT 처럼 추천하고 검색하고 시청하는 플랫폼`,
     position: "Front-end Web Developer",
     stacks: ["Next", "Typescript", "Jotai", "tailwind"],
     member: "Front 1인, Sever 1인",
     period: "2023",
     state: "-",
-    // thumbnail: "/images/finde/finde-logo.png",
+    thumbnail: "/images/molak/molak-logo.jpg",
     thumbStacks: [IconableStackName.next],
+    screenShots: ["/images/molak/molak-logo.jpg"],
   },
 
   {
