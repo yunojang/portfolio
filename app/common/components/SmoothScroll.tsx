@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const SmoothScroll = () => {
   useEffect(() => {
-    const scroller = new Scroller(0.0000825, 180, 18.5);
+    const scroller = new Scroller(0.0000825, 180, 21.25);
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
 
@@ -50,7 +50,7 @@ class Scroller {
     } else {
       this._reducedAmount = Math.min(
         this._maxValue,
-        Math.max(-this._maxValue, v)
+        Math.max(-1 * this._maxValue, v)
       );
     }
   }
