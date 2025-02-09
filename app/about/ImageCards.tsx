@@ -98,7 +98,7 @@ const ImageCards: FC<ImageCardsProps> = ({}) => {
               height={350}
               alt="myimg"
               className={cx(
-                animationState === "end" ? "img" : "",
+                animationState === "end" ? "card-img" : "",
                 "w-80 cursor-pointer shadow-frame rounded-xl h-[28.5em] object-cover transition-all duration-500"
               )}
             />
