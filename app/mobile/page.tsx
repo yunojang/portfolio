@@ -6,12 +6,14 @@ interface MobilePageProps {}
 
 const MobilePage: FC<MobilePageProps> = () => {
   return (
-    <div className="h-screen flex items-center justify-center text-[3.25em] font-medium bg-white">
+    <div className="h-screen flex items-center justify-center text-[2.725em] font-medium bg-white">
       <ResponsiveRedirect width={900} diff="bigger" path="/" />
 
       <LineGrid />
 
-      <div className="z-10">모바일 반응형 준비중입니다.</div>
+      <div className="z-10 text-center" style={{ wordBreak: "keep-all" }}>
+        모바일 반응형 준비중입니다.
+      </div>
     </div>
   );
 };
