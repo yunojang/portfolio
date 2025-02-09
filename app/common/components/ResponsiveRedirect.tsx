@@ -1,20 +1,20 @@
 "use client";
 
 import { navigate } from "@/app/actions";
-import { usePathname } from "next/navigation";
-import { useRouter } from "next/router";
-import { FC, useEffect } from "react";
+import { FC, ReactNode, useEffect } from "react";
 
 interface ResponsiveRedirectProps {
   diff?: "bigger" | "smaller";
   width?: number;
   path?: string;
+  children?: ReactNode;
 }
 
 const ResponsiveRedirect: FC<ResponsiveRedirectProps> = ({
   width = 901,
   diff = "smaller",
   path = "/mobile",
+  children,
 }) => {
   // const router = useRouter();
   // const pathname = usePathname();
@@ -39,7 +39,7 @@ const ResponsiveRedirect: FC<ResponsiveRedirectProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, [diff, width, path]);
 
-  return <div></div>;
+  return <></>;
 };
 
 export default ResponsiveRedirect;
