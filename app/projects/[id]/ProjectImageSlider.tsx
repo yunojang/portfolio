@@ -107,6 +107,7 @@ const ProjectImageSlider: FC<ProjectImageSliderProps> = ({
                   key={i}
                   src={ss}
                   alt="screenshot"
+                  loading="eager"
                   className={cx(
                     // scrolling ? "rotate-1" : "",
                     "object-cover h-full opacity-0 translate-y-full"
