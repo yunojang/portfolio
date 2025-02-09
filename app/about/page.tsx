@@ -26,6 +26,7 @@ import ImageCards from "./ImageCards";
 import MouseCursor from "../common/components/MouseCursor/MouseCursor";
 import ClickableComponent from "../common/components/ClickableComponent";
 import { FiExternalLink } from "react-icons/fi";
+import { SiVelog } from "react-icons/si";
 
 interface AboutPageProps {}
 
@@ -121,12 +122,16 @@ const AboutPage: FC<AboutPageProps> = () => {
           {/* contact icons */}
           <div className="view-width mx-auto flex items-center justify-end gap-6 relative mb-40">
             <ContactIcon
-              icon={<IoIosMail size={"65%"} />}
+              icon={<IoIosMail size={"67.5%"} />}
               path="mailto:hanganda23@naver.com"
             />
-            <ContactIcon icon={<GoHomeFill size={"65%"} />} path="/" />
             <ContactIcon
-              icon={<FaGithub size={"65%"} />}
+              icon={<SiVelog size={"52.5%"} />}
+              path="https://velog.io/@hanganda23/posts"
+            />
+            <ContactIcon icon={<GoHomeFill size={"62.5%"} />} path="/" />
+            <ContactIcon
+              icon={<FaGithub size={"62.5%"} />}
               path="https://github.com/yunojang"
             />
           </div>

@@ -41,8 +41,8 @@ const diffs: Diff[] = [
     diffMin: 28,
   },
   {
-    name: "을지로3가, Seoul",
-    diffMin: 31,
+    name: "용산역, Seoul",
+    diffMin: 33,
   },
   {
     name: "공덕역, Seoul",
