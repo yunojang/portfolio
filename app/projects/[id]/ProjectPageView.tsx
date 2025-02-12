@@ -42,7 +42,7 @@ const ProjectPageView: FC<ProjectPageViewProps> = ({
 
       {/* next project show */}
       <div>
-        <div className="flex flex-col items-center justify-center bg-white h-[44.5em]">
+        <div className="flex flex-col items-center justify-center bg-white rounded-t-[12.5%] h-[44.5em]">
           <div className="font-light text-gray-400 text-[1.525em]">
             Next Project
           </div>
