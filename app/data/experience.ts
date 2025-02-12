@@ -8,9 +8,12 @@ export const experience: Experience[] = [
     subContents: ["", "Front-End Web Dev"],
     startDate: new Date("2021-11-21"),
     endDate: new Date("2024-07-15"),
-    description: `2년 9개월간 기술연구소에서 웹 프론트엔드 개발.
-  2개의 국가 과제 프로젝트, 3개의 백오피스 프로젝트,
-  2개의 신사업 B2C 프로젝트를 참여 및 담당`,
+    description: `2년 9개월간 기술연구소 소속.
+    주로, 2인 프론트 개발팀 리드 역할로
+    디자이너, 서버 개발팀과 협업하여 개발.
+    2개의 국가 과제 프로젝트, 2개의 백오피스 프로젝트에 참여.
+    2개의 B2C, B2B 회사 신사업 프로젝트 초기부터 담당하여
+    프론트 및 모바일 앱의 개발과 빌드,배포까지 담당.`,
     // graphColor: "#1C51FA",
   },
   {
@@ -21,7 +24,7 @@ export const experience: Experience[] = [
     startDate: new Date("2020-09-01"),
     endDate: new Date("2020-11-31"),
     description:
-      "3개월간 근무하며, 비디오 편집,제작 툴 리뉴얼 웹 프론트 참여. 수습기간 후, 군 면제 전환으로 퇴사",
+      "웹 영상 편집, 제작 툴 프로토타입 개발 웹 프론트 참여. 수습기간 후, 군 면제 전환으로 퇴사",
     // graphColor: "#FC943B",
   },
   {

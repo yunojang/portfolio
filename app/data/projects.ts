@@ -19,8 +19,8 @@ export const projects: Project[] = [
       {
         subject: "Role",
         // title: "Front-end Lead",
-        description: `프론트 개발 및 프론트 팀 리드 담당. 프로젝트 구조, 개발 방식 결정 및 프론트 빌드, 배포 설정.
-              업로드 문서 관리 및 문서 뷰어 개발, 반응형 웹 및 WebView를 통한 모바일 개발과 앱 배포`,
+        description: `프론트 개발 및 프론트 팀 리드. 프론트 & 앱의 빌드 및 배포 담당. 계정 관련 개발 및 OAuth,
+              업로드 문서 관리 및 문서 뷰어 개발, 관리자 및 결제 페이지 개발, 반응형 웹 및 WebView를 통한 모바일 개발`,
       },
       {
         subject: "CO-OP",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     position: "Front-end Web/Mobile Developer",
     period: "2023-2024",
     thumbnail: "/images/finde/finde-logo.png",
-    description: `자료 공유에 따른 리워드 시스템과 커뮤니티 기능이 있는, 여러 분야의 실무자를 위한 정보 및 자료를 공유하는 정보 공유 커뮤니티 플랫폼.`,
+    description: `여러 분야 실무자를 위한 정보, 자료를 공유하는 정보 공유 커뮤니티 플랫폼. 자료 공유에 따른 리워드 시스템과 커뮤니티 기능 제공.`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 1인, Server 2인",
     state: "-",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     points: [
       {
         subject: "Role",
-        description: `프론트 개발 및 프론트 팀 리드 담당. Auth 관련 개발 및 OAuth, 계정 설정 기능, 실무 자료 업로드 및 관리, 리워드 시스템, 커뮤니티 페이지 개발`,
+        description: `프론트 개발 및 프론트 팀 리드 담당. 계정 관련 개발 및 OAuth, 실무자료 업로드 및 관리 개발, 리워드 시스템 개발, 커뮤니티 페이지 개발`,
       },
       {
         subject: "Reward",
@@ -78,7 +78,7 @@ export const projects: Project[] = [
       },
       {
         subject: "Mobile",
-        description: `반응형 작업 및 WebView를 사용해 Mobile 앱 구현. Webview Agent로 웹에서 웹뷰 환경 구분하여 설정. 모바일 알림 FCM 설정`,
+        description: `반응형 작업 및 WebView를 사용해 Mobile 앱 구현. Webview Agent로 웹에서 웹뷰 환경 구분 및 설정. 모바일 알림 FCM 설정`,
       },
     ],
 
