@@ -11,32 +11,31 @@ export const projects: Project[] = [
     stacks: ["Next", "React", "Typescript", "React-Native", "Jotai"],
     member: "Web Front-end 2인, Server 3인",
     state: "운영중",
-    description: `보관/관리가 필요한 문서 및 사진을 업로드하여
-    OCR을 통해 자동 분류, 관리하는 솔루션.
-        주로, 산업안전 문서 관리가 힘든 현장의 중대재해처벌법 대응을 위함`,
+    description: `산업안전문서 관리 솔루션으로, 
+    분류 / 관리가 필요한 문서 및 사진을 업로드하여 OCR을 통해 문서 자동 분류 및 관리하는 시스템 제공.`,
     company: "wizcore",
     points: [
       {
         subject: "Role",
         // title: "Front-end Lead",
-        description: `프론트 개발 및 프론트 팀 리드. 프론트 & 앱의 빌드 및 배포 담당. 계정 관련 개발 및 OAuth,
+        description: `프론트 개발 및 프론트 팀 Lead. 프론트엔드 및 앱 빌드 설정 배포. 계정 관련 개발 및 OAuth,
               업로드 문서 관리 및 문서 뷰어 개발, 관리자 및 결제 페이지 개발, 반응형 웹 및 WebView를 통한 모바일 개발`,
       },
       {
         subject: "CO-OP",
         // title: "회의 주관",
-        description: `부서 내 서버 개발팀과 API 개발 요구사항 회의 등 주관하여 주도적 사전 작업.
-           기획팀, 디자인 외주사와 함께 협업`,
+        description: `부서 내 서버 개발팀과 API 개발 요구사항 회의 등 주관하여 개발 효율성 증대.
+          디자인 외주 및 기획팀 함께 협업`,
       },
       {
         subject: "PDF Viewer",
         description:
-          "PDF 페이지 별 Intersection observer 활용하여 페이지 개발 및 뷰어 활용",
+          "문서 업로드 및 문서 뷰어 개발. PDF 페이지 별 Intersection observer 활용 문서뷰어 페이지 개발",
       },
       {
         subject: "Stack",
         // title: "Next, Jotai",
-        description: `첫 Next 사용 프로젝트, Next의 App Router 기능 (Parallel Routes, layout 등) 활용. 컴포넌트 별 실행 환경 구분 및 server action 활용. State libaray로 Jotai를 사용, 간단한 코드로 전역 state 관리`,
+        description: `Next를 도입하여 라우터 설정 코드량 감소, Jotai를 도입하여 상태 관리 코드량 감소`,
       },
     ],
     screenShots: [
@@ -55,7 +54,7 @@ export const projects: Project[] = [
     position: "Front-end Web/Mobile Developer",
     period: "2023-2024",
     thumbnail: "/images/finde/finde-logo.png",
-    description: `여러 분야 실무자를 위한 정보, 자료를 공유하는 정보 공유 커뮤니티 플랫폼. 자료 공유에 따른 리워드 시스템과 커뮤니티 기능 제공.`,
+    description: `실무자를 위한 정보, 자료 공유 커뮤니티 플랫폼. 리워드 시스템 및 커뮤니티 기능 제공.`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 1인, Server 2인",
     state: "-",
@@ -70,15 +69,15 @@ export const projects: Project[] = [
     points: [
       {
         subject: "Role",
-        description: `프론트 개발 및 프론트 팀 리드 담당. 계정 관련 개발 및 OAuth, 실무자료 업로드 및 관리 개발, 리워드 시스템 개발, 커뮤니티 페이지 개발`,
+        description: `프론트 개발 및 프론트 팀 Lead. 프론트엔드 및 앱 빌드 설정 배포. 계정 관련 개발 및 OAuth, 실무자료 업로드 및 관리 개발, 리워드 시스템 개발, 커뮤니티 페이지 개발`,
       },
       {
         subject: "Reward",
-        description: `게시글 및 댓글 작성 시 리워드가 부여되어, 변경된 리워드 동기화 하기 위해 React-Query key 무효화를 통해 구현. 상대 후원에 의한 리워드 변화 및 알림 구현을 위해 Server-Sent Events 사용`,
+        description: `React-Query invalidate key 활용 변경 리워드 동기화 구현 및 Suspense 개발 코드량 감소. Server-Sent Events 활용 상대 후원에 의한 리워드 변화 및 알림 구현`,
       },
       {
         subject: "Mobile",
-        description: `반응형 작업 및 WebView를 사용해 Mobile 앱 구현. Webview Agent로 웹에서 웹뷰 환경 구분 및 설정. 모바일 알림 FCM 설정`,
+        description: `반응형 작업 및 React-Native WebView 사용 Mobile 앱 구현. 모바일 알림 FCM 설정`,
       },
     ],
 
@@ -90,18 +89,19 @@ export const projects: Project[] = [
     title: "wcm",
     position: "Front-end Web Developer",
     period: "2022-2024",
-    description: `사내 사업 계약 건 관리 및 결제를 위한 백오피스 계약 결제 시스템`,
+    description: `사내 사업 계약 건 관리 및 결재를 위한 백오피스 계약 결재 시스템`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 2인, Server 2인",
     state: "-",
     points: [
       {
         subject: "Role",
-        description: `프론트 개발 및 프론트 팀 리드 담당. 계약서 작성 및 상신, 계약 내 채팅, 관리자 페이지, 통계 대시보드 개발`,
+        description: `프론트 개발 및 프론트 팀 Lead. 
+        계약서 작성 및 상신, 관리자 페이지, 통계 커스텀 대시보드 개발.`,
       },
       {
         subject: "Chat",
-        description: `WebSocket 활용 실시간 채팅 구현, 채팅 내 멘션 자동완성을 위해 자모분리 후 비교하여 개발`,
+        description: `WebSocket 활용 실시간 채팅 시스템 및 인터페이스 개발. 채팅 내 멘션 자동완성을 위해 자모분리 후 비교`,
       },
       // {
       //   subject: "Dashboard",
@@ -117,11 +117,19 @@ export const projects: Project[] = [
     title: "절삭공구 플랫폼",
     position: "Front-end Web Developer",
     period: "2022",
-    description: `[국가과제] 각종 파라미터 별 공구 추천, 공구 사용 및 환경에 따른 공구 상태 예측 결과 플랫폼`,
+    description: `[국가 과제 프로젝트. 조건에 맞는 절삭 공구를 추천하고 공구 상태를 예측하는 서비스. 공구 개인화 등록 및 관리 기능을 제공하는 플랫폼 개발.`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 2인, Server 3인",
     state: "-",
     company: "wizcore",
+    points: [
+      {
+        subject: "Role",
+        description: `
+        절삭 공구 추천과 상태 예측을 위한 사용자 인터페이스 개발.
+        사용자 맞춤형 공구 정보 등록 및 관리 기능 개발. 반응형 웹 구현 및 다양한 화면 크기에서의 사용자 경험 최적화.`,
+      },
+    ],
     // thumbnail: "/images/finde/finde-logo.png",
     thumbStacks: [IconableStackName.react],
   },
@@ -138,8 +146,12 @@ export const projects: Project[] = [
     state: "-",
     points: [
       {
+        subject: "개발 문서",
+        description: `Storybook 도입하여 컴포넌트 사용 방법 튜토리얼 제공`,
+      },
+      {
         subject: "개발 템플릿화",
-        description: `지속적 컴포넌트 개발 및 추가를 위해 plop 템플릿 라이브러리로 컴포넌트 개발을 위한 템플릿 코드와 storybook 설정과 같은 초기 설정을 자동화`,
+        description: `Plop 코드 제너레이션 도입하여 컴포넌트 개발 템플릿으로  컴포넌트 개발 효율 증대`,
       },
     ],
     thumbStacks: [IconableStackName.react],
