@@ -13,7 +13,6 @@ import { Circle } from "./components/Circle";
 import { useGSAP } from "@gsap/react";
 
 import gsap from "gsap";
-import { getEnv } from "@/utils/env";
 
 interface LocationMapProps {}
 
@@ -25,9 +24,11 @@ const LocationMap: FC<LocationMapProps> = () => {
       .from(".location-pin", { x: "-200%" }, "-=1");
   });
 
+  if (!process.env.NEXT_PUBLIC_MAP_APIKEY) return;
+
   return (
     <APIProvider
-      apiKey={getEnv("MAP_APIKEY")}
+      apiKey={process.env.NEXT_PUBLIC_MAP_APIKEY ?? ""}
       onLoad={() => console.log("Maps API has loaded.")}
     >
       <div className="w-fit mx-auto">
