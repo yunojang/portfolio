@@ -13,6 +13,7 @@ import { Circle } from "./components/Circle";
 import { useGSAP } from "@gsap/react";
 
 import gsap from "gsap";
+import { getEnv } from "@/utils/env";
 
 interface LocationMapProps {}
 
@@ -26,7 +27,7 @@ const LocationMap: FC<LocationMapProps> = () => {
 
   return (
     <APIProvider
-      apiKey={"AIzaSyCmx9AkK5lIrroZVcqyo_AEQnyI5mGdGUw"}
+      apiKey={getEnv("MAP_APIKEY")}
       onLoad={() => console.log("Maps API has loaded.")}
     >
       <div className="w-fit mx-auto">
