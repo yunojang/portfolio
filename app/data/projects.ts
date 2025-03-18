@@ -17,13 +17,11 @@ export const projects: Project[] = [
     points: [
       {
         subject: "Role",
-        // title: "Front-end Lead",
-        description: `프론트 개발 및 프론트 팀 Lead. 프론트엔드 및 앱 빌드 설정 배포. 계정 관련 개발 및 OAuth,
-              업로드 문서 관리 및 문서 뷰어 개발, 관리자 및 결제 페이지 개발, 반응형 웹 및 WebView를 통한 모바일 개발`,
+        description: `웹 프론트엔드 및 앱 개발. 빌드 설정 및 배포. OAuth 및 계정 관련 개발,
+              문서 관리 및 문서 뷰어 개발, 관리자 및 결제 페이지 개발, 반응형 웹 및 WebView를 통한 모바일 개발`,
       },
       {
         subject: "CO-OP",
-        // title: "회의 주관",
         description: `부서 내 서버 개발팀과 API 개발 요구사항 회의 등 주관하여 개발 효율성 증대.
           디자인 외주 및 기획팀 함께 협업`,
       },
@@ -34,8 +32,11 @@ export const projects: Project[] = [
       },
       {
         subject: "Stack",
-        // title: "Next, Jotai",
         description: `Next를 도입하여 라우터 설정 코드량 감소, Jotai를 도입하여 상태 관리 코드량 감소`,
+      },
+      {
+        subject: "Achievements",
+        description: `기획 시작부터 배포 운영까지 참여. 사내 qa 통과 및 지속적 유지보수 담당. 사용자 확보 및 실 사용자 피드백 기반 서비스 개선 경험.`,
       },
     ],
     screenShots: [
@@ -69,7 +70,7 @@ export const projects: Project[] = [
     points: [
       {
         subject: "Role",
-        description: `프론트 개발 및 프론트 팀 Lead. 프론트엔드 및 앱 빌드 설정 배포. 계정 관련 개발 및 OAuth, 실무자료 업로드 및 관리 개발, 리워드 시스템 개발, 커뮤니티 페이지 개발`,
+        description: `웹 프론트엔드 및 앱 개발. 빌드 설정 및 배포. OAuth 및 계정 관련 개발, 실무자료 업로드 및 관리 개발, 리워드 시스템 개발, 커뮤니티 페이지 개발`,
       },
       {
         subject: "Reward",
@@ -78,6 +79,10 @@ export const projects: Project[] = [
       {
         subject: "Mobile",
         description: `반응형 작업 및 React-Native WebView 사용 Mobile 앱 구현. 모바일 알림 FCM 설정`,
+      },
+      {
+        subject: "Achievements",
+        description: `기획 시작부터 배포 운영까지 참여. 사내 qa 통과 및 지속적 유지보수 담당`,
       },
     ],
 
@@ -96,7 +101,7 @@ export const projects: Project[] = [
     points: [
       {
         subject: "Role",
-        description: `프론트 개발 및 프론트 팀 Lead. 
+        description: `웹 프론트 개발. 
         계약서 작성 및 상신, 관리자 페이지, 통계 커스텀 대시보드 개발.`,
       },
       {
