@@ -59,7 +59,9 @@ const ExperienceCards: FC<ExperienceCardsProps> = ({ exps }) => {
                   ))}
                 </div>
               </div>
-              <div className="flex-1 text-lg break-keep">{exp.description}</div>
+              <div className="flex-1 text-lg whitespace-pre-line">
+                {exp.description}
+              </div>
             </section>
           </div>
         ))}

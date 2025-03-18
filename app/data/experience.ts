@@ -8,12 +8,9 @@ export const experience: Experience[] = [
     subContents: ["", "Front-End Web Dev"],
     startDate: new Date("2021-11-21"),
     endDate: new Date("2024-07-15"),
-    description: `2년 9개월간 기술연구소 소속.
-    주로, 2인 프론트 개발팀 리드 역할로
-    디자이너, 서버 개발팀과 협업하여 개발.
-    2개의 국가 과제 프로젝트, 2개의 백오피스 프로젝트에 참여.
-    2개의 B2C, B2B 회사 신사업 프로젝트 초기부터 담당하여
-    프론트 및 모바일 앱의 개발과 빌드,배포까지 담당.`,
+    description: `2년 9개월간 기술연구소 소속 프론트엔드 웹 개발자 근무.
+    웹 프론트 리드 역할로 개발 방향 및 기술 결정, 빌드 설정 및 배포 담당
+    주로, 기획 시작 단계부터 배포 운영까지 프로젝트 전 과정 참여. B2C, 국책과제, 사내 백오피스 등 다양한 프로젝트 경험`,
     // graphColor: "#1C51FA",
   },
   {
@@ -46,8 +43,7 @@ export const experience: Experience[] = [
     subContents: ["[wanted x wecode] Pre-onboarding 프론트엔드 과정"],
     startDate: new Date("2021-07"),
     endDate: new Date("2021-10"),
-    description:
-      "참여기업 9곳에서 제공하는 과제를 프론트 신입 개발자가 해결 및 피드백하는 교육과정. JS, React 개발에 필요한 핵심 이론 및 실습 강의",
+    description: `참여기업 제공 과제 해결 및 피드백 교육과정. JS, React 개발에 필요한 핵심 이론 및 실습 강의 포함`,
     // graphColor: "#01E3B9",
   },
 
@@ -59,7 +55,7 @@ export const experience: Experience[] = [
     startDate: new Date("2020-02"),
     endDate: new Date("2020-08"),
     description:
-      "Java, Spring 프레임워크 기반 웹 백엔드 개발 교육. JS, React 기반 웹 프론트엔드 개발 교육",
+      "HTML, CSS, JS, React 웹 프론트엔드  Java, Spring 프레임워크 웹서버 개발 과정",
     // graphColor: "#52c91b",
   },
 
@@ -83,7 +79,7 @@ export const experience: Experience[] = [
     startDate: new Date("2022-08-26"),
     endDate: new Date(),
     description:
-      "학점은행제 전문학사 학위연계. 회사 재직 기간 중 온라인 강의 및 독학사 시험을 통해 학위 취득",
+      "학점은행제 전문학사 학위연계. 회사 재직 중 온라인 강의 및 독학사 시험을 통해 학위 취득",
   },
 
   {
@@ -103,7 +99,7 @@ export const experience: Experience[] = [
     subContents: ["전문학사 학위", "학점은행제", "학점: 4.15 / 4.5"],
     startDate: new Date("2020-02"),
     endDate: new Date(),
-    description: "전문학교를 통한 학점은행제 학위 취득",
+    description: "전문학교 재학하며 학점은행제 학위 취득",
   },
 
   {
@@ -123,6 +119,18 @@ export const experience: Experience[] = [
     subContents: ["사내 연말 2023 우수사원"],
     startDate: new Date("2024-01"),
     endDate: new Date(),
-    description: "",
+    description: "연말결산 우수사원 수상(3명) 및 상여금 수령",
+  },
+
+  {
+    id: "11",
+    type: "event",
+    name: "PCCP Lv3",
+    subContents: [
+      "PCCP (Programmers Certified Coding Professional) JavaScript Lv.3",
+    ],
+    startDate: new Date("2025-03"),
+    endDate: new Date(),
+    description: `그렙(프로그래머스)에서 주관하는 SW 전문가 및 상급 학습자를 대상으로 하는 역량 인증`,
   },
 ];

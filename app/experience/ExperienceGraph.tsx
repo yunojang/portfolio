@@ -22,7 +22,7 @@ interface ExperienceGraphProps {
   exps: Experience[];
 }
 
-const now = new Date("2025").getTime();
+const now = new Date("2025-04").getTime();
 
 const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
   const expStartTime = useMemo(
@@ -85,10 +85,10 @@ const ExperienceGraph: FC<ExperienceGraphProps> = ({ exps }) => {
       </div>
       <div className="relative h-12">
         {/* 년도 표시 */}
-        <div className="absolute left-1 bottom-full font-bold text-lg  text-gray-400">
+        <div className="absolute left-1 top-[-100%] font-bold text-gray-400">
           {new Date(expStartTime).getFullYear()}년
         </div>
-        <div className="absolute right-1 bottom-full font-bold text-lg  text-gray-400">
+        <div className="absolute right-1 top-[-100%] font-bold text-gray-400">
           {new Date(expEndTime).getFullYear()}년
         </div>
         {/* 수직선 */}
