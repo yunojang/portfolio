@@ -96,6 +96,7 @@ const ImageCards: FC<ImageCardsProps> = ({}) => {
               src={imgPath}
               width={250}
               height={350}
+              priority
               alt="myimg"
               className={cx(
                 animationState === "end" ? "card-img" : "",
