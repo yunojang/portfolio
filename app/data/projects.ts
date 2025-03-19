@@ -11,8 +11,7 @@ export const projects: Project[] = [
     stacks: ["Next", "React", "Typescript", "React-Native", "Jotai"],
     member: "Web Front-end 2인, Server 3인",
     state: "운영중",
-    description: `산업안전문서 관리 솔루션으로, 
-    분류 / 관리가 필요한 문서 및 사진을 업로드하여 OCR을 통해 문서 자동 분류 및 관리하는 시스템 제공.`,
+    description: `산업안전 문서 관리 솔루션, OCR을 통해 문서 자동 분류 및 관리 기능.`,
     company: "wizcore",
     points: [
       {
@@ -23,7 +22,7 @@ export const projects: Project[] = [
       {
         subject: "CO-OP",
         description: `부서 내 서버 개발팀과 API 개발 요구사항 회의 등 주관하여 개발 효율성 증대.
-          디자인 외주 및 기획팀 함께 협업`,
+          기획팀, 외주 디자인팀과 협업`,
       },
       {
         subject: "PDF Viewer",
@@ -55,7 +54,7 @@ export const projects: Project[] = [
     position: "Front-end Web/Mobile Developer",
     period: "2023-2024",
     thumbnail: "/images/finde/finde-logo.png",
-    description: `실무자를 위한 정보, 자료 공유 커뮤니티 플랫폼. 리워드 시스템 및 커뮤니티 기능 제공.`,
+    description: `실무자를 위한 정보, 자료 공유 커뮤니티 플랫폼. 리워드 및 커뮤니티 기능 제공.`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 1인, Server 2인",
     state: "-",
@@ -74,7 +73,7 @@ export const projects: Project[] = [
       },
       {
         subject: "Reward",
-        description: `React-Query invalidate key 활용 변경 리워드 동기화 구현 및 Suspense 개발 코드량 감소. Server-Sent Events 활용 상대 후원에 의한 리워드 변화 및 알림 구현`,
+        description: `React-Query invalidate key 활용 변경 리워드 동기화 구현 및 Suspense 개발 코드량 감소. Server-Sent Events 알림 구현`,
       },
       {
         subject: "Mobile",
@@ -94,7 +93,7 @@ export const projects: Project[] = [
     title: "wcm",
     position: "Front-end Web Developer",
     period: "2022-2024",
-    description: `사내 사업 계약 건 관리 및 결재를 위한 백오피스 계약 결재 시스템`,
+    description: `사내 사업 계약 관리 및 결재를 위한 백오피스 계약 결재 서비스`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 2인, Server 2인",
     state: "-",
@@ -102,16 +101,16 @@ export const projects: Project[] = [
       {
         subject: "Role",
         description: `웹 프론트 개발. 
-        계약서 작성 및 상신, 관리자 페이지, 통계 커스텀 대시보드 개발.`,
+        계약서 작성 및 상신, 계약서 내 채팅, 관리자 페이지, 커스텀 통계 대시보드 개발.`,
       },
       {
         subject: "Chat",
         description: `WebSocket 활용 실시간 채팅 시스템 및 인터페이스 개발. 채팅 내 멘션 자동완성을 위해 자모분리 후 비교`,
       },
-      // {
-      //   subject: "Dashboard",
-      //   description: ``,
-      // },
+      {
+        subject: "Achievements",
+        description: `사내 계약건 50건 이상 활용 사내 피드백 시스템 기반 유지보수`,
+      },
     ],
     company: "wizcore",
     thumbStacks: [IconableStackName.react],
