@@ -11,31 +11,26 @@ export const projects: Project[] = [
     stacks: ["Next", "React", "Typescript", "React-Native", "Jotai"],
     member: "Web Front-end 2인, Server 3인",
     state: "운영중",
-    description: `산업안전 문서 관리 솔루션, OCR을 통해 문서 자동 분류 및 관리 기능.`,
+    description: `산업안전문서 관리를 위한 SaaS형 웹 서비스, OCR을 통해 문서 자동 분류 및 관리 기능.`,
     company: "wizcore",
     points: [
       {
-        subject: "Role",
-        description: `웹 프론트엔드 및 앱 개발. 빌드 설정 및 배포. OAuth 및 계정 관련 개발,
-              문서 관리 및 문서 뷰어 개발, 관리자 및 결제 페이지 개발, 반응형 웹 및 WebView를 통한 모바일 개발`,
+        subject: "Work",
+        description: `계정 및 문서 관리, 문서 뷰어, 관리자 페이지 등 핵심 기능을 개발하였으며, 문서 업로드 시 OCR 처리 요청 및 대기 상태 관리를 구현하고, OCR 결과에 따라 문서를 자동 분류하고 폴더 구조에 반영되도록 처리하였습니다.`,
       },
       {
-        subject: "CO-OP",
-        description: `부서 내 서버 개발팀과 API 개발 요구사항 회의 등 주관하여 개발 효율성 증대.
-          기획팀, 외주 디자인팀과 협업`,
+        subject: "Structure",
+        description: `중첩된 폴더 구조를 고려해 컴포넌트를 재사용할 수 있도록 설계하고, 유지보수성과 확장성을 높이기 위한 구조적 고민을 경험했습니다.`,
       },
       {
         subject: "PDF Viewer",
         description:
-          "문서 업로드 및 문서 뷰어 개발. PDF 페이지 별 Intersection observer 활용 문서뷰어 페이지 개발",
+          "문서 뷰어는 React PDF Viewer를 활용해 구현하였으며, Intersection Observer API를 통해 사용자의 스크롤 위치에 따라 현재 페이지를 식별하고, 관련 기능과 연결하는 로직도 개발하였습니다.",
       },
       {
-        subject: "Stack",
-        description: `Next를 도입하여 라우터 설정 코드량 감소, Jotai를 도입하여 상태 관리 코드량 감소`,
-      },
-      {
-        subject: "Achievements",
-        description: `기획 시작부터 배포 운영까지 참여. 사내 qa 통과 및 지속적 유지보수 담당. 사용자 확보 및 실 사용자 피드백 기반 서비스 개선 경험.`,
+        subject: "Concurrency",
+        description:
+          "하나의 워크스페이스를 여러 사용자가 동시에 사용하는 환경에서 발생할 수 있는 수정, 삭제 충돌 상황에 대비해 적절한 에러 처리 및 사용자 경험을 고려하여 개발하였습니다",
       },
     ],
     screenShots: [
@@ -54,10 +49,10 @@ export const projects: Project[] = [
     position: "Front-end Web/Mobile Developer",
     period: "2023-2024",
     thumbnail: "/images/finde/finde-logo.png",
-    description: `실무자를 위한 정보, 자료 공유 커뮤니티 플랫폼. 리워드 및 커뮤니티 기능 제공.`,
+    description: `실무 자료를 공유하고 탐색할 수 있는 서비스`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 1인, Server 2인",
-    state: "-",
+    state: "운영 중단",
     company: "wizcore",
 
     screenShots: [
@@ -68,20 +63,16 @@ export const projects: Project[] = [
 
     points: [
       {
-        subject: "Role",
-        description: `웹 프론트엔드 및 앱 개발. 빌드 설정 및 배포. OAuth 및 계정 관련 개발, 실무자료 업로드 및 관리 개발, 리워드 시스템 개발, 커뮤니티 페이지 개발`,
+        subject: "Work",
+        description: `검색 포털과 유사한 사용자 인터페이스를 구현하고, 핀터레스트 스타일의 멀티 컬럼 이미지 탭 UI를 개발하며 복잡한 레이아웃 처리 경험을 쌓았습니다. `,
+      },
+      {
+        subject: "Cross-Platform",
+        description: `복잡한 레이아웃에서 반응형 웹을 개발하였고, React Native, 웹뷰 기반 안드로이드 앱까지 개발, 배포하며 다양한 디바이스 환경에서 사용자 경험 차이를 고려하게 되었습니다. 이 경험을 통해 멀티 플랫폼 대응 역량을 키웠고, UI 요소의 유지보수성과 확장성을 고려한 컴포넌트 설계 역량을 강화할 수 있었습니다. `,
       },
       {
         subject: "Reward",
-        description: `React-Query invalidate key 활용 변경 리워드 동기화 구현 및 Suspense 개발 코드량 감소. Server-Sent Events 알림 구현`,
-      },
-      {
-        subject: "Mobile",
-        description: `반응형 작업 및 React-Native WebView 사용 Mobile 앱 구현. 모바일 알림 FCM 설정`,
-      },
-      {
-        subject: "Achievements",
-        description: `기획 시작부터 배포 운영까지 참여. 사내 qa 통과 및 지속적 유지보수 담당`,
+        description: `리워드 기능을 개발하며 react-query의 revalidate 설정을 활용해 데이터 일관성 유지, 최신 상태 반영, UX 개선을 위한 고민을 통해 개발하였습니다.`,
       },
     ],
 
@@ -93,23 +84,24 @@ export const projects: Project[] = [
     title: "wcm",
     position: "Front-end Web Developer",
     period: "2022-2024",
-    description: `사내 사업 계약 관리 및 결재를 위한 백오피스 계약 결재 서비스`,
+    description: `사내 백오피스 계약 관리 서비스(WCM)`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 2인, Server 2인",
-    state: "-",
+    state: "운영중",
     points: [
       {
-        subject: "Role",
-        description: `웹 프론트 개발. 
-        계약서 작성 및 상신, 계약서 내 채팅, 관리자 페이지, 커스텀 통계 대시보드 개발.`,
+        subject: "Achievements",
+        description: `실제 사내 계약 업무에 도입되어 50건 이상 및 수백만~수억 규모 거래에 사용되었습니다.`,
       },
+
       {
         subject: "Chat",
-        description: `WebSocket 활용 실시간 채팅 시스템 및 인터페이스 개발. 채팅 내 멘션 자동완성을 위해 자모분리 후 비교`,
+        description: `WebSocket 활용 실시간 채팅 시스템 및 인터페이스 개발. 채팅 내 멘션 자동완성을 위해 자모분리 후 비교하여 개발하였습니다.`,
       },
       {
-        subject: "Achievements",
-        description: `사내 계약건 50건 이상 활용 사내 피드백 시스템 기반 유지보수`,
+        subject: "Work",
+        description: `유사한 관리 페이지가 많은 구조를 고려해 페이지 설계를 추상화하고, 재사용성과 유지보수성을 높였습니다. 
+        또한, 사용자별 거래액 및 계약 건수 등을 확인할 수 있는 대시보드와 차트 시각화 기능을 구현하였으며, 차트는 주로 echarts를 사용하며, 다양한 차트에 대응할 수 있도록 데이터를 고유의 구조로 변환하고, 차트 컴포넌트를 개발하도록 구현하였습니다. 대시보드의 레이아웃 구성과 패널의 드래그 앤 드롭 기능은 react-grid-layout을 활용하여 구현하였습니다.`,
       },
     ],
     company: "wizcore",
@@ -121,17 +113,19 @@ export const projects: Project[] = [
     title: "절삭공구 플랫폼",
     position: "Front-end Web Developer",
     period: "2022",
-    description: `[국가 과제 프로젝트. 조건에 맞는 절삭 공구를 추천하고 공구 상태를 예측하는 서비스. 공구 개인화 등록 및 관리 기능을 제공하는 플랫폼 개발.`,
+    description: `국책 과제로 진행된 절삭공구 추천, 관리 플랫폼`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 2인, Server 3인",
     state: "-",
     company: "wizcore",
     points: [
       {
-        subject: "Role",
-        description: `
-        절삭 공구 추천과 상태 예측을 위한 사용자 인터페이스 개발.
-        사용자 맞춤형 공구 정보 등록 및 관리 기능 개발. 반응형 웹 구현 및 다양한 화면 크기에서의 사용자 경험 최적화.`,
+        subject: "Work",
+        description: `과제 요구사항을 바탕으로 공구 등록, 관리와 추천, 상태 예측 기능을 개발하였습니다.`,
+      },
+      {
+        subject: "usability",
+        description: `사용자 입력에 따른 절삭공구 예측 결과를 API로 요청하고(axios + react-query), 응답 데이터를 echarts로 시각화하는 기능을 구현하며, 입력 흐름 과 데이터 반영 시점 등 사용성을 고려하여 사용자 인터랙션을 개선하였습니다.`,
       },
     ],
     // thumbnail: "/images/finde/finde-logo.png",
@@ -143,19 +137,27 @@ export const projects: Project[] = [
     title: "component lib",
     position: "Front-end Web Developer",
     period: "2021-2023",
-    description: `사내 프로젝트의 프론트 컴포넌트 개발 일관성 확보 및 외부 의존도 낮추기 위한 사내 UI 컴포넌트 라이브러리`,
+    description: `사내 UI 개발 단계의 일관성과 생산성을 높이기 위한 React 컴포넌트 라이브러리`,
     stacks: ["React", "Typescript", "Emotion", "Storybook", "plop"],
     member: "Front 1인",
     company: "wizcore",
     state: "-",
     points: [
       {
-        subject: "개발 문서",
-        description: `Storybook 도입하여 컴포넌트 사용 방법 튜토리얼 제공`,
+        subject: "Work",
+        description: `약 20~30개의 컴포넌트를 개발하였으며, 버튼, 인풋 등 기본 요소부터 모달, 드로어 등 상태 기반 컴포넌트까지 포함되었습니다. 번들러 설정부터 사내 패키지 저장소 (verdaccio)에 배포하며, 모듈 시스템과 배포 구조에 대한 이해를 쌓을 수 있었습니다. `,
       },
       {
-        subject: "개발 템플릿화",
-        description: `Plop 코드 제너레이션 도입하여 컴포넌트 개발 템플릿으로  컴포넌트 개발 효율 증대`,
+        subject: "Benchmarking",
+        description: `시중 UI 라이브러리들의 소스를 보고 기능과 구현을 분석, 참고하여 재사용성과 확장성을 고려한 컴포넌트를 설계 및 개발하였습니다.`,
+      },
+      {
+        subject: "Share",
+        description: `사내 개발자가 쉽게 사용할 수 있도록 API 설계와 문서화를 고려하여, Storybook 도입 하여 문서 자동화와 협업 효율을 증대시켰습니다.`,
+      },
+      {
+        subject: "Archivement",
+        description: `사내 일부 프로젝트에 도입하여 사용 피드백을 기반으로 사용성을 개선해 나갔습니다.`,
       },
     ],
     thumbStacks: [IconableStackName.react],
@@ -164,7 +166,7 @@ export const projects: Project[] = [
   {
     id: "6",
     title: "Toonivie",
-    description: `웹 영상 편집 제작 툴. 타임라인 기반 영상, 사진 요소를 배치하여 편집. 요소의 타임 별 파라미터 적용하여 애니메이션을 제작하는 웹 영상 편집 및 제작 플랫폼.`,
+    description: `Pixi.js를 활용한 타임라인 기반 웹 영상 편집 툴`,
     position: "Front-end Web Developer",
     period: "2020",
     stacks: ["React"],
@@ -173,9 +175,9 @@ export const projects: Project[] = [
     company: "ideaconcert",
     points: [
       {
-        subject: "Canvas",
+        subject: "Work",
         description:
-          "pixi.js라는 Canvas 라이브러리를 사용해 유저가 업로드한 요소의 파라미터를 제어해 영상 애니메이션으로 편집할 수 있도록 개발",
+          "영상 및 이미지 요소를 타임라인에 배치하고, 구간에 맞춰 해당 요소들이 등장,전환되도록 하여, 영상 미리보기 인터페이스를 구현하였습니다. ",
       },
     ],
     // thumbnail: "/images/finde/finde-logo.png",
