@@ -25,19 +25,24 @@ export const projects: Project[] = [
     ],
     points: [
       {
-        subject: "Queue/Worker",
+        subject: "더빙 파이프라인 진행률",
         description:
-          "장시간 다운로드·처리를 워커로 오프로딩해 동시 업로드 안정화 및 API ACK p95 단축.",
+          "STT→MT→TTS→Mux 단계 기반 진행률·상태 전이 모델링, 워커 콜백 수집 + SSE 실시간 반영, 단계 전환 전 완만 증가 UI로 멈춰 보이는 구간 제거 및 중복 요청 감소.",
       },
       {
-        subject: "Editor Perf",
+        subject: "오디오 에디터 성능",
         description:
-          "스크럽/시킹 병목을 프로파일링 기반 최적화로 프레임 드랍·레이턴시를 90%+ 감소.",
+          "스크럽/시킹 병목 프로파일링 후 throttle + 키프레임 시킹 + 이진탐색/사전로딩 적용, 프레임드랍·오디오 레이턴시 90%+ 감소로 반응성 및 싱크 안정화.",
       },
       {
-        subject: "Realtime Status",
+        subject: "업로드 병목 해소",
         description:
-          "워커 콜백 API+SSE로 단계 진행률을 실시간 반영하고 다음 단계까지 이어지는 진행률 UI로 대기 경험 개선.",
+          "업로드 요청을 Job 생성 후 즉시 응답, 다운로드/전처리를 Redis 큐+워커 비동기로 오프로딩하여 장시간/동시 업로드 시 API 지연·타임아웃 제거.",
+      },
+      {
+        subject: "보이스 클로닝 품질",
+        description:
+          "보이스 임베딩 유사도 기반으로 타겟 언어 발화 가능한 유사 보이스 선택 전략 전환, 발음 품질 편차 완화 및 자연스러움 개선.",
       },
     ],
   },

@@ -51,10 +51,12 @@ const ProjectAbout: FC<ProjectAboutProps> = ({ project }) => {
               {project.stacks?.reduce((acc, stack) => (acc += `, ${stack}`))}
             </div>
           </div>
-          <div className="flex flex-col">
-            <div className="label">(Member)</div>
-            <div className="ml-8 description">{project.member ?? ""}</div>
-          </div>
+          {project.member && (
+            <div className="flex flex-col">
+              <div className="label">(Member)</div>
+              <div className="ml-8 description">{project.member}</div>
+            </div>
+          )}
           {project.links && project.links.length > 0 && (
             <div className="flex flex-col gap-2">
               <div className="label">(Links)</div>

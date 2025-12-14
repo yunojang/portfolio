@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC } from "react";
+import React, { FC, useRef } from "react";
 import { Point } from "../types/project";
 
 import { useGSAP } from "@gsap/react";
@@ -80,24 +80,46 @@ const ProjectPointItem: FC<ProjectPointItemProps> = ({
   size,
   point,
 }) => {
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!imageRef.current) return;
+    gsap.from(imageRef.current, {
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: imageRef.current,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
+
   return (
-    <section
-      className="flex flex-col"
-      style={{ "--view-width": "25.25vw" } as React.CSSProperties}
-    >
+    <section className="flex flex-col" style={{} as React.CSSProperties}>
       <div
         className="border-t-[1px] border-dashed"
         style={{ borderColor: "var(--font-color)" }}
       />
       <div className="flex items-start pt-2" style={{ height: size }}>
-        <div className="w-[37.5vw] expend">
-          {`${index + 1}`.padStart(2, "0")}
-        </div>
         <div className="flex-1">
-          <div className="expend">({point.subject})</div>
-          <div className="ml-12 description view-width mt-5">
+          <div className="expend h-[2em] text-lg font-bold tracking-tight text-slate-900 flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full bg-slate-900" />
+            <span>{point.subject}</span>
+          </div>
+          <div className="ml-12 description view-width mt-5 pr-5">
             {point.description}
           </div>
+        </div>
+
+        {/* image */}
+        <div
+          ref={imageRef}
+          className="w-[50vw] h-[60vh] rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50/80 flex items-center justify-center text-sm text-gray-500"
+        >
+          -
         </div>
       </div>
     </section>
