@@ -61,13 +61,13 @@ const NavigationBar: FC<NavigationBarProps> = () => {
         router.push("/about");
       },
     },
-    {
-      content: "Location",
-      condition: "always",
-      onClick() {
-        router.push("/about/location");
-      },
-    },
+    // {
+    //   content: "Location",
+    //   condition: "always",
+    //   onClick() {
+    //     router.push("/about/location");
+    //   },
+    // },
     {
       content: "Projects",
       condition: "always",

@@ -59,7 +59,7 @@ export default function Home() {
 
       <ProfileIntroduce />
 
-      <div className=" py-40 mb-[16rem] sticky top-0">
+      <div className="py-32 mb-[16rem] sticky top-0">
         <ProfileTexts onScrollCareer={scrollToCareer} />
       </div>
 

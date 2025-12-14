@@ -59,7 +59,7 @@ const Intro: FC<IntroProps> = ({ onEnd, onStart }) => {
             style={{ animationDelay: "750ms" }}
             onAnimationEnd={onEndIntro}
           >
-            FRONT-END WEB DEVELOPER
+            FULL-STACK WEB ENGINEER
           </div>
         </div>
       </div>

@@ -46,7 +46,7 @@ const AboutPage: FC<AboutPageProps> = () => {
         <div className="font-medium text-[6.25em] leading-[1em]">ABOUT ME</div>
         <div className="flex items-center justify-between w-full text-2xl font-light">
           <div>Korean</div>
-          <div>Front-End Web Devloper</div>
+          <div>Full-stack Web Engineer</div>
         </div>
       </header>
 
@@ -70,21 +70,21 @@ const AboutPage: FC<AboutPageProps> = () => {
                 <ProfileField label="생년월일" content={"1998.10.03"} />
                 <ProfileField label="연락처" content={"010-2757-3729"} />
 
-                <ClickableComponent clickableText="move">
-                  <Link href="/about/location">
-                    <ProfileField
-                      label="거주지"
-                      content={
-                        <div className="flex items-center justify-between">
-                          <div>서초구 Seoul, Korea</div>
-                          <div>
-                            <FiExternalLink />
-                          </div>
-                        </div>
-                      }
-                    />
-                  </Link>
-                </ClickableComponent>
+                {/* <ClickableComponent clickableText="move">
+                  <Link href="/about/location"> */}
+                <ProfileField
+                  label="거주지"
+                  content={
+                    <div className="flex items-center justify-between">
+                      <div>서초구 Seoul, Korea</div>
+                      {/* <div>
+                        <FiExternalLink />
+                      </div> */}
+                    </div>
+                  }
+                />
+                {/* </Link>
+                </ClickableComponent> */}
               </div>
 
               {/* <div className="flex w-full items-center justify-end gap-3 relative">
@@ -107,7 +107,7 @@ const AboutPage: FC<AboutPageProps> = () => {
                   My Tech Stacks
                 </div>
                 <div className="text-lg text-[#404040]">
-                  일치하면 좋지만, 새로운 스택에도 열려있습니다.
+                  새로운 스택에도 열려있습니다.
                 </div>
               </header>
 

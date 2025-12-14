@@ -16,6 +16,7 @@ import Script from "next/script";
 import ResponsiveRedirect from "./common/components/ResponsiveRedirect";
 import SmoothScroll from "./common/components/SmoothScroll";
 import { headers } from "next/headers";
+import PageLoadGate from "./common/components/PageLoadGate";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,10 +34,10 @@ export const metadata = async (): Promise<Metadata> => {
 
   return {
     title: "JANGYUNHO",
-    description: "Front-end Web Developer yuno's portfolio",
+    description: "Full-stack Web Engineer yuno's portfolio",
     openGraph: {
       title: "Yuno-Portfolio",
-      description: "Front-end Web Developer yuno's portfolio",
+      description: "Full-stack Web Engineer yuno's portfolio",
       images: imageUrl,
     },
   };
@@ -63,23 +64,25 @@ export default function RootLayout({
       <body
         className={`${notoSansKR.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ResponsiveRedirect width={901} />
+        <PageLoadGate>
+          <ResponsiveRedirect width={901} />
 
-        <SmoothScroll />
+          <SmoothScroll />
 
-        <section className="relative">
-          {children}
+          <section className="relative">
+            {children}
 
-          <Footer />
+            <Footer />
 
-          {/* <div className="fixed w-[645px] left-1/2 -translate-x-1/2 bottom-5 z-50">
-            <NavigationBar />
-          </div> */}
+            {/* <div className="fixed w-[645px] left-1/2 -translate-x-1/2 bottom-5 z-50">
+              <NavigationBar />
+            </div> */}
 
-          <div className="fixed w-fit right-3 bottom-5 z-[999]">
-            <NavigationBar />
-          </div>
-        </section>
+            <div className="fixed w-fit right-3 bottom-5 z-[999]">
+              <NavigationBar />
+            </div>
+          </section>
+        </PageLoadGate>
       </body>
     </html>
   );

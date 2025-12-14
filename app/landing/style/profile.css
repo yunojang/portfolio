@@ -1,33 +1,35 @@
 .title-bg {
   animation: bg-fade-in linear forwards;
   animation-timeline: view();
+  /* 더 느리고 늦게 시작하도록 범위를 넓힘 */
+  animation-range: entry 22vh 88vh;
+  background: linear-gradient(
+    180deg,
+    #050505 0%,
+    #0c0c0f 30%,
+    #0c0c0f 70%,
+    #050505 100%
+  );
   opacity: 0;
-  scale: 0.8;
-  animation-range: entry 15vh;
-  border-top-left-radius: 100%;
-  border-top-right-radius: 100%;
+  scale: 0.9;
+  filter: blur(12px);
+  clip-path: circle(22% at 50% 22%);
 }
 
 @keyframes bg-fade-in {
-  0% {
-  }
-
-  100% {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    scale: 1;
-    opacity: 1;
-  }
-
-  /* 85% {
-    scale: 1;
-    opacity: 1;
-  }
-
-  100% {
-    scale: 0.8;
+  from {
+    clip-path: circle(22% at 50% 22%);
+    scale: 0.9;
     opacity: 0;
-  } */
+    filter: blur(12px);
+  }
+
+  to {
+    clip-path: circle(140% at 50% 22%);
+    scale: 1;
+    opacity: 1;
+    filter: blur(0px);
+  }
 }
 
 .intro-text {
