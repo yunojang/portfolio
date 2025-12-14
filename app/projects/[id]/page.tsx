@@ -14,8 +14,9 @@ const ProjectPage: FC<ProjectPageProps> = async ({ params }) => {
 
   if (!project) throw new Error("Invalid id");
 
+  const currentIndex = projects.findIndex((prj) => prj.id === id);
   const nextProject =
-    projects.find((prj) => Number(prj.id) === Number(id) + 1) ?? projects[0];
+    projects[(currentIndex + 1) % projects.length] ?? projects[0];
 
   return (
     <div>

@@ -20,7 +20,7 @@ const ExperienceCards: FC<ExperienceCardsProps> = ({ exps }) => {
   const seeOnlyEvent = filterState === ExperienceFiliterType.EVENT;
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-8 max-w-6xl mx-auto">
       {exps
         .filter(
           (exp) =>
@@ -30,38 +30,42 @@ const ExperienceCards: FC<ExperienceCardsProps> = ({ exps }) => {
             (seeOnlyEvent && exp.type === "event")
         )
         .map((exp, i) => (
-          <div key={i} id={exp.name}>
-            <div className="border-t-2 border-[#a7bcec] border-dashed" />
-            <section
-              className="view-width mx-auto flex items-start gap-5 pb-[50vh] pt-12 text-gray-600"
-              style={{ "--view-width": "62.625vw" } as React.CSSProperties}
-            >
-              <div className="flex-1">
-                <div className="border-2 rounded-full border-[#1a397c] text-[#1a397c] inline-block px-2 py-1 self-end font-semibold text-sm mb-3 tracking-wider">
-                  {exp.type.toUpperCase()}
+          <div key={i} id={exp.name} className="relative pl-10">
+            <div className="absolute left-4 top-0 bottom-0 w-px bg-slate-200" />
+            <div className="absolute left-2.5 top-4 w-3 h-3 rounded-full bg-[#1a397c] shadow-[0_0_0_4px_rgba(26,57,124,0.12)]" />
+
+            <section className="rounded-2xl border border-slate-200/80 bg-white/80 shadow-sm px-6 py-6 flex flex-col gap-4 text-slate-800">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-[0.65rem] font-semibold tracking-[0.18em] text-[#1a397c] bg-[#e7edfb] border border-[#b9c8f4] rounded-full px-3 py-1">
+                    {typeLabel(exp.type)}
+                  </span>
+                  <span className="text-base text-slate-500">{exp.name}</span>
                 </div>
 
-                <div className="text-3xl text-[#1a397c] mb-3">
-                  {exp.name.toUpperCase()}
-                </div>
-
-                <div className="text-lg">
-                  {exp.startDate.getFullYear() === exp.endDate.getFullYear() ||
-                  exp.type === "event"
-                    ? exp.startDate.getFullYear()
-                    : `${exp.startDate.getFullYear()} - ${exp.endDate.getFullYear()}`}
-                </div>
+                <span className="text-sm font-semibold text-slate-600 bg-slate-100 rounded-full px-3 py-1 border border-slate-200">
+                  {formatPeriod(exp.startDate, exp.endDate, exp.type)}
+                </span>
               </div>
-              <div className="flex-1">
-                <div className="flex flex-col text-lg">
-                  {exp.subContents.map((content, i) => (
-                    <div key={i}>{content}</div>
+
+              {exp.subContents.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {exp.subContents.map((content, idx) => (
+                    <span
+                      key={idx}
+                      className="inline-flex items-center rounded-full bg-slate-50 border border-slate-200 px-3 py-1 text-xs font-medium text-slate-700"
+                    >
+                      {content}
+                    </span>
                   ))}
                 </div>
-              </div>
-              <div className="flex-1 text-lg whitespace-pre-line">
-                {exp.description}
-              </div>
+              )}
+
+              {exp.description && (
+                <p className="text-sm leading-relaxed text-slate-700 whitespace-pre-line">
+                  {exp.description}
+                </p>
+              )}
             </section>
           </div>
         ))}
@@ -70,3 +74,24 @@ const ExperienceCards: FC<ExperienceCardsProps> = ({ exps }) => {
 };
 
 export default ExperienceCards;
+
+const formatPeriod = (start: Date, end: Date, type: Experience["type"]) => {
+  const fmt = (d: Date) =>
+    `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}`;
+
+  if (type === "event") return fmt(start);
+  return `${fmt(start)} - ${fmt(end)}`;
+};
+
+const typeLabel = (type: Experience["type"]) => {
+  switch (type) {
+    case "career":
+      return "Career";
+    case "edu":
+      return "Education";
+    case "event":
+      return "Certification";
+    default:
+      return type.toUpperCase();
+  }
+};

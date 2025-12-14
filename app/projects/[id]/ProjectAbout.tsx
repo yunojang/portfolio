@@ -36,7 +36,7 @@ const ProjectAbout: FC<ProjectAboutProps> = ({ project }) => {
             label="(Position)"
             content={project.position}
           />
-          <ProjectAboutHolder line label="(Year)" content={project.period} />
+          <ProjectAboutHolder line label="(Period)" content={project.period} />
           <ProjectAboutHolder
             line
             label="(In)"
@@ -55,10 +55,30 @@ const ProjectAbout: FC<ProjectAboutProps> = ({ project }) => {
             <div className="label">(Member)</div>
             <div className="ml-8 description">{project.member ?? ""}</div>
           </div>
-          <div className="flex flex-col">
-            <div className="label">(State)</div>
-            <div className="ml-8 description">{project.state ?? ""}</div>
-          </div>
+          {project.links && project.links.length > 0 && (
+            <div className="flex flex-col gap-2">
+              <div className="label">(Links)</div>
+              <div className="ml-8 flex flex-wrap gap-2">
+                {project.links.map((link, idx) =>
+                  link.url ? (
+                    <a
+                      key={idx}
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="description underline hover:opacity-75 transition-opacity"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <div key={idx} className="description">
+                      {link.label}
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </header>

@@ -37,6 +37,16 @@ export const experience: Experience[] = [
   },
 
   {
+    id: "kj",
+    type: "edu",
+    name: "KRAFTON JUNGLE 10기",
+    subContents: ["KRAFTON JUNGLE"],
+    startDate: new Date("2025-07-01"),
+    endDate: new Date("2025-12-31"),
+    description: "",
+  },
+
+  {
     id: "3",
     type: "edu",
     name: "원티드 프리온보딩",
@@ -60,26 +70,30 @@ export const experience: Experience[] = [
   },
 
   {
-    id: "2",
+    id: "5",
     type: "edu",
-    name: "한국IT직업전문학교",
-    subContents: ["정보보호학과", "정보보호전문학사", "학점:4.15 / 4.5"],
-    startDate: new Date("2018-03"),
-    endDate: new Date("2020-02"),
+    name: "컴퓨터공학사",
+    subContents: ["학사 학위", "학점은행제", "학점: 4.16 / 4.5"],
+    startDate: new Date("2018-03-01"),
+    endDate: new Date("2022-06-01"),
     description:
-      "정보보호개론, 암호학, 네트워크, 포렌식 등 정보보호 관련 과목 수료",
-    // graphColor: "#8debf0",
+      "학점은행제 전문학사 학위연계. 회사 재직 중 온라인 강의 및 독학사 시험을 통해 학위 취득",
   },
 
   {
-    id: "5",
-    type: "event",
-    name: "컴퓨터공학사",
-    subContents: ["학사 학위", "학점은행제", "학점: 4.16 / 4.5"],
-    startDate: new Date("2022-08-26"),
-    endDate: new Date(),
+    id: "4",
+    type: "edu",
+    name: "정보보호전문학사",
+    subContents: [
+      "전문학사 학위",
+      "학점은행제",
+      "학점: 4.15 / 4.5",
+      "한국IT직업전문학교 정보보호학과"
+    ],
+    startDate: new Date("2018-03-01"),
+    endDate: new Date("2020-02-01"),
     description:
-      "학점은행제 전문학사 학위연계. 회사 재직 중 온라인 강의 및 독학사 시험을 통해 학위 취득",
+      "한국IT직업전문학교 재학하며 학점은행제 병행으로 정보보호 전문학사 취득",
   },
 
   {
@@ -90,16 +104,6 @@ export const experience: Experience[] = [
     startDate: new Date("2021-06"),
     endDate: new Date(),
     description: "",
-  },
-
-  {
-    id: "4",
-    type: "event",
-    name: "정보보호전문학사",
-    subContents: ["전문학사 학위", "학점은행제", "학점: 4.15 / 4.5"],
-    startDate: new Date("2020-02"),
-    endDate: new Date(),
-    description: "전문학교 재학하며 학점은행제 학위 취득",
   },
 
   {

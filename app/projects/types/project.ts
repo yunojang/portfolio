@@ -2,6 +2,7 @@ export enum IconableStackName {
   next = "Next",
   react = "React",
   js = "Js",
+  c = "C",
 }
 
 export interface Point {
@@ -17,13 +18,13 @@ export interface Project {
   period: string;
   thumbnail?: string;
   thumbStacks: IconableStackName[];
+  links?: { label: string; url?: string }[];
 
   // --- detail
   company?: string;
   stacks?: string[];
   // tools: string[];
   member?: string;
-  state?: string;
   // progress: string;
   description?: string;
   screenShots?: string[];

@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/all";
 
 import Image from "next/image";
 
-import { SiNextdotjs } from "react-icons/si";
+import { SiNextdotjs, SiC } from "react-icons/si";
 import { FaJs, FaReact } from "react-icons/fa6";
 
 import { IBM_Plex_Sans_KR } from "next/font/google";
@@ -32,6 +32,7 @@ const StackIcon: { [k in IconableStackName]: ReactNode } = {
   [IconableStackName.next]: <SiNextdotjs />,
   [IconableStackName.react]: <FaReact />,
   [IconableStackName.js]: <FaJs />,
+  [IconableStackName.c]: <SiC />,
 };
 
 gsap.registerPlugin(ScrollTrigger);

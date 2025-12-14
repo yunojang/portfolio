@@ -2,35 +2,128 @@ import { IconableStackName, Project } from "../projects/types/project";
 
 export const projects: Project[] = [
   {
+    id: "dupilot",
+    title: "Dupilot",
+    position: "Full-stack Engineer",
+    period: "2025.07 - 2025.12",
+    company: "Krafton Jungle",
+    description:
+      "AI 자동 더빙 영상 서비스. 업로드-더빙 생성-편집-배포까지 AI 콘텐츠 제작 플로우를 풀스택으로 개발",
+    stacks: [
+      "React",
+      "Zustand",
+      "React-Query",
+      "FastAPI",
+      "DocumentDB",
+      "Redis",
+      "Worker",
+    ],
+    thumbStacks: [IconableStackName.react],
+    links: [
+      { label: "시연영상" },
+      { label: "소스코드" },
+    ],
+    points: [
+      {
+        subject: "Queue/Worker",
+        description:
+          "장시간 다운로드·처리를 워커로 오프로딩해 동시 업로드 안정화 및 API ACK p95 단축.",
+      },
+      {
+        subject: "Editor Perf",
+        description:
+          "스크럽/시킹 병목을 프로파일링 기반 최적화로 프레임 드랍·레이턴시를 90%+ 감소.",
+      },
+      {
+        subject: "Realtime Status",
+        description:
+          "워커 콜백 API+SSE로 단계 진행률을 실시간 반영하고 다음 단계까지 이어지는 진행률 UI로 대기 경험 개선.",
+      },
+    ],
+  },
+  {
+    id: "pintos",
+    title: "Pintos",
+    position: "System Programming",
+    period: "2025.07 - 2025.12",
+    description:
+      "Pintos OS에서 Threads‒User Programs‒VM 단계별 핵심 기능을 구현하며 커널 동작 원리를 체득.",
+    stacks: ["C"],
+    thumbStacks: [IconableStackName.c],
+    company: "KRAFTON JUNGLE",
+    points: [
+      {
+        subject: "Priority Donation",
+        description:
+          "Priority Donation Chaining으로 중첩 락에서 우선순위 역전 문제를 해결.",
+      },
+      {
+        subject: "System Call",
+        description:
+          "dup2 등 시스템콜을 FD 정합성과 표준 I/O 흐름에 맞게 타입 분리 + refcount 기반 close로 구현.",
+      },
+      {
+        subject: "VM / Swap",
+        description:
+          "Lazy Loading, Page Fault, Frame/Swap 관리로 swap-in/out을 구현하며 VM 동작 원리 학습.",
+      },
+    ],
+  },
+  {
+    id: "web-server",
+    title: "Web Server",
+    position: "System Programming",
+    period: "2025.07 - 2025.12",
+    description:
+      "C로 소켓/TCP 기반 Echo - Tiny HTTP 서버 - Proxy 서버를 구현하며 요청‒응답 흐름을 계층별로 구현.",
+    stacks: ["C"],
+    thumbStacks: [IconableStackName.c],
+    company: "KRAFTON JUNGLE",
+    points: [
+      {
+        subject: "HTTP Cycle",
+        description:
+          "요청 파싱-디스패치-응답 생성을 직접 구현해 웹 서버 요청-응답 사이클 원리를 체득.",
+      },
+      {
+        subject: "Proxy Cache",
+        description:
+          "캐시 키 재정의와 용량/대상 제한 정책으로 오답/메모리 잠식 문제를 줄이며 효율 개선.",
+      },
+    ],
+  },
+  {
     id: "1",
     title: "Safely",
     position: "Front-end Web/Mobile Developer",
-    period: "2024",
+    period: "2024.01 - 2024.12",
     thumbnail: "/images/safely-logo.png",
     thumbStacks: [IconableStackName.next],
     stacks: ["Next", "React", "Typescript", "React-Native", "Jotai"],
     member: "Web Front-end 2인, Server 3인",
-    state: "운영중",
-    description: `산업안전문서 관리를 위한 SaaS형 웹 서비스, OCR을 통해 문서 자동 분류 및 관리 기능.`,
     company: "wizcore",
+    links: [{ label: "운영사이트" }],
+    description:
+      "산업안전 문서 관리 SaaS. 사진·PDF 업로드 시 OCR로 문서 타입/제목을 추출해 자동 분류·저장.",
     points: [
       {
-        subject: "Work",
-        description: `계정 및 문서 관리, 문서 뷰어, 관리자 페이지 등 핵심 기능을 개발하였으며, 문서 업로드 시 OCR 처리 요청 및 대기 상태 관리를 구현하고, OCR 결과에 따라 문서를 자동 분류하고 폴더 구조에 반영되도록 처리하였습니다.`,
+        subject: "문서 관리",
+        description: `계정 및 문서 관리, 문서 뷰어, 관리자 페이지 등 핵심 기능을 개발하고 OCR 결과에 따라 문서를 자동 분류.`,
       },
       {
-        subject: "Structure",
-        description: `중첩된 폴더 구조를 고려해 컴포넌트를 재사용할 수 있도록 설계하고, 유지보수성과 확장성을 높이기 위한 구조적 고민을 경험했습니다.`,
+        subject: "구조 설계",
+        description:
+          "중첩 폴더 구조를 고려한 재사용 가능 컴포넌트 설계로 유지보수성·확장성 확보.",
       },
       {
         subject: "PDF Viewer",
         description:
-          "문서 뷰어는 React PDF Viewer를 활용해 구현하였으며, Intersection Observer API를 통해 사용자의 스크롤 위치에 따라 현재 페이지를 식별하고, 관련 기능과 연결하는 로직도 개발하였습니다.",
+          "React PDF Viewer + Intersection Observer로 페이지 감지 및 UI 연동 구현.",
       },
       {
-        subject: "Concurrency",
+        subject: "동시성",
         description:
-          "하나의 워크스페이스를 여러 사용자가 동시에 사용하는 환경에서 발생할 수 있는 수정, 삭제 충돌 상황에 대비해 적절한 에러 처리 및 사용자 경험을 고려하여 개발하였습니다",
+          "다중 사용자 환경에서 수정/삭제 충돌 대응을 위한 에러 처리와 UX 고려.",
       },
     ],
     screenShots: [
@@ -47,13 +140,13 @@ export const projects: Project[] = [
     id: "2",
     title: "Find-e",
     position: "Front-end Web/Mobile Developer",
-    period: "2023-2024",
+    period: "2023.01 - 2024.12",
     thumbnail: "/images/finde/finde-logo.png",
     description: `실무 자료를 공유하고 탐색할 수 있는 서비스`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 1인, Server 2인",
-    state: "운영 중단",
     company: "wizcore",
+    links: [{ label: "운영사이트" }],
 
     screenShots: [
       "/images/finde/finde-logo.png",
@@ -64,15 +157,15 @@ export const projects: Project[] = [
     points: [
       {
         subject: "Work",
-        description: `검색 포털과 유사한 사용자 인터페이스를 구현하고, 핀터레스트 스타일의 멀티 컬럼 이미지 탭 UI를 개발하며 복잡한 레이아웃 처리 경험을 쌓았습니다. `,
+        description: `검색 포털과 유사한 사용자 인터페이스 구현 및 핀터레스트 스타일 멀티 컬럼 이미지 탭 UI 개발.`,
       },
       {
         subject: "Cross-Platform",
-        description: `복잡한 레이아웃에서 반응형 웹을 개발하였고, React Native, 웹뷰 기반 안드로이드 앱까지 개발, 배포하며 다양한 디바이스 환경에서 사용자 경험 차이를 고려하게 되었습니다. 이 경험을 통해 멀티 플랫폼 대응 역량을 키웠고, UI 요소의 유지보수성과 확장성을 고려한 컴포넌트 설계 역량을 강화할 수 있었습니다. `,
+        description: `반응형 웹 + React Native(WebView) 앱 개발·배포로 멀티 플랫폼 대응 경험.`,
       },
       {
         subject: "Reward",
-        description: `리워드 기능을 개발하며 react-query의 revalidate 설정을 활용해 데이터 일관성 유지, 최신 상태 반영, UX 개선을 위한 고민을 통해 개발하였습니다.`,
+        description: `리워드 기능 개발 시 react-query revalidate 설정으로 데이터 일관성과 UX 개선.`,
       },
     ],
 
@@ -83,28 +176,27 @@ export const projects: Project[] = [
     id: "3",
     title: "wcm",
     position: "Front-end Web Developer",
-    period: "2022-2024",
+    period: "2022.01 - 2024.12",
     description: `사내 백오피스 계약 관리 서비스(WCM)`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 2인, Server 2인",
-    state: "운영중",
+    company: "wizcore",
+    links: [],
     points: [
       {
         subject: "Achievements",
-        description: `실제 사내 계약 업무에 도입되어 50건 이상 및 수백만~수억 규모 거래에 사용되었습니다.`,
+        description: `사내 계약 업무에 도입되어 50건 이상 및 수백만~수억 규모 거래에 사용.`,
       },
 
       {
         subject: "Chat",
-        description: `WebSocket 활용 실시간 채팅 시스템 및 인터페이스 개발. 채팅 내 멘션 자동완성을 위해 자모분리 후 비교하여 개발하였습니다.`,
+        description: `WebSocket 실시간 채팅, 멘션 자동완성 구현.`,
       },
       {
         subject: "Work",
-        description: `유사한 관리 페이지가 많은 구조를 고려해 페이지 설계를 추상화하고, 재사용성과 유지보수성을 높였습니다. 
-        또한, 사용자별 거래액 및 계약 건수 등을 확인할 수 있는 대시보드와 차트 시각화 기능을 구현하였으며, 차트는 주로 echarts를 사용하며, 다양한 차트에 대응할 수 있도록 데이터를 고유의 구조로 변환하고, 차트 컴포넌트를 개발하도록 구현하였습니다. 대시보드의 레이아웃 구성과 패널의 드래그 앤 드롭 기능은 react-grid-layout을 활용하여 구현하였습니다.`,
+        description: `반복되는 관리 페이지 추상화, 대시보드/차트/패널 드래그앤드롭 등 유지보수성 고려 설계.`,
       },
     ],
-    company: "wizcore",
     thumbStacks: [IconableStackName.react],
   },
 
@@ -112,23 +204,22 @@ export const projects: Project[] = [
     id: "4",
     title: "절삭공구 플랫폼",
     position: "Front-end Web Developer",
-    period: "2022",
+    period: "2022.01 - 2022.12",
     description: `국책 과제로 진행된 절삭공구 추천, 관리 플랫폼`,
     stacks: ["React", "Typescript", "react-query", "tailwind"],
     member: "Front 2인, Server 3인",
-    state: "-",
     company: "wizcore",
+    links: [],
     points: [
       {
         subject: "Work",
-        description: `과제 요구사항을 바탕으로 공구 등록, 관리와 추천, 상태 예측 기능을 개발하였습니다.`,
+        description: `공구 등록/관리/추천 기능 개발.`,
       },
       {
         subject: "usability",
-        description: `사용자 입력에 따른 절삭공구 예측 결과를 API로 요청하고(axios + react-query), 응답 데이터를 echarts로 시각화하는 기능을 구현하며, 입력 흐름 과 데이터 반영 시점 등 사용성을 고려하여 사용자 인터랙션을 개선하였습니다.`,
+        description: `입력 흐름/데이터 반영 시점을 고려한 사용자 인터랙션 개선 및 echarts 시각화.`,
       },
     ],
-    // thumbnail: "/images/finde/finde-logo.png",
     thumbStacks: [IconableStackName.react],
   },
 
@@ -136,28 +227,28 @@ export const projects: Project[] = [
     id: "5",
     title: "component lib",
     position: "Front-end Web Developer",
-    period: "2021-2023",
-    description: `사내 UI 개발 단계의 일관성과 생산성을 높이기 위한 React 컴포넌트 라이브러리`,
+    period: "2021.01 - 2023.12",
+    description: `사내 UI 개발 일관성과 생산성을 위한 React 컴포넌트 라이브러리`,
     stacks: ["React", "Typescript", "Emotion", "Storybook", "plop"],
     member: "Front 1인",
     company: "wizcore",
-    state: "-",
+    links: [],
     points: [
       {
         subject: "Work",
-        description: `약 20~30개의 컴포넌트를 개발하였으며, 버튼, 인풋 등 기본 요소부터 모달, 드로어 등 상태 기반 컴포넌트까지 포함되었습니다. 번들러 설정부터 사내 패키지 저장소 (verdaccio)에 배포하며, 모듈 시스템과 배포 구조에 대한 이해를 쌓을 수 있었습니다. `,
+        description: `20~30개 컴포넌트 개발, Storybook 문서화 및 사내 배포.`,
       },
       {
         subject: "Benchmarking",
-        description: `시중 UI 라이브러리들의 소스를 보고 기능과 구현을 분석, 참고하여 재사용성과 확장성을 고려한 컴포넌트를 설계 및 개발하였습니다.`,
+        description: `UI 라이브러리 분석으로 재사용성과 확장성을 고려한 설계.`,
       },
       {
         subject: "Share",
-        description: `사내 개발자가 쉽게 사용할 수 있도록 API 설계와 문서화를 고려하여, Storybook 도입 하여 문서 자동화와 협업 효율을 증대시켰습니다.`,
+        description: `API 설계·문서화로 협업 효율 증대.`,
       },
       {
         subject: "Archivement",
-        description: `사내 일부 프로젝트에 도입하여 사용 피드백을 기반으로 사용성을 개선해 나갔습니다.`,
+        description: `사내 프로젝트 도입 후 피드백 기반 개선.`,
       },
     ],
     thumbStacks: [IconableStackName.react],
@@ -166,35 +257,34 @@ export const projects: Project[] = [
   {
     id: "6",
     title: "Toonivie",
-    description: `Pixi.js를 활용한 타임라인 기반 웹 영상 편집 툴`,
+    description: `Pixi.js 기반 타임라인 웹 영상 편집 툴 데모`,
     position: "Front-end Web Developer",
-    period: "2020",
+    period: "2020.01 - 2020.12",
     stacks: ["React"],
     member: "-",
-    state: "-",
     company: "ideaconcert",
+    links: [{ label: "Demo" }],
     points: [
       {
         subject: "Work",
         description:
-          "영상 및 이미지 요소를 타임라인에 배치하고, 구간에 맞춰 해당 요소들이 등장,전환되도록 하여, 영상 미리보기 인터페이스를 구현하였습니다. ",
+          "영상/이미지 요소를 타임라인에 배치, 전환되도록 구현하고 미리보기 인터페이스 개발.",
       },
     ],
-    // thumbnail: "/images/finde/finde-logo.png",
     thumbStacks: [IconableStackName.react],
   },
 
   {
     id: "7",
     title: "portfolio",
-    description: `자기 자신을 소개하기 위한 포트폴리오 사이트`,
+    description: `개인 포트폴리오 사이트`,
     position: "Front-end Web Developer",
     stacks: ["Next", "Typescript", "Jotai", "tailwind"],
     member: "1인",
-    state: "운영중",
-    period: "2025",
+    period: "2025.01 - 2025.12",
     thumbnail: "/images/pt/pt-main1.png",
     thumbStacks: [IconableStackName.next],
+    links: [],
     screenShots: [
       "/images/pt/pt-main.png",
       "/images/pt/pt-main1.png",
@@ -205,44 +295,30 @@ export const projects: Project[] = [
       {
         subject: "Meaning",
         description:
-          "회사 업무에선 디자인, UX를 위한 효과 및 애니메이션 적용 경험이 없어 여러 효과를 적용 해보기 위함. 해외 개발자 포트폴리오에 영감을 받아 개인 포트폴리오 사이트 제작",
+          "해외 포트폴리오에 영감을 받아 다양한 효과와 애니메이션을 적용해본 개인 작업.",
       },
       {
         subject: "Scrolling",
         description:
-          "스크롤 감응 애니메이션 적용을 위해 GSAP (ScrollTrigger, scrub 등), CSS (animation-timeline) 활용. 마우스 scroll delta값 누적 및 requestAnimationFrame 활용 scroll smooth 개발",
+          "GSAP ScrollTrigger, CSS animation-timeline, custom smooth scroll로 스크롤 감응 애니메이션 구현.",
       },
       {
         subject: "Slider",
         description:
-          "무한 반복 슬라이더 CSS Animation Infinity의 한 사이클 종료 후 원래 위치로 돌아가는 성질 활용하여 CSS로만 구현. 슬라이더 넓이의 스크롤 요소와 sticky 속성 활용 스크롤시 가로로 움직이는 이미지 슬라이더 구현",
+          "CSS 무한 슬라이더와 sticky 가로 슬라이더 등 실험적 인터랙션 구현.",
       },
     ],
   },
 
-  // {
-  //   id: "8",
-  //   title: "Molak",
-  //   description: `최근 많아진 웹 드라마 및 웹 포맷 영상물을 OTT 처럼 추천하고 검색하고 시청하는 플랫폼`,
-  //   position: "Front-end Web Developer",
-  //   stacks: ["Next", "Typescript", "Jotai", "tailwind"],
-  //   member: "Front 1인, Sever 1인",
-  //   period: "2023",
-  //   state: "운영 중단",
-  //   thumbnail: "/images/molak/molak-logo.jpg",
-  //   thumbStacks: [IconableStackName.next],
-  //   screenShots: ["/images/molak/molak-logo.jpg"],
-  // },
-
   {
     id: "8",
     title: "pomodoro",
-    description: `업무나 공부 효율 향상에 도움을 주는 뽀모도로 타이머 시간 관리법을 웹으로 구현, 정해놓은 집중시간과 휴식시간을 반복하여 시각적으로 보여주고 알림을 준다`,
+    description: `업무/공부 효율을 위한 뽀모도로 타이머`,
     position: "Front-end Web Developer",
     member: "1인",
-    period: "2021",
+    period: "2021.01 - 2021.12",
     stacks: ["Javascript"],
-    state: "운영중",
+    links: [],
     thumbnail: "/images/pm/PM-SS2.png",
     screenShots: ["/images/pm/PM-SS1.png", "/images/pm/PM-SS2.png"],
     thumbStacks: [IconableStackName.js],
