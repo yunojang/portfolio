@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface AboutTextsProps {}
+type AboutTextsProps = Record<string, never>;
 
 const AboutTexts: FC<AboutTextsProps> = () => {
   useGSAP(() => {

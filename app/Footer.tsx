@@ -2,9 +2,9 @@ import { FC } from "react";
 import ClickableComponent from "./common/components/ClickableComponent";
 import Link from "next/link";
 
-interface FooterProps {}
+type FooterProps = Record<string, never>;
 
-const Footer: FC<FooterProps> = ({}) => {
+const Footer: FC<FooterProps> = () => {
   return (
     <ClickableComponent cursorHide>
       <div className="h-60 bg-gray-900 relative">

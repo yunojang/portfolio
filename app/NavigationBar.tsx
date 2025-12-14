@@ -10,7 +10,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { FaHome } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
 
-interface NavigationBarProps {}
+type NavigationBarProps = Record<string, never>;
 
 interface Menu {
   content: ReactNode;

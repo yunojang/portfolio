@@ -11,7 +11,7 @@ import { cx } from "@emotion/css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface ImageCardsProps {}
+type ImageCardsProps = Record<string, never>;
 
 const IMG_PATHS = [
   "/images/img1.jpg",
@@ -20,7 +20,7 @@ const IMG_PATHS = [
   "/images/img4.jpg",
 ];
 
-const ImageCards: FC<ImageCardsProps> = ({}) => {
+const ImageCards: FC<ImageCardsProps> = () => {
   const [animationState, setAnimationState] = useState<
     "ready" | "progress" | "end"
   >("ready");
