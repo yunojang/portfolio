@@ -102,7 +102,6 @@ export const experience: Experience[] = [
     name: "정보처리기사",
     subContents: ["기사", "한국산업인력공단"],
     startDate: new Date("2021-06"),
-    endDate: new Date(),
     description: "",
   },
 
@@ -112,7 +111,6 @@ export const experience: Experience[] = [
     name: "네트워크관리사",
     subContents: ["2급 (국가공인)", "한국정보통신자격협회"],
     startDate: new Date("2018-12"),
-    endDate: new Date(),
     description: "",
   },
 
@@ -122,7 +120,6 @@ export const experience: Experience[] = [
     name: "2023 우수사원",
     subContents: ["사내 연말 2023 우수사원"],
     startDate: new Date("2024-01"),
-    endDate: new Date(),
     description: "연말결산 우수사원 수상(3명) 및 상여금 수령",
   },
 

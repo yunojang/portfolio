@@ -6,6 +6,6 @@ export interface Experience {
   description: string;
   thumbnail?: string;
   startDate: Date;
-  endDate: Date;
+  endDate?: Date;
   graphColor?: string;
 }

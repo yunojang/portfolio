@@ -41,10 +41,10 @@ const typeColor = (type: Experience["type"], name?: string) => {
   }
 };
 
-const formatPeriod = (start: Date, end: Date, type: Experience["type"]) => {
+const formatPeriod = (start: Date, end: Date | undefined, type: Experience["type"]) => {
   const fmt = (d: Date) =>
     `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}`;
-  if (type === "event") return fmt(start);
+  if (!end || start.getTime() === end.getTime()) return fmt(start);
   return `${fmt(start)} - ${fmt(end)}`;
 };
 
@@ -56,35 +56,54 @@ const ExperienceGraph = ({ exps }: ExperienceGraphProps) => {
       (a, b) => a.startDate.getTime() - b.startDate.getTime()
     );
 
-    const MIN_GAP_RATIO = 0.03; // 3% of total span
+    const MIN_GAP_RATIO = 0.2; // 20% of total span
+    const firstStart = sorted[0]?.startDate.getTime() ?? 0;
+    const lastEnd = sorted.length
+      ? Math.max(
+          ...sorted.map((exp) =>
+            (exp.endDate ?? exp.startDate).getTime()
+          )
+        )
+      : 0;
     const minGapMs =
-      sorted.length > 1
-        ? (sorted[sorted.length - 1].endDate.getTime() -
-            sorted[0].startDate.getTime()) *
-          MIN_GAP_RATIO
-        : 0;
+      sorted.length > 1 ? (lastEnd - firstStart) * MIN_GAP_RATIO : 0;
 
-    let lastTop = -Infinity;
-    let lastBottom = -Infinity;
+    const topCenters: number[] = [];
+    const bottomCenters: number[] = [];
 
     return sorted.map((exp) => {
       const start = exp.startDate.getTime();
-      const end = exp.endDate.getTime();
+      const end = (exp.endDate ?? exp.startDate).getTime();
       const center = start === end ? start : (start + end) / 2;
 
+      // Calculate min distance to any existing pin in each lane
+      const getMinDist = (centers: number[]) => {
+        if (centers.length === 0) return Infinity;
+        return Math.min(...centers.map((c) => Math.abs(c - center)));
+      };
+
+      const minDistTop = getMinDist(topCenters);
+      const minDistBottom = getMinDist(bottomCenters);
+
       let direction: "top" | "bottom" = "top";
-      if (center - lastTop < minGapMs) {
+
+      // 1. Top이 충분히 비어있으면 Top 우선
+      if (minDistTop >= minGapMs) {
+        direction = "top";
+      }
+      // 2. Top은 좁지만 Bottom이 충분하면 Bottom
+      else if (minDistBottom >= minGapMs) {
         direction = "bottom";
       }
+      // 3. 둘 다 좁으면, 더 넓은 쪽(가장 가까운 핀과의 거리가 더 먼 쪽) 선택
+      else {
+        direction = minDistTop >= minDistBottom ? "top" : "bottom";
+      }
+
       if (direction === "top") {
-        lastTop = center;
+        topCenters.push(center);
       } else {
-        if (center - lastBottom < minGapMs && center - lastTop >= minGapMs) {
-          direction = "top";
-          lastTop = center;
-        } else {
-          lastBottom = center;
-        }
+        bottomCenters.push(center);
       }
 
       return {
