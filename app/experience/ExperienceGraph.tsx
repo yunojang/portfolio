@@ -94,15 +94,12 @@ const ExperienceGraph = ({ exps }: ExperienceGraphProps) => {
         type: exp.type,
         period: formatPeriod(exp.startDate, exp.endDate, exp.type),
         direction,
-          color: typeColor(exp.type, exp.name),
-        };
-      });
+        color: typeColor(exp.type, exp.name),
+      };
+    });
   }, [exps]);
 
-  const minStart = useMemo(
-    () => Math.min(...pins.map((p) => p.start)),
-    [pins]
-  );
+  const minStart = useMemo(() => Math.min(...pins.map((p) => p.start)), [pins]);
   const maxEnd = useMemo(() => {
     const max = Math.max(...pins.map((p) => p.end));
     const padding = 1000 * 60 * 60 * 24 * 30 * 3; // 3 months padding
@@ -329,6 +326,6 @@ const typeLabel = (type: Experience["type"], name?: string) => {
     case "event":
       return "Certification";
     default:
-      return type.toUpperCase();
+      return (type as string).toUpperCase();
   }
 };
