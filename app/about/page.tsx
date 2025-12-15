@@ -28,7 +28,7 @@ import ClickableComponent from "../common/components/ClickableComponent";
 import { FiExternalLink } from "react-icons/fi";
 import { SiVelog } from "react-icons/si";
 
-interface AboutPageProps {}
+type AboutPageProps = Record<string, never>;
 
 const AboutPage: FC<AboutPageProps> = () => {
   return (

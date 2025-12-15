@@ -6,7 +6,7 @@ import "./style/profile.css";
 
 import StackTapeLine from "./components/StackTapeLine";
 
-interface GlitchAnimationProps {}
+type GlitchAnimationProps = Record<string, never>;
 
 const GlitchAnimation: FC<GlitchAnimationProps> = () => {
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { FaMapPin } from "react-icons/fa6";
 
 import { useGSAP } from "@gsap/react";
@@ -8,7 +8,7 @@ import gsap from "gsap";
 
 // import "@/app/common/style/animation.css";
 
-interface LocationDiffProps {}
+type LocationDiffProps = Record<string, never>;
 
 interface Diff {
   name: string;

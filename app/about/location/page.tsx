@@ -12,7 +12,7 @@ const noto = Noto_Sans_KR({
   subsets: ["latin"],
 });
 
-interface LocationPageProps {}
+type LocationPageProps = Record<string, never>;
 
 const LocationPage: FC<LocationPageProps> = () => {
   return (

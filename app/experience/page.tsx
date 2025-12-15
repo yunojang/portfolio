@@ -6,7 +6,7 @@ import { experience } from "../data/experience";
 
 import "@/app/common/style/animation.css";
 
-interface ExperiencePageProps {}
+type ExperiencePageProps = Record<string, never>;
 
 const ExperiencePage: FC<ExperiencePageProps> = () => {
   return (

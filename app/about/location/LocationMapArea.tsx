@@ -14,7 +14,7 @@ import { useGSAP } from "@gsap/react";
 
 import gsap from "gsap";
 
-interface LocationMapProps {}
+type LocationMapProps = Record<string, never>;
 
 const LocationMap: FC<LocationMapProps> = () => {
   useGSAP(() => {

@@ -11,7 +11,7 @@ const ibm = IBM_Plex_Sans_KR({
 import "./style/project.css";
 import RotateButton from "../common/components/RotateButton/RotateButton";
 
-interface LandingEtcProps {}
+type LandingEtcProps = Record<string, never>;
 
 const LandingEtc: FC<LandingEtcProps> = () => {
   return (

@@ -11,9 +11,9 @@ const noto = Noto_Sans_KR({
   subsets: ["latin"],
 });
 
-interface ExperienceGraphProps {
+type ExperienceGraphProps = {
   exps: Experience[];
-}
+};
 
 type PinData = {
   start: number;

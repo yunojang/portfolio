@@ -24,7 +24,7 @@ enum ProjectViewFilter {
   ONLYSIDE = "OnlySide",
 }
 
-interface ProjectPageProps {}
+type ProjectPageProps = Record<string, never>;
 
 const ProjectPage: FC<ProjectPageProps> = () => {
   const listContainer = useRef<HTMLElement>(null);

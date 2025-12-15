@@ -2,7 +2,7 @@ import { FC } from "react";
 import LineGrid from "../common/LineGrid";
 import ResponsiveRedirect from "../common/components/ResponsiveRedirect";
 
-interface MobilePageProps {}
+type MobilePageProps = Record<string, never>;
 
 const MobilePage: FC<MobilePageProps> = () => {
   return (

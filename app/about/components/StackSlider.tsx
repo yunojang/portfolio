@@ -3,7 +3,7 @@ import { FC, useMemo } from "react";
 import AutoSlider from "@/app/common/components/AutoSlider/AutoSlider";
 import Image from "next/image";
 
-interface StackSliderProps {}
+type StackSliderProps = Record<string, never>;
 
 const STACK_PATHS: string[] = [
   "css-logo.webp",

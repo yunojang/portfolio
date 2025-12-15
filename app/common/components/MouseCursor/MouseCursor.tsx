@@ -11,7 +11,7 @@ import {
   initCursor as initCursorAtom,
 } from "@/app/atom/common/cursor";
 
-interface MouseCursorProps {}
+type MouseCursorProps = Record<string, never>;
 
 interface ClientPosition {
   x: number;
@@ -24,7 +24,7 @@ interface FollowCursorPosition {
   distance: ClientPosition;
 }
 
-const MouseCursor: FC<MouseCursorProps> = ({}) => {
+const MouseCursor: FC<MouseCursorProps> = () => {
   const cursor = useRef<HTMLDivElement>(null);
 
   const initCursor = useSetAtom(initCursorAtom);

@@ -91,7 +91,9 @@ const typeLabel = (type: Experience["type"]) => {
       return "Education";
     case "event":
       return "Certification";
-    default:
-      return type.toUpperCase();
+    default: {
+      const text = typeof type === "string" ? type : "unknown";
+      return text.toUpperCase();
+    }
   }
 };
