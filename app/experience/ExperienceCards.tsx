@@ -6,6 +6,7 @@ import { Experience } from "./types/experience";
 import { useAtomValue } from "jotai";
 import { experienceFilter } from "../atom/experience/filter";
 import { ExperienceFiliterType } from "./types/type";
+import { formatPeriod } from "./utils/formatPeriod";
 
 interface ExperienceCardsProps {
   exps: Experience[];
@@ -74,14 +75,6 @@ const ExperienceCards: FC<ExperienceCardsProps> = ({ exps }) => {
 };
 
 export default ExperienceCards;
-
-const formatPeriod = (start: Date, end: Date, type: Experience["type"]) => {
-  const fmt = (d: Date) =>
-    `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}`;
-
-  if (type === "event") return fmt(start);
-  return `${fmt(start)} - ${fmt(end)}`;
-};
 
 const typeLabel = (type: Experience["type"]) => {
   switch (type) {

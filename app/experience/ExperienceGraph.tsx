@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef } from "react";
 import * as echarts from "echarts";
 import { Noto_Sans_KR } from "next/font/google";
 import { Experience } from "./types/experience";
+import { formatPeriod } from "./utils/formatPeriod";
 
 const noto = Noto_Sans_KR({
   weight: ["300", "400", "500"],
@@ -39,13 +40,6 @@ const typeColor = (type: Experience["type"], name?: string) => {
     default:
       return "#475569";
   }
-};
-
-const formatPeriod = (start: Date, end: Date | undefined, type: Experience["type"]) => {
-  const fmt = (d: Date) =>
-    `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}`;
-  if (!end || start.getTime() === end.getTime()) return fmt(start);
-  return `${fmt(start)} - ${fmt(end)}`;
 };
 
 const ExperienceGraph = ({ exps }: ExperienceGraphProps) => {
