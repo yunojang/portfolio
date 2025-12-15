@@ -88,7 +88,7 @@ export const experience: Experience[] = [
       "전문학사 학위",
       "학점은행제",
       "학점: 4.15 / 4.5",
-      "한국IT직업전문학교 정보보호학과"
+      "한국IT직업전문학교 정보보호학과",
     ],
     startDate: new Date("2018-03-01"),
     endDate: new Date("2020-02-01"),
@@ -131,7 +131,6 @@ export const experience: Experience[] = [
       "PCCP (Programmers Certified Coding Professional) JavaScript Lv.3",
     ],
     startDate: new Date("2025-03"),
-    endDate: new Date(),
     description: `그렙(프로그래머스)에서 주관하는 SW 전문가 및 상급 학습자를 대상으로 하는 역량 인증`,
   },
 ];
